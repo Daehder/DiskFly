@@ -499,6 +499,7 @@
 				03F2C2D1181DABFB00DBAA85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		03F2C2D2181DABFB00DBAA85 /* Build configuration list for PBXNativeTarget "DiskFlyTests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +508,7 @@
 				03F2C2D4181DABFB00DBAA85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
