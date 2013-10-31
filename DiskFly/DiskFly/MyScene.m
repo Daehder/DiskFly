@@ -7,47 +7,43 @@
 //
 
 #import "MyScene.h"
+#import "Disc.h"
+#import "GoalNode.h"
 
 @implementation MyScene
 
 -(id)initWithSize:(CGSize)size {    
     if (self = [super initWithSize:size]) {
-        /* Setup your scene here */
         
-        self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
+        self.backgroundColor = [SKColor whiteColor];
         
-        SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+        Disc *cue = [[Disc alloc] init];
+        cue.position = CGPointMake(self.frame.size.width / 2, 50);
+        [self addChild:cue];
+        Disc *star = [[Disc alloc] init];
+        star.position = CGPointMake(self.frame.size.width / 2, self.frame.size.height * 2 / 3);
+        star.fillColor = [SKColor blueColor];
+        [self addChild:star];
         
-        myLabel.text = @"Hello, World!";
-        myLabel.fontSize = 30;
-        myLabel.position = CGPointMake(CGRectGetMidX(self.frame),
-                                       CGRectGetMidY(self.frame));
+        GoalNode *outsideGoal = [[GoalNode alloc] initWithWidth:self.frame.size.width - 30
+                                                      andHeight:100
+                                                       andScene:self];
+        [self addChild:outsideGoal];
         
-        [self addChild:myLabel];
+        GoalNode *middleGoal = [[GoalNode alloc] initWithWidth:self.frame.size.width - 60
+                                                     andHeight:80
+                                                      andScene:self];
+        middleGoal.strokeColor = [SKColor whiteColor];
+        middleGoal.fillColor = [SKColor whiteColor];
+        [self addChild:middleGoal];
+        
+        GoalNode *insideGoal = [[GoalNode alloc] initWithWidth:self.frame.size.width - 90
+                                                     andHeight:60
+                                                      andScene:self];
+        [self addChild:insideGoal];
+        
     }
     return self;
-}
-
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    /* Called when a touch begins */
-    
-    for (UITouch *touch in touches) {
-        CGPoint location = [touch locationInNode:self];
-        
-        SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
-        
-        sprite.position = location;
-        
-        SKAction *action = [SKAction rotateByAngle:M_PI duration:1];
-        
-        [sprite runAction:[SKAction repeatActionForever:action]];
-        
-        [self addChild:sprite];
-    }
-}
-
--(void)update:(CFTimeInterval)currentTime {
-    /* Called before each frame is rendered */
 }
 
 @end
