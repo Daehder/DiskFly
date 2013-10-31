@@ -20,6 +20,7 @@
         
         myLabel.text = @"Hello, World!";
         myLabel.fontSize = 30;
+        myLabel.color = [SKColor colorWithRed:.4 green:.3 blue:.3 alpha:1.0];
         myLabel.position = CGPointMake(CGRectGetMidX(self.frame),
                                        CGRectGetMidY(self.frame));
         
@@ -32,17 +33,7 @@
     /* Called when a touch begins */
     
     for (UITouch *touch in touches) {
-        CGPoint location = [touch locationInNode:self];
-        
-        SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
-        
-        sprite.position = location;
-        
-        SKAction *action = [SKAction rotateByAngle:M_PI duration:1];
-        
-        [sprite runAction:[SKAction repeatActionForever:action]];
-        
-        [self addChild:sprite];
+        //shows the menu
     }
 }
 
