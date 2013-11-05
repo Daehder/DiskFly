@@ -7,6 +7,8 @@
 //
 
 #import "MyScene.h"
+#import "Disc.h"
+#import "GoalNode.h"
 #import "MenuNode.h"
 
 @implementation MyScene
@@ -15,7 +17,6 @@
 {
     if (self = [super initWithSize:size])
     {
-        /* Setup your scene here */
         
         self.backgroundColor = [SKColor whiteColor];
         
@@ -24,13 +25,28 @@
         cue.fillColor = [SKColor yellowColor];
         [self addChild:cue];
         
-        myLabel.text = @"Hello, World!";
-        myLabel.fontSize = 30;
-        myLabel.color = [SKColor colorWithRed:.4 green:.3 blue:.3 alpha:1.0];
-        myLabel.position = CGPointMake(CGRectGetMidX(self.frame),
-                                       CGRectGetMidY(self.frame));
+        Disc *star = [[Disc alloc] init];
+        star.position = CGPointMake(self.frame.size.width / 2, self.frame.size.height * 2 / 3);
+        star.fillColor = [SKColor blueColor];
+        [self addChild:star];
         
-        [self addChild:myLabel];
+        GoalNode *outsideGoal = [[GoalNode alloc] initWithWidth:self.frame.size.width - 30
+                                                      andHeight:100
+                                                       andScene:self];
+        [self addChild:outsideGoal];
+        
+        GoalNode *middleGoal = [[GoalNode alloc] initWithWidth:self.frame.size.width - 60
+                                                     andHeight:80
+                                                      andScene:self];
+        middleGoal.strokeColor = [SKColor whiteColor];
+        middleGoal.fillColor = [SKColor whiteColor];
+        [self addChild:middleGoal];
+        
+        GoalNode *insideGoal = [[GoalNode alloc] initWithWidth:self.frame.size.width - 90
+                                                     andHeight:60
+                                                      andScene:self];
+        [self addChild:insideGoal];
+        
     }
     return self;
 }
@@ -39,10 +55,10 @@
 {
     /* Called when a touch begins */
     
-    for (UITouch *touch in touches)
+    /*for (UITouch *touch in touches)
     {
         
-    }
+    }*/
     MenuNode *menu = [[MenuNode alloc] initWithColor:[SKColor whiteColor] size: self.frame.size];
     [self addChild:menu];
 }
