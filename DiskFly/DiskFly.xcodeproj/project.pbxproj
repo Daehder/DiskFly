@@ -132,7 +132,6 @@
 				03F2C2B3181DABFB00DBAA85 /* MyScene.h */,
 				03F2C2B4181DABFB00DBAA85 /* MyScene.m */,
 				03F2C2B6181DABFB00DBAA85 /* Spaceship.png */,
-				03F2C2B8181DABFB00DBAA85 /* Images.xcassets */,
 				03F2C29F181DABFB00DBAA85 /* Supporting Files */,
 			);
 			path = DiskFly;
@@ -141,6 +140,7 @@
 		03F2C29F181DABFB00DBAA85 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				03F2C2B8181DABFB00DBAA85 /* Images.xcassets */,
 				03F2C2A0181DABFB00DBAA85 /* DiskFly-Info.plist */,
 				03F2C2A1181DABFB00DBAA85 /* InfoPlist.strings */,
 				03F2C2A4181DABFB00DBAA85 /* main.m */,
@@ -499,6 +499,7 @@
 				03F2C2D1181DABFB00DBAA85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		03F2C2D2181DABFB00DBAA85 /* Build configuration list for PBXNativeTarget "DiskFlyTests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +508,7 @@
 				03F2C2D4181DABFB00DBAA85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
