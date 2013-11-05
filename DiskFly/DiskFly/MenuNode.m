@@ -9,16 +9,14 @@
 #import "MenuNode.h"
 #import "Circle.h"
 
-@interface MenuNode90
-@property ScreenSize;
-@end
-
 @implementation MenuNode
 
  - (instancetype) initWithColor:(UIColor *)color size:(CGSize)size
 {
     self = [super initWithColor:color size:size];
-    self.position = CGPointMake(160, 284);
+    self.screenWidth = self.size.width;
+    self.screenLength = self.size.height;
+    self.position = CGPointMake(self.screenWidth/2, self.screenLength/2);
     self.alpha = .5;
     
     [self setupMenu];
@@ -28,13 +26,31 @@
 
  - (void) setupMenu
 {
-    Circle *playButton = [[Circle alloc] init];
-    playButton.position = CGPointMake(-70, 130);
-    [self addChild:playButton];
+    Circle *resumeButton = [[Circle alloc] init];
+    resumeButton.position = CGPointMake(-70, 130);
+    [self addChild:resumeButton];
     
     Circle *restartButton = [[Circle alloc] init];
     restartButton.position = CGPointMake(70, 130);
     [self addChild:restartButton];
+    
+    self.userInteractionEnabled =  YES;
+}
+
+// Called when the resume button is pressed
+- (void) resume
+{
+    [self removeFromParent];
+    
+    // put in code to resume regular movement
+    
+}
+
+ - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    //UITouch *touch = [touches anyObject];
+    //[self resume];
+    [self removeFromParent];
 }
 
 @end

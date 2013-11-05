@@ -10,4 +10,7 @@
 
 @interface MenuNode : SKSpriteNode
 
+@property CGFloat screenWidth;
+@property CGFloat screenLength;
+
 @end

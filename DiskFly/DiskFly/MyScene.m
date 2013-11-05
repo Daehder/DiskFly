@@ -38,9 +38,10 @@
     
     for (UITouch *touch in touches)
     {
-        MenuNode *menu = [[MenuNode alloc] initWithColor:[SKColor whiteColor] size:self.frame.size];
-        [self addChild:menu];
+        
     }
+    MenuNode *menu = [[MenuNode alloc] initWithColor:[SKColor whiteColor] size: self.frame.size];
+    [self addChild:menu];
 }
 
 -(void)update:(CFTimeInterval)currentTime
