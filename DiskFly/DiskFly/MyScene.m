@@ -17,9 +17,12 @@
     {
         /* Setup your scene here */
         
-        self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
+        self.backgroundColor = [SKColor whiteColor];
         
-        SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+        Disc *cue = [[Disc alloc] init];
+        cue.position = CGPointMake(self.frame.size.width / 2, 50);
+        cue.fillColor = [SKColor yellowColor];
+        [self addChild:cue];
         
         myLabel.text = @"Hello, World!";
         myLabel.fontSize = 30;
