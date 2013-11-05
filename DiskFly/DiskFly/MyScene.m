@@ -19,7 +19,9 @@
         
         Disc *cue = [[Disc alloc] init];
         cue.position = CGPointMake(self.frame.size.width / 2, 50);
+        cue.fillColor = [SKColor yellowColor];
         [self addChild:cue];
+        
         Disc *star = [[Disc alloc] init];
         star.position = CGPointMake(self.frame.size.width / 2, self.frame.size.height * 2 / 3);
         star.fillColor = [SKColor blueColor];
