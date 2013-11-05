@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03D450661829703400D5E4CD /* Circle.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D450651829703400D5E4CD /* Circle.m */; };
+		03DAFE1F1822E956001BA754 /* MenuNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DAFE1E1822E956001BA754 /* MenuNode.m */; };
 		03F2C297181DABFB00DBAA85 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03F2C296181DABFB00DBAA85 /* Foundation.framework */; };
 		03F2C299181DABFB00DBAA85 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03F2C298181DABFB00DBAA85 /* CoreGraphics.framework */; };
 		03F2C29B181DABFB00DBAA85 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03F2C29A181DABFB00DBAA85 /* UIKit.framework */; };
@@ -38,6 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03D450641829703400D5E4CD /* Circle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Circle.h; sourceTree = "<group>"; };
+		03D450651829703400D5E4CD /* Circle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Circle.m; sourceTree = "<group>"; };
+		03DAFE1D1822E956001BA754 /* MenuNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuNode.h; sourceTree = "<group>"; };
+		03DAFE1E1822E956001BA754 /* MenuNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuNode.m; sourceTree = "<group>"; };
 		03F2C293181DABFB00DBAA85 /* DiskFly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiskFly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03F2C296181DABFB00DBAA85 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		03F2C298181DABFB00DBAA85 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -131,6 +137,10 @@
 				03F2C2B1181DABFB00DBAA85 /* ViewController.m */,
 				03F2C2B3181DABFB00DBAA85 /* MyScene.h */,
 				03F2C2B4181DABFB00DBAA85 /* MyScene.m */,
+				03DAFE1D1822E956001BA754 /* MenuNode.h */,
+				03DAFE1E1822E956001BA754 /* MenuNode.m */,
+				03D450641829703400D5E4CD /* Circle.h */,
+				03D450651829703400D5E4CD /* Circle.m */,
 				03F2C2B6181DABFB00DBAA85 /* Spaceship.png */,
 				03F2C2B8181DABFB00DBAA85 /* Images.xcassets */,
 				03F2C29F181DABFB00DBAA85 /* Supporting Files */,
@@ -272,7 +282,9 @@
 				03F2C2B5181DABFB00DBAA85 /* MyScene.m in Sources */,
 				03F2C2B2181DABFB00DBAA85 /* ViewController.m in Sources */,
 				03F2C2A9181DABFB00DBAA85 /* AppDelegate.m in Sources */,
+				03D450661829703400D5E4CD /* Circle.m in Sources */,
 				03F2C2A5181DABFB00DBAA85 /* main.m in Sources */,
+				03DAFE1F1822E956001BA754 /* MenuNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
