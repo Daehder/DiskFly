@@ -55,12 +55,11 @@
 {
     /* Called when a touch begins */
     
-    /*for (UITouch *touch in touches)
-    {
-        
-    }*/
-    MenuNode *menu = [[MenuNode alloc] initWithColor:[SKColor whiteColor] size: self.frame.size];
-    [self addChild:menu];
+// Uncomment following code to enable menu
+    // WARNING: currently breaks touches for the game, as it looks for touches anywhere, then puts up the menu
+    
+    /*MenuNode *menu = [[MenuNode alloc] initWithColor:[SKColor whiteColor] size: self.frame.size];
+    [self addChild:menu];*/
 }
 
 -(void)update:(CFTimeInterval)currentTime
