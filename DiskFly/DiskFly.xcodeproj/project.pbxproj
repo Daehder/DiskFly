@@ -25,6 +25,8 @@
 		03F2C2C2181DABFB00DBAA85 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03F2C29A181DABFB00DBAA85 /* UIKit.framework */; };
 		03F2C2CA181DABFB00DBAA85 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 03F2C2C8181DABFB00DBAA85 /* InfoPlist.strings */; };
 		03F2C2CC181DABFB00DBAA85 /* DiskFlyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F2C2CB181DABFB00DBAA85 /* DiskFlyTests.m */; };
+		3723CBF01822E90200C07CFF /* GoalNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 3723CBEF1822E90200C07CFF /* GoalNode.m */; };
+		3782B6921822DEAE00C8E79F /* Disc.m in Sources */ = {isa = PBXBuildFile; fileRef = 3782B6911822DEAE00C8E79F /* Disc.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,10 @@
 		03F2C2C7181DABFB00DBAA85 /* DiskFlyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DiskFlyTests-Info.plist"; sourceTree = "<group>"; };
 		03F2C2C9181DABFB00DBAA85 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		03F2C2CB181DABFB00DBAA85 /* DiskFlyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DiskFlyTests.m; sourceTree = "<group>"; };
+		3723CBEE1822E90200C07CFF /* GoalNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoalNode.h; sourceTree = "<group>"; };
+		3723CBEF1822E90200C07CFF /* GoalNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoalNode.m; sourceTree = "<group>"; };
+		3782B6901822DEAE00C8E79F /* Disc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Disc.h; path = ../Disc.h; sourceTree = "<group>"; };
+		3782B6911822DEAE00C8E79F /* Disc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Disc.m; path = ../Disc.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +129,10 @@
 		03F2C29E181DABFB00DBAA85 /* DiskFly */ = {
 			isa = PBXGroup;
 			children = (
+				3723CBEE1822E90200C07CFF /* GoalNode.h */,
+				3723CBEF1822E90200C07CFF /* GoalNode.m */,
+				3782B6901822DEAE00C8E79F /* Disc.h */,
+				3782B6911822DEAE00C8E79F /* Disc.m */,
 				03F2C2A7181DABFB00DBAA85 /* AppDelegate.h */,
 				03F2C2A8181DABFB00DBAA85 /* AppDelegate.m */,
 				03F2C2AA181DABFB00DBAA85 /* Main_iPhone.storyboard */,
@@ -269,6 +279,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3723CBF01822E90200C07CFF /* GoalNode.m in Sources */,
+				3782B6921822DEAE00C8E79F /* Disc.m in Sources */,
 				03F2C2B5181DABFB00DBAA85 /* MyScene.m in Sources */,
 				03F2C2B2181DABFB00DBAA85 /* ViewController.m in Sources */,
 				03F2C2A9181DABFB00DBAA85 /* AppDelegate.m in Sources */,
