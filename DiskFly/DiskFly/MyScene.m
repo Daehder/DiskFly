@@ -9,6 +9,7 @@
 #import "MyScene.h"
 #import "Disc.h"
 #import "GoalNode.h"
+#import "MoveZone.h"
 
 @implementation MyScene
 
@@ -17,8 +18,13 @@
         
         self.backgroundColor = [SKColor whiteColor];
         
+        MoveZone *zone = [[MoveZone alloc] initWithWidth:self.frame.size.width andHeight:75 andScene:self];
+        zone.fillColor = [SKColor grayColor];
+        [self addChild:zone];
+        
+        
         Disc *cue = [[Disc alloc] init];
-        cue.position = CGPointMake(self.frame.size.width / 2, 50);
+        cue.position = CGPointMake(self.frame.size.width / 2, 37.5);
         cue.fillColor = [SKColor yellowColor];
         [self addChild:cue];
         
@@ -43,7 +49,7 @@
                                                      andHeight:60
                                                       andScene:self];
         [self addChild:insideGoal];
-        
+       
     }
     return self;
 }
