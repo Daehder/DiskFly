@@ -9,16 +9,24 @@
 #import "MyScene.h"
 #import "Disc.h"
 #import "GoalNode.h"
+#import "CongratulationsScene.h"
 
 @implementation MyScene
 
--(id)initWithSize:(CGSize)size {    
-    if (self = [super initWithSize:size]) {
+-(id)initWithSize:(CGSize)size
+{
+    if (self = [super initWithSize:size])
+    {
         
         self.backgroundColor = [SKColor whiteColor];
         
+        MoveZone *zone = [[MoveZone alloc] initWithWidth:self.frame.size.width andHeight:75 andScene:self];
+        zone.fillColor = [SKColor grayColor];
+        [self addChild:zone];
+        
+        
         Disc *cue = [[Disc alloc] init];
-        cue.position = CGPointMake(self.frame.size.width / 2, 50);
+        cue.position = CGPointMake(self.frame.size.width / 2, 37.5);
         cue.fillColor = [SKColor yellowColor];
         [self addChild:cue];
         
@@ -44,8 +52,26 @@
                                                       andScene:self];
         [self addChild:insideGoal];
         
+       
+        
     }
     return self;
+}
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    /* Called when a touch begins */
+    
+// Uncomment following code to enable menu
+    // WARNING: currently breaks touches for the game, as it looks for touches anywhere, then puts up the menu
+    
+    /*MenuNode *menu = [[MenuNode alloc] initWithColor:[SKColor whiteColor] size: self.frame.size];
+    [self addChild:menu];*/
+}
+
+-(void)update:(CFTimeInterval)currentTime
+{
+    /* Called before each frame is rendered */
 }
 
 @end

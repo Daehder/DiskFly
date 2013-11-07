@@ -22,6 +22,9 @@
     self.path = path.CGPath;
     
     return self;
+    
+    
 }
+
 
 @end
