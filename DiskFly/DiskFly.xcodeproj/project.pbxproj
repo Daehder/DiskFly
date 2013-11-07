@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		03D450661829703400D5E4CD /* Circle.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D450651829703400D5E4CD /* Circle.m */; };
-		03DAFE1F1822E956001BA754 /* MenuNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DAFE1E1822E956001BA754 /* MenuNode.m */; };
 		03F2C297181DABFB00DBAA85 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03F2C296181DABFB00DBAA85 /* Foundation.framework */; };
 		03F2C299181DABFB00DBAA85 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03F2C298181DABFB00DBAA85 /* CoreGraphics.framework */; };
 		03F2C29B181DABFB00DBAA85 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03F2C29A181DABFB00DBAA85 /* UIKit.framework */; };
@@ -30,7 +28,10 @@
 		369EE73B182975960066BDD0 /* MoveZone.m in Sources */ = {isa = PBXBuildFile; fileRef = 369EE73A182975960066BDD0 /* MoveZone.m */; };
 		3723CBF01822E90200C07CFF /* GoalNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 3723CBEF1822E90200C07CFF /* GoalNode.m */; };
 		3782B6921822DEAE00C8E79F /* Disc.m in Sources */ = {isa = PBXBuildFile; fileRef = 3782B6911822DEAE00C8E79F /* Disc.m */; };
-		DF185AF118298A6000700993 /* CongratulationsScene.m in Sources */ = {isa = PBXBuildFile; fileRef = DF185AF018298A6000700993 /* CongratulationsScene.m */; };
+		8C275B601829973000981C07 /* yellowdisk.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C275B5F1829973000981C07 /* yellowdisk.png */; };
+		8C5CB26D182C1B2500148D8F /* CongratulationsScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5CB26C182C1B2500148D8F /* CongratulationsScene.m */; };
+		8C5CB270182C1B3300148D8F /* MenuNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5CB26F182C1B3300148D8F /* MenuNode.m */; };
+		8C5CB273182C1B6600148D8F /* Circle.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5CB272182C1B6600148D8F /* Circle.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,10 +45,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		03D450641829703400D5E4CD /* Circle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Circle.h; sourceTree = "<group>"; };
-		03D450651829703400D5E4CD /* Circle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Circle.m; sourceTree = "<group>"; };
-		03DAFE1D1822E956001BA754 /* MenuNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuNode.h; sourceTree = "<group>"; };
-		03DAFE1E1822E956001BA754 /* MenuNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuNode.m; sourceTree = "<group>"; };
 		03F2C293181DABFB00DBAA85 /* DiskFly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiskFly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03F2C296181DABFB00DBAA85 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		03F2C298181DABFB00DBAA85 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -78,8 +75,13 @@
 		3723CBEF1822E90200C07CFF /* GoalNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoalNode.m; sourceTree = "<group>"; };
 		3782B6901822DEAE00C8E79F /* Disc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Disc.h; path = ../Disc.h; sourceTree = "<group>"; };
 		3782B6911822DEAE00C8E79F /* Disc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Disc.m; path = ../Disc.m; sourceTree = "<group>"; };
-		DF185AEF18298A6000700993 /* CongratulationsScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CongratulationsScene.h; sourceTree = "<group>"; };
-		DF185AF018298A6000700993 /* CongratulationsScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CongratulationsScene.m; sourceTree = "<group>"; };
+		8C275B5F1829973000981C07 /* yellowdisk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellowdisk.png; sourceTree = "<group>"; };
+		8C5CB26B182C1B2500148D8F /* CongratulationsScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CongratulationsScene.h; sourceTree = "<group>"; };
+		8C5CB26C182C1B2500148D8F /* CongratulationsScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CongratulationsScene.m; sourceTree = "<group>"; };
+		8C5CB26E182C1B3300148D8F /* MenuNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuNode.h; sourceTree = "<group>"; };
+		8C5CB26F182C1B3300148D8F /* MenuNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuNode.m; sourceTree = "<group>"; };
+		8C5CB271182C1B6600148D8F /* Circle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Circle.h; sourceTree = "<group>"; };
+		8C5CB272182C1B6600148D8F /* Circle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Circle.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,12 @@
 		03F2C29E181DABFB00DBAA85 /* DiskFly */ = {
 			isa = PBXGroup;
 			children = (
+				8C5CB271182C1B6600148D8F /* Circle.h */,
+				8C5CB272182C1B6600148D8F /* Circle.m */,
+				8C5CB26E182C1B3300148D8F /* MenuNode.h */,
+				8C5CB26F182C1B3300148D8F /* MenuNode.m */,
+				8C5CB26B182C1B2500148D8F /* CongratulationsScene.h */,
+				8C5CB26C182C1B2500148D8F /* CongratulationsScene.m */,
 				3723CBEE1822E90200C07CFF /* GoalNode.h */,
 				3723CBEF1822E90200C07CFF /* GoalNode.m */,
 				3782B6901822DEAE00C8E79F /* Disc.h */,
@@ -153,14 +161,9 @@
 				03F2C2AD181DABFB00DBAA85 /* Main_iPad.storyboard */,
 				03F2C2B0181DABFB00DBAA85 /* ViewController.h */,
 				03F2C2B1181DABFB00DBAA85 /* ViewController.m */,
-				DF185AEF18298A6000700993 /* CongratulationsScene.h */,
-				DF185AF018298A6000700993 /* CongratulationsScene.m */,
 				03F2C2B3181DABFB00DBAA85 /* MyScene.h */,
 				03F2C2B4181DABFB00DBAA85 /* MyScene.m */,
-				03DAFE1D1822E956001BA754 /* MenuNode.h */,
-				03DAFE1E1822E956001BA754 /* MenuNode.m */,
-				03D450641829703400D5E4CD /* Circle.h */,
-				03D450651829703400D5E4CD /* Circle.m */,
+				8C275B5F1829973000981C07 /* yellowdisk.png */,
 				03F2C2B6181DABFB00DBAA85 /* Spaceship.png */,
 				03F2C29F181DABFB00DBAA85 /* Supporting Files */,
 			);
@@ -280,6 +283,7 @@
 				03F2C2B9181DABFB00DBAA85 /* Images.xcassets in Resources */,
 				03F2C2AF181DABFB00DBAA85 /* Main_iPad.storyboard in Resources */,
 				03F2C2AC181DABFB00DBAA85 /* Main_iPhone.storyboard in Resources */,
+				8C275B601829973000981C07 /* yellowdisk.png in Resources */,
 				03F2C2A3181DABFB00DBAA85 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -299,16 +303,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF185AF118298A6000700993 /* CongratulationsScene.m in Sources */,
 				3723CBF01822E90200C07CFF /* GoalNode.m in Sources */,
 				369EE73B182975960066BDD0 /* MoveZone.m in Sources */,
+				8C5CB270182C1B3300148D8F /* MenuNode.m in Sources */,
 				3782B6921822DEAE00C8E79F /* Disc.m in Sources */,
 				03F2C2B5181DABFB00DBAA85 /* MyScene.m in Sources */,
+				8C5CB26D182C1B2500148D8F /* CongratulationsScene.m in Sources */,
 				03F2C2B2181DABFB00DBAA85 /* ViewController.m in Sources */,
+				8C5CB273182C1B6600148D8F /* Circle.m in Sources */,
 				03F2C2A9181DABFB00DBAA85 /* AppDelegate.m in Sources */,
-				03D450661829703400D5E4CD /* Circle.m in Sources */,
 				03F2C2A5181DABFB00DBAA85 /* main.m in Sources */,
-				03DAFE1F1822E956001BA754 /* MenuNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
