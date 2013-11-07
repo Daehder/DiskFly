@@ -10,6 +10,8 @@
 #import "Disc.h"
 #import "GoalNode.h"
 #import "CongratulationsScene.h"
+#import "MenuNode.h"
+#import "MoveZone.h"
 
 @implementation MyScene
 
