@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "MyScene.h"
+#import "CongratulationsScene.h"
 
 @implementation ViewController
 
@@ -24,6 +25,9 @@
     SKScene * scene = [MyScene sceneWithSize:skView.bounds.size];
     scene.scaleMode = SKSceneScaleModeAspectFill;
     
+    //SKScene * scene = [CongratulationsScene sceneWithSize:skView.bounds.size];
+    //scene.scaleMode = SKSceneScaleModeAspectFill;
+
     // Present the scene.
     [skView presentScene:scene];
 }

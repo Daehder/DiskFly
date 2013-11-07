@@ -27,6 +27,7 @@
 		03F2C2CC181DABFB00DBAA85 /* DiskFlyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F2C2CB181DABFB00DBAA85 /* DiskFlyTests.m */; };
 		3723CBF01822E90200C07CFF /* GoalNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 3723CBEF1822E90200C07CFF /* GoalNode.m */; };
 		3782B6921822DEAE00C8E79F /* Disc.m in Sources */ = {isa = PBXBuildFile; fileRef = 3782B6911822DEAE00C8E79F /* Disc.m */; };
+		DF185AF118298A6000700993 /* CongratulationsScene.m in Sources */ = {isa = PBXBuildFile; fileRef = DF185AF018298A6000700993 /* CongratulationsScene.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,8 @@
 		3723CBEF1822E90200C07CFF /* GoalNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoalNode.m; sourceTree = "<group>"; };
 		3782B6901822DEAE00C8E79F /* Disc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Disc.h; path = ../Disc.h; sourceTree = "<group>"; };
 		3782B6911822DEAE00C8E79F /* Disc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Disc.m; path = ../Disc.m; sourceTree = "<group>"; };
+		DF185AEF18298A6000700993 /* CongratulationsScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CongratulationsScene.h; sourceTree = "<group>"; };
+		DF185AF018298A6000700993 /* CongratulationsScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CongratulationsScene.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +142,8 @@
 				03F2C2AD181DABFB00DBAA85 /* Main_iPad.storyboard */,
 				03F2C2B0181DABFB00DBAA85 /* ViewController.h */,
 				03F2C2B1181DABFB00DBAA85 /* ViewController.m */,
+				DF185AEF18298A6000700993 /* CongratulationsScene.h */,
+				DF185AF018298A6000700993 /* CongratulationsScene.m */,
 				03F2C2B3181DABFB00DBAA85 /* MyScene.h */,
 				03F2C2B4181DABFB00DBAA85 /* MyScene.m */,
 				03F2C2B6181DABFB00DBAA85 /* Spaceship.png */,
@@ -279,6 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF185AF118298A6000700993 /* CongratulationsScene.m in Sources */,
 				3723CBF01822E90200C07CFF /* GoalNode.m in Sources */,
 				3782B6921822DEAE00C8E79F /* Disc.m in Sources */,
 				03F2C2B5181DABFB00DBAA85 /* MyScene.m in Sources */,

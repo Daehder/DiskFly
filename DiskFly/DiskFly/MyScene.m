@@ -9,6 +9,7 @@
 #import "MyScene.h"
 #import "Disc.h"
 #import "GoalNode.h"
+#import "CongratulationsScene.h"
 
 @implementation MyScene
 
@@ -43,6 +44,8 @@
                                                      andHeight:60
                                                       andScene:self];
         [self addChild:insideGoal];
+        
+       
         
     }
     return self;
