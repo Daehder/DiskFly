@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03D450661829703400D5E4CD /* Circle.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D450651829703400D5E4CD /* Circle.m */; };
+		03DAFE1F1822E956001BA754 /* MenuNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DAFE1E1822E956001BA754 /* MenuNode.m */; };
 		03F2C297181DABFB00DBAA85 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03F2C296181DABFB00DBAA85 /* Foundation.framework */; };
 		03F2C299181DABFB00DBAA85 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03F2C298181DABFB00DBAA85 /* CoreGraphics.framework */; };
 		03F2C29B181DABFB00DBAA85 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03F2C29A181DABFB00DBAA85 /* UIKit.framework */; };
@@ -25,6 +27,7 @@
 		03F2C2C2181DABFB00DBAA85 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03F2C29A181DABFB00DBAA85 /* UIKit.framework */; };
 		03F2C2CA181DABFB00DBAA85 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 03F2C2C8181DABFB00DBAA85 /* InfoPlist.strings */; };
 		03F2C2CC181DABFB00DBAA85 /* DiskFlyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F2C2CB181DABFB00DBAA85 /* DiskFlyTests.m */; };
+		369EE73B182975960066BDD0 /* MoveZone.m in Sources */ = {isa = PBXBuildFile; fileRef = 369EE73A182975960066BDD0 /* MoveZone.m */; };
 		3723CBF01822E90200C07CFF /* GoalNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 3723CBEF1822E90200C07CFF /* GoalNode.m */; };
 		3782B6921822DEAE00C8E79F /* Disc.m in Sources */ = {isa = PBXBuildFile; fileRef = 3782B6911822DEAE00C8E79F /* Disc.m */; };
 		DF185AF118298A6000700993 /* CongratulationsScene.m in Sources */ = {isa = PBXBuildFile; fileRef = DF185AF018298A6000700993 /* CongratulationsScene.m */; };
@@ -41,6 +44,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03D450641829703400D5E4CD /* Circle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Circle.h; sourceTree = "<group>"; };
+		03D450651829703400D5E4CD /* Circle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Circle.m; sourceTree = "<group>"; };
+		03DAFE1D1822E956001BA754 /* MenuNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuNode.h; sourceTree = "<group>"; };
+		03DAFE1E1822E956001BA754 /* MenuNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuNode.m; sourceTree = "<group>"; };
 		03F2C293181DABFB00DBAA85 /* DiskFly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiskFly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03F2C296181DABFB00DBAA85 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		03F2C298181DABFB00DBAA85 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -65,6 +72,8 @@
 		03F2C2C7181DABFB00DBAA85 /* DiskFlyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DiskFlyTests-Info.plist"; sourceTree = "<group>"; };
 		03F2C2C9181DABFB00DBAA85 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		03F2C2CB181DABFB00DBAA85 /* DiskFlyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DiskFlyTests.m; sourceTree = "<group>"; };
+		369EE739182975960066BDD0 /* MoveZone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MoveZone.h; path = ../MoveZone.h; sourceTree = "<group>"; };
+		369EE73A182975960066BDD0 /* MoveZone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MoveZone.m; path = ../MoveZone.m; sourceTree = "<group>"; };
 		3723CBEE1822E90200C07CFF /* GoalNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoalNode.h; sourceTree = "<group>"; };
 		3723CBEF1822E90200C07CFF /* GoalNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoalNode.m; sourceTree = "<group>"; };
 		3782B6901822DEAE00C8E79F /* Disc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Disc.h; path = ../Disc.h; sourceTree = "<group>"; };
@@ -136,6 +145,8 @@
 				3723CBEF1822E90200C07CFF /* GoalNode.m */,
 				3782B6901822DEAE00C8E79F /* Disc.h */,
 				3782B6911822DEAE00C8E79F /* Disc.m */,
+				369EE739182975960066BDD0 /* MoveZone.h */,
+				369EE73A182975960066BDD0 /* MoveZone.m */,
 				03F2C2A7181DABFB00DBAA85 /* AppDelegate.h */,
 				03F2C2A8181DABFB00DBAA85 /* AppDelegate.m */,
 				03F2C2AA181DABFB00DBAA85 /* Main_iPhone.storyboard */,
@@ -146,6 +157,10 @@
 				DF185AF018298A6000700993 /* CongratulationsScene.m */,
 				03F2C2B3181DABFB00DBAA85 /* MyScene.h */,
 				03F2C2B4181DABFB00DBAA85 /* MyScene.m */,
+				03DAFE1D1822E956001BA754 /* MenuNode.h */,
+				03DAFE1E1822E956001BA754 /* MenuNode.m */,
+				03D450641829703400D5E4CD /* Circle.h */,
+				03D450651829703400D5E4CD /* Circle.m */,
 				03F2C2B6181DABFB00DBAA85 /* Spaceship.png */,
 				03F2C29F181DABFB00DBAA85 /* Supporting Files */,
 			);
@@ -286,11 +301,14 @@
 			files = (
 				DF185AF118298A6000700993 /* CongratulationsScene.m in Sources */,
 				3723CBF01822E90200C07CFF /* GoalNode.m in Sources */,
+				369EE73B182975960066BDD0 /* MoveZone.m in Sources */,
 				3782B6921822DEAE00C8E79F /* Disc.m in Sources */,
 				03F2C2B5181DABFB00DBAA85 /* MyScene.m in Sources */,
 				03F2C2B2181DABFB00DBAA85 /* ViewController.m in Sources */,
 				03F2C2A9181DABFB00DBAA85 /* AppDelegate.m in Sources */,
+				03D450661829703400D5E4CD /* Circle.m in Sources */,
 				03F2C2A5181DABFB00DBAA85 /* main.m in Sources */,
+				03DAFE1F1822E956001BA754 /* MenuNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
