@@ -19,7 +19,23 @@
 {
     if (self = [super initWithSize:size])
     {
+        GoalNode *outsideGoal = [[GoalNode alloc] initWithWidth:self.frame.size.width - 30
+                                                      andHeight:100
+                                                       andScene:self];
+        [self addChild:outsideGoal];
         
+        GoalNode *middleGoal = [[GoalNode alloc] initWithWidth:self.frame.size.width - 60
+                                                     andHeight:80
+                                                      andScene:self];
+        middleGoal.strokeColor = [SKColor whiteColor];
+        middleGoal.fillColor = [SKColor whiteColor];
+        [self addChild:middleGoal];
+        
+        GoalNode *insideGoal = [[GoalNode alloc] initWithWidth:self.frame.size.width - 90
+                                                     andHeight:60
+                                                      andScene:self];
+        [self addChild:insideGoal];
+
         self.backgroundColor = [SKColor whiteColor];
         
         MoveZone *zone = [[MoveZone alloc] initWithWidth:self.frame.size.width andHeight:75 andScene:self];
@@ -37,22 +53,6 @@
         star.fillColor = [SKColor blueColor];
         [self addChild:star];
         
-        GoalNode *outsideGoal = [[GoalNode alloc] initWithWidth:self.frame.size.width - 30
-                                                      andHeight:100
-                                                       andScene:self];
-        [self addChild:outsideGoal];
-        
-        GoalNode *middleGoal = [[GoalNode alloc] initWithWidth:self.frame.size.width - 60
-                                                     andHeight:80
-                                                      andScene:self];
-        middleGoal.strokeColor = [SKColor whiteColor];
-        middleGoal.fillColor = [SKColor whiteColor];
-        [self addChild:middleGoal];
-        
-        GoalNode *insideGoal = [[GoalNode alloc] initWithWidth:self.frame.size.width - 90
-                                                     andHeight:60
-                                                      andScene:self];
-        [self addChild:insideGoal];
         
        
         
@@ -60,8 +60,8 @@
     return self;
 }
 
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
+//-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+//{
     /* Called when a touch begins */
     
 // Uncomment following code to enable menu
@@ -69,11 +69,11 @@
     
     /*MenuNode *menu = [[MenuNode alloc] initWithColor:[SKColor whiteColor] size: self.frame.size];
     [self addChild:menu];*/
-}
+//}
 
--(void)update:(CFTimeInterval)currentTime
-{
+//-(void)update:(CFTimeInterval)currentTime
+//{
     /* Called before each frame is rendered */
-}
+//}
 
 @end
