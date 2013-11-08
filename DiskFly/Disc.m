@@ -29,10 +29,12 @@
 {
     UIBezierPath *path = [[UIBezierPath alloc] init];
     [path addArcWithCenter:CGPointMake(0, 0) radius:25 startAngle:0 endAngle:2 * M_PI clockwise:YES];
-    self.fillColor = [SKColor yellowColor];
+    /*self.fillColor = [SKColor yellowColor];
     self.strokeColor = [SKColor blackColor];
     self.glowWidth = 1;
-    self.path = path.CGPath;
+    self.path = path.CGPath;*/
+    
+    
     
     self.userInteractionEnabled = YES;
 }

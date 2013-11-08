@@ -54,6 +54,30 @@
         [self addChild:star];
         
         
+        /*SKPhysicsBody *physicsBody;
+        physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:25];
+        physicsBody.affectedByGravity = NO;
+        physicsBody.velocity = CGVectorMake(0, 200);
+        physicsBody.linearDamping = 1;*/
+        
+        Disc *cue = [[Disc alloc] initWithImageNamed:@"yellowdisk.png"];
+        cue.size = CGSizeMake(50, 50);
+        cue.position = CGPointMake(self.frame.size.width / 2, 37.5);
+        //cue.fillColor = [SKColor yellowColor];
+        [cue setPhysicsBody];
+        [self addChild:cue];
+        
+        
+        Disc *star = [[Disc alloc] initWithImageNamed:@"bluedisk.png"];
+        star.size = CGSizeMake(50, 50);
+        star.position = CGPointMake(self.frame.size.width / 2, self.frame.size.height * 2 / 3);
+        //star.fillColor = [SKColor blueColor];
+        //physicsBody.velocity = CGVectorMake(0, 1);
+        [star setPhysicsBody];
+        star.physicsBody.velocity = CGVectorMake(0, 0);
+        
+        [self addChild:star];
+        
        
         
     }
