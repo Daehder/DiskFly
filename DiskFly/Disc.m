@@ -34,8 +34,6 @@
     self.glowWidth = 1;
     self.path = path.CGPath;*/
     
-    
-    
     self.userInteractionEnabled = YES;
 }
 
@@ -56,6 +54,19 @@
     
     self.position = newPosition;
     self.lastTouchLocation = [touch locationInNode:self];
+}
+
+
+- (void) setPhysicsBody {
+    
+    SKPhysicsBody *physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
+    physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:25];
+    physicsBody.affectedByGravity = NO;
+    physicsBody.velocity = CGVectorMake(25, 450);
+    physicsBody.linearDamping = 1.1;
+
+
+    self.physicsBody = physicsBody;
 }
 
 @end

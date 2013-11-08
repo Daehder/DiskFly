@@ -54,6 +54,18 @@
         [self addChild:star];
         
         
+        GoalNode *middleGoal = [[GoalNode alloc] initWithWidth:self.frame.size.width - 60
+                                                     andHeight:80
+                                                      andScene:self];
+        middleGoal.strokeColor = [SKColor whiteColor];
+        middleGoal.fillColor = [SKColor whiteColor];
+        [self addChild:middleGoal];
+        
+        GoalNode *insideGoal = [[GoalNode alloc] initWithWidth:self.frame.size.width - 90
+                                                     andHeight:60
+                                                      andScene:self];
+        [self addChild:insideGoal];
+        
         /*SKPhysicsBody *physicsBody;
         physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:25];
         physicsBody.affectedByGravity = NO;
