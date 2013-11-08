@@ -1,5 +1,5 @@
 //
-//  Level Select Scene.h
+//  Back Button.h
 //  DiskFly
 //
 //  Created by Derek T. Nguyen on 11/7/13.
@@ -8,6 +8,6 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface Level_Select_Scene : SKShapeNode
-
+@interface Back_Button : SKShapeNode
+-(instancetype) init;
 @end

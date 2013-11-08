@@ -1,13 +1,13 @@
 //
-//  Level Select Scene.m
+//  Level1Node.h
 //  DiskFly
 //
 //  Created by Derek T. Nguyen on 11/7/13.
 //  Copyright (c) 2013 InitToWinIt. All rights reserved.
 //
 
-#import "Level Select Scene.h"
+#import <SpriteKit/SpriteKit.h>
 
-@implementation Level_Select_Scene
-
+@interface Level1Node : SKShapeNode
+-(instancetype) init;
 @end

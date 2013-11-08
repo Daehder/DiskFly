@@ -8,6 +8,7 @@
 
 #import "Level Select Button.h"
 #import "RectangleNode.h"
+#import "Level Select Scene.h"
 @interface Level_Select_Button()
 @property CGPoint lastTouchLocation;
 @end
@@ -38,4 +39,18 @@
     Text.position = CGPointMake(100, 15);
     [self addChild:Text];
 }
+-(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [touches anyObject];
+    self.lastTouchLocation = [touch locationInNode:self];
+    
+    SKAction *fadeout = [SKAction fadeOutWithDuration:.1];
+    [self runAction:fadeout completion:^
+     {
+         Level_Select_Scene *LevelScreen = [Level_Select_Scene sceneWithSize:self.scene.size];
+         LevelScreen.scaleMode = SKSceneScaleModeAspectFill;
+         [self.scene.view presentScene:LevelScreen];
+     }];
+}
+
 @end

@@ -68,8 +68,6 @@
         
         [self addChild:star];
         
-       
-        
     }
     return self;
 }
