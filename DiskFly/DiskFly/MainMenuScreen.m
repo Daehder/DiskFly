@@ -25,7 +25,7 @@
 
 -(void) createSceneContents
 {
-    self.backgroundColor = [SKColor whiteColor];
+    self.backgroundColor = [SKColor colorWithRed:(99.0/255.0) green:(184.0/255) blue:(254.0/255) alpha:1];
     self.scaleMode = SKSceneScaleModeAspectFill;
     
     //Game name to be replace with logo
@@ -41,8 +41,6 @@
     Level_Select_Button *LevelSelect = [[Level_Select_Button alloc] init];
     LevelSelect.position = CGPointMake(self.frame.size.width *.18, self.frame.size.height *.30);
     [self addChild:LevelSelect];
-    
-    
 }
 
 @end

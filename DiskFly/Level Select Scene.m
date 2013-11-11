@@ -20,13 +20,12 @@
     {
         [self createSceneContents];
         self.contentCreated = YES;
-        
     }
 }
 
 -(void) createSceneContents
 {
-    self.backgroundColor = [SKColor whiteColor];
+    self.backgroundColor = [SKColor colorWithRed:(99.0/255.0) green:(184.0/255) blue:(254.0/255) alpha:1];
     self.scaleMode = SKSceneScaleModeAspectFill;
     
     SKLabelNode *Label;
