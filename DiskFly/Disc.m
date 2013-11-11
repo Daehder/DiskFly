@@ -10,32 +10,35 @@
 
 @interface Disc ()
 @property CGPoint lastTouchLocation;
+@property CGPoint touchLocation;
 @end
 
 @implementation Disc
 
 
--(instancetype) init
+-(instancetype) initWithImage:(NSString *)fileName andLocation:(CGPoint)location andUserInteraction:(BOOL)interactable
 {
-    self = [super init];
-    
-    [self createDisc];
+    self = [super initWithImageNamed:fileName];
+    self.position = location;
+    self.userInteractionEnabled = interactable;
+    self.size = CGSizeMake(50, 50);
+    [self setPhysicsBody];
     
     return self;
-    
 }
 
--(void) createDisc
-{
-    UIBezierPath *path = [[UIBezierPath alloc] init];
-    [path addArcWithCenter:CGPointMake(0, 0) radius:25 startAngle:0 endAngle:2 * M_PI clockwise:YES];
-    /*self.fillColor = [SKColor yellowColor];
-    self.strokeColor = [SKColor blackColor];
-    self.glowWidth = 1;
-    self.path = path.CGPath;*/
+-(void) setPhysicsBody {
     
-    self.userInteractionEnabled = YES;
+    SKPhysicsBody *physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
+    physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:25];
+    physicsBody.velocity = CGVectorMake(0, 0);
+    physicsBody.linearDamping = 1;
+    physicsBody.affectedByGravity = NO;
+    
+    self.physicsBody = physicsBody;
 }
+
+
 
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
@@ -54,19 +57,35 @@
     
     self.position = newPosition;
     self.lastTouchLocation = [touch locationInNode:self];
+    
 }
 
-
-- (void) setPhysicsBody {
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [touches anyObject];
+    self.touchLocation = [touch locationInNode:self];
     
-    SKPhysicsBody *physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
-    physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:25];
-    physicsBody.affectedByGravity = NO;
-    physicsBody.velocity = CGVectorMake(25, 450);
-    physicsBody.linearDamping = 1.1;
+    
+    if(self.touchLocation.y > 50)
+    {
+        //self.physicsBody.velocity = "velocity of swipe"
+        UIView *flickView = [[UIView alloc] initWithFrame:self.frame];
+        
+        UIPanGestureRecognizer *flick = [[UIPanGestureRecognizer alloc] init];
+        flick.minimumNumberOfTouches = flick.maximumNumberOfTouches = 1;
+        CGPoint flickVector = [flick velocityInView:flickView];
+        self.physicsBody.velocity = CGVectorMake(flickVector.x, flickVector.y);
+    }
+    else
+    {
+        self.physicsBody.velocity = CGVectorMake(0, 0);
+    }
+    
+}
 
-
-    self.physicsBody = physicsBody;
+-(void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    
 }
 
 @end
