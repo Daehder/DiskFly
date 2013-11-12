@@ -20,6 +20,8 @@
 {
     if (self = [super initWithSize:size])
     {
+        SKColor *skyBlueColor = [SKColor colorWithRed:(99.0/255.0) green:(184.0/255) blue:(254.0/255) alpha:1];
+        
         self.backgroundColor = [SKColor colorWithRed:(99.0/255.0) green:(184.0/255) blue:(254.0/255) alpha:1];
         //self.backgroundColor = [SKColor whiteColor];
         
@@ -34,9 +36,8 @@
         
         GoalNode *middleGoal = [[GoalNode alloc] initWithWidth:self.frame.size.width - 60
                                                      andHeight:80
-                                                      andScene:self];
-        middleGoal.strokeColor = [SKColor whiteColor];
-        middleGoal.fillColor = [SKColor whiteColor];
+                                                      andScene:self
+                                                      andColor:skyBlueColor];
         [self addChild:middleGoal];
         
         GoalNode *insideGoal = [[GoalNode alloc] initWithWidth:self.frame.size.width - 90
@@ -68,11 +69,11 @@
         
         [self addChild:star];
         
-        Pause_Button *PauseButton = [[Pause_Button alloc]init];
+        /*Pause_Button *PauseButton = [[Pause_Button alloc]init];
         PauseButton.xScale = .5;
         PauseButton.yScale = .5;
         PauseButton.position = CGPointMake(self.frame.size.width *.1, self.frame.size.height *.19);
-        [self addChild:PauseButton];
+        [self addChild:PauseButton];*/
         
        
         
@@ -83,6 +84,18 @@
 {
     /*Called before each frame is rendered */
     
+}
+
+-(void)pause
+{
+    self.menu = [[MenuNode alloc] initWithColor:[SKColor whiteColor] size: self.frame.size];
+    [self addChild:self.menu];
+    self.scene.physicsWorld.speed = 0;
+}
+
+-(void) resume
+{
+    [self.menu resume];
 }
 
 @end

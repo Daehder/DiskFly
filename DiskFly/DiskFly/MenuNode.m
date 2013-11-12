@@ -49,10 +49,8 @@
 // Called when the resume button is pressed
 - (void) resume
 {
+    self.scene.physicsWorld.speed = 1;
     [self removeFromParent];
-    
-    // put in code to resume regular movement
-    
 }
 
 @end

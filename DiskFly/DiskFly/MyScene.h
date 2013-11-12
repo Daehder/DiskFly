@@ -7,8 +7,10 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "MenuNode.h"
 
 @interface MyScene : SKScene
 
+@property MenuNode *menu;
 
 @end
