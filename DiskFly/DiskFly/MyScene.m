@@ -33,9 +33,8 @@
         
         GoalNode *middleGoal = [[GoalNode alloc] initWithWidth:self.frame.size.width - 60
                                                      andHeight:80
-                                                      andScene:self];
-        middleGoal.strokeColor = [SKColor whiteColor];
-        middleGoal.fillColor = [SKColor whiteColor];
+                                                      andScene:self
+                                                      andColor: [SKColor colorWithRed:(99.0/255.0) green:(184.0/255) blue:(254.0/255) alpha:1]];
         [self addChild:middleGoal];
         
         GoalNode *insideGoal = [[GoalNode alloc] initWithWidth:self.frame.size.width - 90

@@ -29,4 +29,14 @@
     return self;
 }
 
+-(instancetype) initWithWidth:(int) width andHeight:(int) height andScene:(SKScene*) scene andColor: (SKColor*) color
+{
+    self = [self initWithWidth:width andHeight:height andScene:scene];
+    
+    self.strokeColor = color;
+    self.fillColor = color;
+    
+    return self;
+}
+
 @end
