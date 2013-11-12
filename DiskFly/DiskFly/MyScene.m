@@ -73,7 +73,7 @@
         [self addChild:PauseButton];*/
         
        
-        
+        //[[UIApplication sharedApplication] setStatusBarHidden:YES];
     }
     return self;
 }
