@@ -11,5 +11,6 @@
 @interface GoalNode : SKShapeNode
 
 -(instancetype) initWithWidth:(int) width andHeight:(int) height andScene:(SKScene*)scene;
+-(instancetype) initWithWidth:(int) width andHeight:(int) height andScene:(SKScene*) scene andColor: (SKColor*) color;
 
 @end
