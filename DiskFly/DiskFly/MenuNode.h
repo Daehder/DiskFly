@@ -10,6 +10,8 @@
 
 @interface MenuNode : SKSpriteNode
 
+- (instancetype) initWithColor:(UIColor *)color size:(CGSize)size;
+
 @property CGFloat screenWidth;
 @property CGFloat screenLength;
 

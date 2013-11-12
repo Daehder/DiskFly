@@ -8,9 +8,12 @@
 
 #import "MenuNode.h"
 #import "Circle.h"
+@interface MenuNode()
+@property CGPoint lastTouchLocation;
+@end
 
 @implementation MenuNode
-
+// PAUSE MENU FOR IN-GAME
  - (instancetype) initWithColor:(UIColor *)color size:(CGSize)size
 {
     self = [super init];
@@ -50,8 +53,9 @@
 
  - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    //UITouch *touch = [touches anyObject];
-    //[self resume];
+    UITouch *touch = [touches anyObject];
+    self.lastTouchLocation = [touch locationInNode:self];
+    [self resume];
     [self removeFromParent];
 }
 

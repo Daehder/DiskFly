@@ -12,6 +12,7 @@
 #import "CongratulationsScene.h"
 #import "MenuNode.h"
 #import "MoveZone.h"
+#import "Pause Button.h"
 
 @implementation MyScene
 
