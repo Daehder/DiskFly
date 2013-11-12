@@ -79,17 +79,6 @@
     }
     return self;
 }
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    /* Called when a touch begins */
-    
-// Uncomment following code to enable menu
-    // WARNING: currently breaks touches for the game, as it looks for touches anywhere, then puts up the menu
-    
-    MenuNode *menu = [[MenuNode alloc] initWithColor:[SKColor whiteColor] size: self.frame.size];
-    [self addChild:menu];
-    self.scene.physicsWorld.speed = 0;
-}
 -(void)update:(CFTimeInterval)currentTime
 {
     /*Called before each frame is rendered */

@@ -8,6 +8,7 @@
 
 #import "MenuNode.h"
 #import "Circle.h"
+#import "Resume Button.h"
 @interface MenuNode()
 @property CGPoint lastTouchLocation;
 @end
@@ -31,7 +32,8 @@
 
  - (void) setupMenu
 {
-    Circle *resumeButton = [[Circle alloc] init];
+    //CHANGE FROM CIRCLE NODE TO RESUME_BUTTON NODE
+    Resume_Button *resumeButton = [[Resume_Button alloc] init];
     resumeButton.position = CGPointMake(-70 + self.screenWidth/2, 130 + self.screenLength/2);
     resumeButton.strokeColor = [SKColor grayColor];
     [self addChild:resumeButton];
@@ -52,6 +54,9 @@
     // put in code to resume regular movement
     
 }
+
+
+
 
 /* - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {

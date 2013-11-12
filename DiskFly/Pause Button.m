@@ -53,6 +53,8 @@
     [self.scene addChild:menu];
     self.scene.physicsWorld.speed = 0;
     
+    
+    
     [self removeFromParent];
 }
 @end
