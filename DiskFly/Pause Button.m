@@ -44,12 +44,15 @@
 
 
 //Erik: put in the menunode.
-/*-(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+-(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     UITouch *touch = [touches anyObject];
     self.lastTouchLocation = [touch locationInNode:self];
     
-    MenuNode *PauseMenu = [[MenuNode alloc]init];
-    [self addChild:PauseMenu];
-}*/
+    MenuNode *menu = [[MenuNode alloc] initWithColor:[SKColor whiteColor] size: self.scene.frame.size];
+    [self.scene addChild:menu];
+    self.scene.physicsWorld.speed = 0;
+    
+    [self removeFromParent];
+}
 @end

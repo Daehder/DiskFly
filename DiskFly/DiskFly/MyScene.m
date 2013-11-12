@@ -80,7 +80,6 @@
     }
     return self;
 }
-
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     /* Called when a touch begins */
@@ -92,10 +91,10 @@
     [self addChild:menu];
     self.scene.physicsWorld.speed = 0;
 }
-
 -(void)update:(CFTimeInterval)currentTime
 {
-    /* Called before each frame is rendered */
+    /*Called before each frame is rendered */
+    
 }
 
 @end
