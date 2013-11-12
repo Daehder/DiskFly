@@ -11,6 +11,9 @@
 @interface Disc ()
 @property CGPoint lastTouchLocation;
 @property CGPoint touchLocation;
+@property UIPanGestureRecognizer *flick;
+@property UIView *flickView;
+@property CGPoint flickVector;
 @end
 
 @implementation Disc
@@ -44,6 +47,11 @@
 {
     UITouch *touch = [touches anyObject];
     self.lastTouchLocation = [touch locationInNode:self];
+    
+    self.flickView = [[UIView alloc] initWithFrame:self.frame];
+    
+    self.flick = [[UIPanGestureRecognizer alloc] init];
+    self.flick.minimumNumberOfTouches = self.flick.maximumNumberOfTouches = 1;
 }
 
 -(void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
@@ -57,7 +65,10 @@
     
     self.position = newPosition;
     self.lastTouchLocation = [touch locationInNode:self];
+    self.flickVector = [self.flick velocityInView:self.flickView];
     
+    NSLog([NSString stringWithFormat:@"Velocity - X-Axis - %f ", self.flickVector.x]);
+    NSLog([NSString stringWithFormat:@"Velocity - Y-Axis - %f ", self.flickVector.y]);
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
@@ -65,21 +76,18 @@
     UITouch *touch = [touches anyObject];
     self.touchLocation = [touch locationInNode:self];
     
+    /*if(self.touchLocation.y > 50)
+     {
+     //self.physicsBody.velocity = "velocity of swipe"
+     self.physicsBody.velocity = CGVectorMake(self.flickVector.x, self.flickVector.y);
+     }
+     else
+     {
+     self.physicsBody.velocity = CGVectorMake(0, 0);
+     }*/
     
-    if(self.touchLocation.y > 50)
-    {
-        //self.physicsBody.velocity = "velocity of swipe"
-        UIView *flickView = [[UIView alloc] initWithFrame:self.frame];
-        
-        UIPanGestureRecognizer *flick = [[UIPanGestureRecognizer alloc] init];
-        flick.minimumNumberOfTouches = flick.maximumNumberOfTouches = 1;
-        CGPoint flickVector = [flick velocityInView:flickView];
-        self.physicsBody.velocity = CGVectorMake(flickVector.x, flickVector.y);
-    }
-    else
-    {
-        self.physicsBody.velocity = CGVectorMake(0, 0);
-    }
+    
+    self.physicsBody.velocity = CGVectorMake(self.flickVector.x, self.flickVector.y);
     
 }
 
