@@ -51,7 +51,7 @@
     [self removeFromParent];
 }
 
-/* - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     UITouch *touch = [touches anyObject];
     self.lastTouchLocation = [touch locationInNode:self];
