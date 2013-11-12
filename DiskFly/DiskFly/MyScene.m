@@ -67,11 +67,11 @@
         
         [self addChild:star];
         
-        Pause_Button *PauseButton = [[Pause_Button alloc]init];
+        /*Pause_Button *PauseButton = [[Pause_Button alloc]init];
         PauseButton.xScale = .5;
         PauseButton.yScale = .5;
         PauseButton.position = CGPointMake(self.frame.size.width *.1, self.frame.size.height *.19);
-        [self addChild:PauseButton];
+        [self addChild:PauseButton];*/
         
        
         
