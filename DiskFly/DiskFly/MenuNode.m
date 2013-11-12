@@ -45,10 +45,8 @@
 // Called when the resume button is pressed
 - (void) resume
 {
+    self.scene.physicsWorld.speed = 1;
     [self removeFromParent];
-    
-    // put in code to resume regular movement
-    
 }
 
  - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -56,7 +54,6 @@
     UITouch *touch = [touches anyObject];
     self.lastTouchLocation = [touch locationInNode:self];
     [self resume];
-    [self removeFromParent];
 }
 
 @end
