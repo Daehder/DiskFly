@@ -21,7 +21,7 @@
     self.screenWidth = background.size.width;
     self.screenLength = background.size.height;
     background.position = CGPointMake(self.screenWidth/2, self.screenLength/2);
-    background.alpha = .5;
+    background.alpha = .9;
     
     [self addChild:background];
     [self setupMenu];
@@ -33,10 +33,12 @@
 {
     Circle *resumeButton = [[Circle alloc] init];
     resumeButton.position = CGPointMake(-70 + self.screenWidth/2, 130 + self.screenLength/2);
+    resumeButton.strokeColor = [SKColor grayColor];
     [self addChild:resumeButton];
     
     Circle *restartButton = [[Circle alloc] init];
     restartButton.position = CGPointMake(70 + self.screenWidth/2, 130 + self.screenLength/2);
+    restartButton.strokeColor = [SKColor grayColor];
     [self addChild:restartButton];
     
     self.userInteractionEnabled =  YES;
@@ -51,12 +53,12 @@
     
 }
 
- - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+/* - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     UITouch *touch = [touches anyObject];
     self.lastTouchLocation = [touch locationInNode:self];
     [self resume];
     [self removeFromParent];
-}
+}*/
 
 @end
