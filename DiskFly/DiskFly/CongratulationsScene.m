@@ -16,6 +16,7 @@
     
     if (self = [super initWithSize:size]) {
         
+        
         self.backgroundColor = [SKColor whiteColor];
         
         SKLabelNode * skLabel = [SKLabelNode labelNodeWithFontNamed:@"HelviticaNeue"];
@@ -65,12 +66,17 @@
         
         skLabel = [SKLabelNode labelNodeWithFontNamed:@"HelviticaNeue"];
         
-        skLabel.text = @"Home";
+        skLabel.text = @"Menu";
         skLabel.fontSize = 25;
         skLabel.fontColor = [SKColor blueColor];
         skLabel.position = CGPointMake(160, 85);
         
         [self addChild:skLabel];
+        
+        /* CongratulatinonsScene * scene = [CongratulationsScene sceneWithSize:self.scene.size]; 
+           scene.scaleMode = SKSceneScaleModeAspectFill;
+         
+            [self.view presentScene.scene]; */
         
         
     }
