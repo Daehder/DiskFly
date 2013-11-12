@@ -8,8 +8,9 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface Disc : SKShapeNode
+@interface Disc : SKSpriteNode
 
 -(instancetype) init;
+-(void) setPhysicsBody;
 
 @end

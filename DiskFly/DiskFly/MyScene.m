@@ -19,29 +19,6 @@
 {
     if (self = [super initWithSize:size])
     {
-        
-        self.backgroundColor = [SKColor whiteColor];
-        
-        MoveZone *zone = [[MoveZone alloc] initWithWidth:self.frame.size.width andHeight:75 andScene:self];
-        zone.fillColor = [SKColor grayColor];
-        [self addChild:zone];
-        
-        
-        Disc *cue = [[Disc alloc] init];
-        cue.position = CGPointMake(self.frame.size.width / 2, 37.5);
-        cue.fillColor = [SKColor yellowColor];
-        [self addChild:cue];
-        
-        Disc *star = [[Disc alloc] init];
-        star.position = CGPointMake(self.frame.size.width / 2, self.frame.size.height * 2 / 3);
-        star.fillColor = [SKColor blueColor];
-        [self addChild:star];
-        
-        GoalNode *outsideGoal = [[GoalNode alloc] initWithWidth:self.frame.size.width - 30
-                                                      andHeight:100
-                                                       andScene:self];
-        [self addChild:outsideGoal];
-        
         GoalNode *middleGoal = [[GoalNode alloc] initWithWidth:self.frame.size.width - 60
                                                      andHeight:80
                                                       andScene:self];
@@ -54,7 +31,18 @@
                                                       andScene:self];
         [self addChild:insideGoal];
         
-       
+        SKPhysicsBody *physicsBody;
+        physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:25];
+        physicsBody.affectedByGravity = NO;
+        physicsBody.velocity = CGVectorMake(0, 200);
+        physicsBody.linearDamping = 1;
+        
+        Disc *cue = [[Disc alloc] initWithImageNamed:@"yellowdisk.png"];
+        cue.size = CGSizeMake(50, 50);
+        cue.position = CGPointMake(self.frame.size.width / 2, 37.5);
+        //cue.fillColor = [SKColor yellowColor];
+        [cue setPhysicsBody];
+        [self addChild:cue];
         
        
         
