@@ -72,6 +72,10 @@
         PauseButton.position = CGPointMake(self.frame.size.width *.1, self.frame.size.height *.19);
         [self addChild:PauseButton];*/
         
+        SKScene * scene = [CongratulationsScene sceneWithSize:self.scene.size];
+        scene.scaleMode = SKSceneScaleModeAspectFill;
+        
+        [self.view presentScene:scene];
     }
     return self;
 }
