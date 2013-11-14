@@ -14,6 +14,9 @@
 @end
 
 @implementation Level_Select_Scene
+
+
+
 -(void) didMoveToView:(SKView *)view
 {
     if(!self.contentCreated)
@@ -42,6 +45,14 @@
     BackButton.xScale = .3;
     BackButton.yScale = .3;
     [self addChild:BackButton];
+    
+    SKLabelNode *Back;
+    Back = [SKLabelNode labelNodeWithFontNamed:@"helvetica"];
+    Back.text = @"BACK";
+    Back.fontSize = 17;
+    Back.fontColor = [SKColor whiteColor];
+    Back.position = CGPointMake(self.frame.size.width *.14558, self.frame.size.height *.903);
+    [self addChild:Back];
     
     SKShapeNode *Level1;
     Level1 = [[Level1Node alloc] init];

@@ -30,13 +30,13 @@
     Button.lineWidth = 0;
     [self addChild:Button];
     
-    SKLabelNode *Back;
+    /*SKLabelNode *Back;
     Back = [SKLabelNode labelNodeWithFontNamed:@"helvetica"];
     Back.text = @"BACK";
     Back.fontSize = 50;
     Back.fontColor = [SKColor whiteColor];
     Back.position = CGPointMake(100, 30);
-    [self addChild:Back];
+    [self addChild:Back];*/
 }
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
