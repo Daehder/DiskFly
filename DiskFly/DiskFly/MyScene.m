@@ -35,6 +35,8 @@
         [self addChild:self.cue];
         
         [self makeObstacles];
+        
+        [self makeInterface];
     }
     return self;
 }
