@@ -9,7 +9,8 @@
 #import "ViewController.h"
 #import "MyScene.h"
 #import "CongratulationsScene.h"
-
+#import "MainMenuScreen.h"
+#import "Level Select Scene.h"
 @implementation ViewController
 
 - (void)viewDidLoad
@@ -22,7 +23,7 @@
     skView.showsNodeCount = YES;
     
     // Create and configure the scene.
-    SKScene * scene = [MyScene sceneWithSize:skView.bounds.size];
+    SKScene * scene = [MainMenuScreen sceneWithSize:skView.bounds.size];
     scene.scaleMode = SKSceneScaleModeAspectFill;
     
    // SKScene * scene = [CongratulationsScene sceneWithSize:skView.bounds.size];
