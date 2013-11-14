@@ -69,14 +69,9 @@
         [self addChild:cue];
         
         
-        Disc *star = [[Disc alloc] initWithImageNamed:@"bluedisk.png"];
-        star.size = CGSizeMake(50, 50);
-        star.position = CGPointMake(self.frame.size.width / 2, self.frame.size.height * 2 / 3);
-        //star.fillColor = [SKColor blueColor];
-        //physicsBody.velocity = CGVectorMake(0, 1);
-        [star setPhysicsBody];
-        star.physicsBody.velocity = CGVectorMake(0, 0);
-        
+        Disc *star = [[Disc alloc] initWithImage:@"bluedisk"
+                                     andLocation:CGPointMake(self.frame.size.width / 2, self.frame.size.height * 2 / 3)
+                              andUserInteraction:NO];
         [self addChild:star];
         */
         Disc *cue = [[Disc alloc] initWithImage:@"yellowdisk"
@@ -91,12 +86,13 @@
         [self addChild:star];
        
         
-    }
+       
+        }
     return self;
 }
 
-//-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-//{
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
     /* Called when a touch begins */
     
 // Uncomment following code to enable menu
@@ -104,11 +100,11 @@
     
     /*MenuNode *menu = [[MenuNode alloc] initWithColor:[SKColor whiteColor] size: self.frame.size];
     [self addChild:menu];*/
-//}
+}
 
-//-(void)update:(CFTimeInterval)currentTime
-//{
+-(void)update:(CFTimeInterval)currentTime
+{
     /* Called before each frame is rendered */
-//}
+}
 
 @end

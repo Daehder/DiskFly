@@ -13,12 +13,14 @@
 
  - (instancetype) initWithColor:(UIColor *)color size:(CGSize)size
 {
-    self = [super initWithColor:color size:size];
-    self.screenWidth = self.size.width;
-    self.screenLength = self.size.height;
-    self.position = CGPointMake(self.screenWidth/2, self.screenLength/2);
-    self.alpha = .5;
+    self = [super init];
+    SKSpriteNode *background = [[SKSpriteNode alloc]initWithColor:color size:size];
+    self.screenWidth = background.size.width;
+    self.screenLength = background.size.height;
+    background.position = CGPointMake(self.screenWidth/2, self.screenLength/2);
+    background.alpha = .5;
     
+    [self addChild:background];
     [self setupMenu];
     
     return self;
@@ -27,11 +29,11 @@
  - (void) setupMenu
 {
     Circle *resumeButton = [[Circle alloc] init];
-    resumeButton.position = CGPointMake(-70, 130);
+    resumeButton.position = CGPointMake(-70 + self.screenWidth/2, 130 + self.screenLength/2);
     [self addChild:resumeButton];
     
     Circle *restartButton = [[Circle alloc] init];
-    restartButton.position = CGPointMake(70, 130);
+    restartButton.position = CGPointMake(70 + self.screenWidth/2, 130 + self.screenLength/2);
     [self addChild:restartButton];
     
     self.userInteractionEnabled =  YES;

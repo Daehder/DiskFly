@@ -46,6 +46,7 @@
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     UITouch *touch = [touches anyObject];
+    self.firstTouchLocation = [touch locationInView:Nil];
     self.lastTouchLocation = [touch locationInNode:self];
     
     self.flickView = [[UIView alloc] initWithFrame:self.frame];
