@@ -26,8 +26,8 @@
     SKScene * scene = [MainMenuScreen sceneWithSize:skView.bounds.size];
     scene.scaleMode = SKSceneScaleModeAspectFill;
     
-   // SKScene * scene = [CongratulationsScene sceneWithSize:skView.bounds.size];
-   // scene.scaleMode = SKSceneScaleModeAspectFill;
+    //SKScene * scenes = [CongratulationsScene sceneWithSize:skView.bounds.size];
+    scene.scaleMode = SKSceneScaleModeAspectFill;
 
     // Present the scene.
     [skView presentScene:scene];
