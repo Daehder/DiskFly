@@ -7,6 +7,7 @@
 //
 
 #import "CongratulationsScene.h"
+#import "Back Button.h"
 
 @implementation CongratulationsScene
 
@@ -63,14 +64,26 @@
         
         [self addChild:skLabel];
         
-        skLabel = [SKLabelNode labelNodeWithFontNamed:@"HelviticaNeue"];
+        /*skLabel = [SKLabelNode labelNodeWithFontNamed:@"HelviticaNeue"];
         
         skLabel.text = @"Home";
         skLabel.fontSize = 25;
         skLabel.fontColor = [SKColor blueColor];
         skLabel.position = CGPointMake(160, 85);
         
-        [self addChild:skLabel];
+        [self addChild:skLabel];*/
+        
+        SKShapeNode *MainMenu = [[Back_Button alloc]init];
+        MainMenu.position = CGPointMake(100, 85);
+        MainMenu.xScale = .5;
+        MainMenu.yScale = .5;
+        [self addChild:MainMenu];
+        
+        SKLabelNode *MainMenuLabel = [SKLabelNode labelNodeWithFontNamed:@"Helvetica"];
+        MainMenuLabel.text = @"HOME";
+        MainMenuLabel.fontSize = 50;
+        MainMenuLabel.position = CGPointMake(100, 30);
+        [MainMenu addChild:MainMenuLabel];
         
         
     }

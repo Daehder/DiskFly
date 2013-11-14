@@ -46,6 +46,7 @@
     restartButton.strokeColor = [SKColor grayColor];
     [self addChild:restartButton];
     
+    //MAIN MENU BUTTON
     Back_Button *MainMenu = [[Back_Button alloc] init];
     MainMenu.position = CGPointMake(60,300);
     MainMenu.xScale = 1;
