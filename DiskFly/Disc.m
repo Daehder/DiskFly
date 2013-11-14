@@ -26,7 +26,7 @@
     self.size = CGSizeMake(50, 50);
     self.startPosition = location;
     [self setPhysicsBody];
-    self.userHasInteracted = NO;
+    self.canReset = NO;
     
     return self;
 }
@@ -42,12 +42,12 @@
 
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    
     UITouch *touch = [touches anyObject];
     self.firstTouchLocation = [touch locationInView:self.scene.view];
     self.lastTouchLocation = [touch locationInNode:self];
     self.startTime = [NSDate date];
     self.physicsBody.velocity = CGVectorMake(0, 0);
-    self.userHasInteracted = YES;
 }
 
 -(void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
@@ -72,6 +72,7 @@
     
     if (self.position.y > 75) {
         self.physicsBody.velocity = CGVectorMake((endTouchLocation.x - self.firstTouchLocation.x) / (- swipeTime), (endTouchLocation.y - self.firstTouchLocation.y) / swipeTime);
+        self.canReset = YES;
     }
     
 }
@@ -89,7 +90,6 @@
 
 -(void) resetDisc {
     self.position = self.startPosition;
-    self.userHasInteracted = NO;
 }
 
 @end

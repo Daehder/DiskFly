@@ -10,7 +10,7 @@
 
 @interface Disc : SKSpriteNode
 
-@property BOOL userHasInteracted;
+@property BOOL canReset;
 -(instancetype) initWithImage:(NSString *)fileName andLocation:(CGPoint)location andUserInteraction:(BOOL)interactable;
 -(void) setPhysicsBody;
 -(void) createDisc;

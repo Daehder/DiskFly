@@ -17,6 +17,7 @@
 @interface MyScene()
 @property Disc *cue;
 @property Disc *star;
+@property int stillFrames;
 @end
 
 @implementation MyScene
@@ -27,6 +28,8 @@
 {
     if (self = [super initWithSize:size])
     {
+        self.stillFrames = 0;
+        
         [self makeGoal];
         
         self.cue = [[Disc alloc] initWithImage:@"yellowdisk"
@@ -98,11 +101,30 @@
         self.cue.position = CGPointMake(self.frame.size.width / 2, 37.5);
     }*/
     
-    if (self.cue.physicsBody.velocity.dx < .5 && self.cue.physicsBody.velocity.dy < .5 && self.cue.userHasInteracted && self.cue.position.y > 75) {
-        self.cue.position = CGPointMake(self.frame.size.width / 2, 37.5);
-        self.cue.physicsBody.velocity = CGVectorMake(0, 0);
-        
+    
+    
+    if (self.cue.physicsBody.velocity.dx < .1 &&
+        self.cue.physicsBody.velocity.dy < .1 &&
+        self.cue.position.y > 75 &&
+        self.cue.canReset)
+    {
+        if (self.stillFrames++ == 30) {
+            self.cue.position = CGPointMake(self.frame.size.width / 2, 37.5);
+            self.cue.physicsBody.velocity = CGVectorMake(0, 0);
+        }
     }
+    
+    if (self.star.physicsBody.velocity.dx < .5 &&
+        self.star.physicsBody.velocity.dy < .5 &&
+        self.star.position.y > 380 &&
+        self.star.position.y < 525)
+    {
+        CongratulationsScene * scene = [CongratulationsScene sceneWithSize:self.scene.size];
+        scene.scaleMode = SKSceneScaleModeAspectFill;
+        
+        [self.view presentScene:scene];
+    }
+    
 }
 
 -(void)pause
