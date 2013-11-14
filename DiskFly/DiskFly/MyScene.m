@@ -14,7 +14,14 @@
 #import "MoveZone.h"
 #import "Pause Button.h"
 
+@interface MyScene()
+@property Disc *cue;
+@property Disc *star;
+@end
+
 @implementation MyScene
+
+
 
 -(id)initWithSize:(CGSize)size
 {
@@ -24,6 +31,9 @@
         
         self.backgroundColor = [SKColor colorWithRed:(99.0/255.0) green:(184.0/255) blue:(254.0/255) alpha:1];
         //self.backgroundColor = [SKColor whiteColor];
+        
+        SKPhysicsBody *edge = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
+        self.physicsBody = edge;
         
         MoveZone *zone = [[MoveZone alloc] initWithWidth:self.frame.size.width andHeight:75 andScene:self];
         zone.fillColor = [SKColor grayColor];
@@ -45,29 +55,19 @@
                                                       andScene:self];
         [self addChild:insideGoal];
         
-        /*SKPhysicsBody *physicsBody;
-        physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:25];
-        physicsBody.affectedByGravity = NO;
-        physicsBody.velocity = CGVectorMake(0, 200);
-        physicsBody.linearDamping = 1;*/
         
-        Disc *cue = [[Disc alloc] initWithImageNamed:@"yellowdisk.png"];
-        cue.size = CGSizeMake(50, 50);
-        cue.position = CGPointMake(self.frame.size.width / 2, 37.5);
-        //cue.fillColor = [SKColor yellowColor];
-        [cue setPhysicsBody];
-        [self addChild:cue];
+        self.cue = [[Disc alloc] initWithImage:@"yellowdisk"
+                                    andLocation:CGPointMake(self.frame.size.width / 2, 37.5)
+                             andUserInteraction:YES];
+        [self addChild:self.cue];
         
         
-        Disc *star = [[Disc alloc] initWithImageNamed:@"bluedisk.png"];
-        star.size = CGSizeMake(50, 50);
-        star.position = CGPointMake(self.frame.size.width / 2, self.frame.size.height * 2 / 3);
-        //star.fillColor = [SKColor blueColor];
-        //physicsBody.velocity = CGVectorMake(0, 1);
-        [star setPhysicsBody];
-        star.physicsBody.velocity = CGVectorMake(0, 0);
+        self.star = [[Disc alloc] initWithImage:@"bluedisk"
+                                     andLocation:CGPointMake(self.frame.size.width / 2, self.frame.size.height * 2 / 3)
+                              andUserInteraction:NO];
+        [self addChild:self.star];
         
-        [self addChild:star];
+
         
         self.menu = [[MenuNode alloc] initWithColor:[SKColor whiteColor] size: self.frame.size];
         
@@ -75,11 +75,11 @@
         PauseButton.xScale = .5;
         PauseButton.yScale = .5;
         PauseButton.position = CGPointMake(self.frame.size.width *.1, self.frame.size.height *.19);
-        [self addChild:PauseButton];
+        [self addChild:PauseButton];*/
+        
         
        
-        
-    }
+        }
     return self;
 }
 -(void)update:(CFTimeInterval)currentTime
