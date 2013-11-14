@@ -72,7 +72,6 @@
         PauseButton.position = CGPointMake(self.frame.size.width *.1, self.frame.size.height *.19);
         [self addChild:PauseButton];*/
         
-        
     }
     return self;
 }

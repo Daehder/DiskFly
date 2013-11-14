@@ -73,7 +73,7 @@
         
         [self addChild:skLabel];
         
-        /* CongratulatinonsScene * scene = [CongratulationsScene sceneWithSize:self.scene.size]; 
+        /* CongratulationsScene * scene = [CongratulationsScene sceneWithSize:self.scene.size]; 
            scene.scaleMode = SKSceneScaleModeAspectFill;
          
             [self.view presentScene.scene]; */
