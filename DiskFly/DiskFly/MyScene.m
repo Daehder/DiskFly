@@ -27,61 +27,67 @@
 {
     if (self = [super initWithSize:size])
     {
-        SKColor *skyBlueColor = [SKColor colorWithRed:(99.0/255.0) green:(184.0/255) blue:(254.0/255) alpha:1];
-        
-        self.backgroundColor = [SKColor colorWithRed:(99.0/255.0) green:(184.0/255) blue:(254.0/255) alpha:1];
-        //self.backgroundColor = [SKColor whiteColor];
-        
-        SKPhysicsBody *edge = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
-        self.physicsBody = edge;
-        
-        MoveZone *zone = [[MoveZone alloc] initWithWidth:self.frame.size.width andHeight:75 andScene:self];
-        zone.fillColor = [SKColor grayColor];
-        [self addChild:zone];
-        
-        GoalNode *outsideGoal = [[GoalNode alloc] initWithWidth:self.frame.size.width - 30
-                                                      andHeight:100
-                                                       andScene:self];
-        [self addChild:outsideGoal];
-        
-        GoalNode *middleGoal = [[GoalNode alloc] initWithWidth:self.frame.size.width - 60
-                                                     andHeight:80
-                                                      andScene:self
-                                                      andColor:skyBlueColor];
-        [self addChild:middleGoal];
-        
-        GoalNode *insideGoal = [[GoalNode alloc] initWithWidth:self.frame.size.width - 90
-                                                     andHeight:60
-                                                      andScene:self];
-        [self addChild:insideGoal];
-        
+        [self makeGoal];
         
         self.cue = [[Disc alloc] initWithImage:@"yellowdisk"
                                     andLocation:CGPointMake(self.frame.size.width / 2, 37.5)
                              andUserInteraction:YES];
         [self addChild:self.cue];
         
-        
-        self.star = [[Disc alloc] initWithImage:@"bluedisk"
-                                     andLocation:CGPointMake(self.frame.size.width / 2, self.frame.size.height * 2 / 3)
-                              andUserInteraction:NO];
-        [self addChild:self.star];
-        
-
-        
-        self.menu = [[MenuNode alloc] initWithColor:[SKColor whiteColor] size: self.frame.size];
-        
-        Pause_Button *PauseButton = [[Pause_Button alloc]init];
-        PauseButton.xScale = .5;
-        PauseButton.yScale = .5;
-        //PauseButton.position = CGPointMake(self.frame.size.width *.1, self.frame.size.height *.95);
-        PauseButton.position = CGPointMake(self.frame.size.width *.1, self.frame.size.height *.19);
-        [self addChild:PauseButton];
-        
-        
-       
-        }
+        [self makeObstacles];
+    }
     return self;
+}
+
+-(void)makeGoal
+{
+    SKColor *skyBlueColor = [SKColor colorWithRed:(99.0/255.0) green:(184.0/255) blue:(254.0/255) alpha:1];
+    
+    self.backgroundColor = [SKColor colorWithRed:(99.0/255.0) green:(184.0/255) blue:(254.0/255) alpha:1];
+    //self.backgroundColor = [SKColor whiteColor];
+    
+    SKPhysicsBody *edge = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
+    self.physicsBody = edge;
+    
+    MoveZone *zone = [[MoveZone alloc] initWithWidth:self.frame.size.width andHeight:75 andScene:self];
+    zone.fillColor = [SKColor grayColor];
+    [self addChild:zone];
+    
+    GoalNode *outsideGoal = [[GoalNode alloc] initWithWidth:self.frame.size.width - 30
+                                                  andHeight:100
+                                                   andScene:self];
+    [self addChild:outsideGoal];
+    
+    GoalNode *middleGoal = [[GoalNode alloc] initWithWidth:self.frame.size.width - 60
+                                                 andHeight:80
+                                                  andScene:self
+                                                  andColor:skyBlueColor];
+    [self addChild:middleGoal];
+    
+    GoalNode *insideGoal = [[GoalNode alloc] initWithWidth:self.frame.size.width - 90
+                                                 andHeight:60
+                                                  andScene:self];
+    [self addChild:insideGoal];
+}
+
+-(void)makeObstacles
+{
+    self.star = [[Disc alloc] initWithImage:@"bluedisk"
+                                andLocation:CGPointMake(self.frame.size.width / 2, self.frame.size.height * 2 / 3)
+                         andUserInteraction:NO];
+    [self addChild:self.star];
+}
+
+-(void)makeInterface
+{
+    self.menu = [[MenuNode alloc] initWithColor:[SKColor whiteColor] size: self.frame.size];
+    
+    Pause_Button *PauseButton = [[Pause_Button alloc]init];
+    PauseButton.xScale = .5;
+    PauseButton.yScale = .5;
+    //PauseButton.position = CGPointMake(self.frame.size.width *.1, self.frame.size.height *.95);
+    PauseButton.position = CGPointMake(self.frame.size.width *.1, self.frame.size.height *.19);
+    [self addChild:PauseButton];
 }
 
 -(void)update:(CFTimeInterval)currentTime
