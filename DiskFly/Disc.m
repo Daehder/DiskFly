@@ -80,7 +80,7 @@
     
     SKPhysicsBody *physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
     physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:25];
-    //physicsBody.velocity = CGVectorMake(0, 0);
+    physicsBody.velocity = CGVectorMake(0, 0);
     physicsBody.linearDamping = 1;
     physicsBody.affectedByGravity = NO;
     
