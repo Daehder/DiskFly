@@ -55,11 +55,11 @@
     SKLabelNode *MainMenuLabel = [SKLabelNode labelNodeWithFontNamed:@"Helvetica"];
     MainMenuLabel.text = @"Main Menu";
     MainMenuLabel.fontColor = [SKColor whiteColor];
-    MainMenuLabel.fontSize = 30;
-    MainMenuLabel.position = CGPointMake(160, 313);
-    [self addChild:MainMenuLabel];
-    
-    
+    MainMenuLabel.fontSize = 40;
+    MainMenuLabel.xScale = .80;
+    MainMenuLabel.yScale = 1.3;
+    MainMenuLabel.position = CGPointMake(100, 30);
+    [MainMenu addChild:MainMenuLabel];
     
     self.userInteractionEnabled =  YES;
 }
