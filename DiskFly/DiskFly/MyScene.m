@@ -74,18 +74,21 @@
         Pause_Button *PauseButton = [[Pause_Button alloc]init];
         PauseButton.xScale = .5;
         PauseButton.yScale = .5;
+        //PauseButton.position = CGPointMake(self.frame.size.width *.1, self.frame.size.height *.95);
         PauseButton.position = CGPointMake(self.frame.size.width *.1, self.frame.size.height *.19);
-        [self addChild:PauseButton];*/
+        [self addChild:PauseButton];
         
         
        
         }
     return self;
 }
+
 -(void)update:(CFTimeInterval)currentTime
 {
-    /*Called before each frame is rendered */
-    
+    if (self.cue.physicsBody.resting && self.cue.userHasInteracted) {
+        [self.cue resetDisc];
+    }
 }
 
 -(void)pause
