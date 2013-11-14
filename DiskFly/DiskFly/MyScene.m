@@ -22,6 +22,10 @@
         //self.backgroundColor = [SKColor colorWithRed:(99.0/255.0) green:(184.0/255) blue:(254.0/255) alpha:1];
         self.backgroundColor = [SKColor whiteColor];
         
+        MoveZone *zone = [[MoveZone alloc] initWithWidth:self.frame.size.width andHeight:75 andScene:self];
+        zone.fillColor = [SKColor grayColor];
+        [self addChild:zone];
+        
         GoalNode *outsideGoal = [[GoalNode alloc] initWithWidth:self.frame.size.width - 30
                                                       andHeight:100
                                                        andScene:self];
@@ -40,9 +44,7 @@
         [self addChild:insideGoal];
 
         
-        MoveZone *zone = [[MoveZone alloc] initWithWidth:self.frame.size.width andHeight:75 andScene:self];
-        zone.fillColor = [SKColor grayColor];
-        [self addChild:zone];
+        
         
         
         /*Disc *cue = [[Disc alloc] init];
