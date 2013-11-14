@@ -9,6 +9,8 @@
 #import "Pause Button.h"
 #import "Circle.h"
 #import "MenuNode.h"
+#import "MyScene.h"
+
 @interface Pause_Button()
 @property CGPoint lastTouchLocation;
 @end
@@ -49,12 +51,10 @@
     UITouch *touch = [touches anyObject];
     self.lastTouchLocation = [touch locationInNode:self];
     
-    MenuNode *menu = [[MenuNode alloc] initWithColor:[SKColor whiteColor] size: self.scene.frame.size];
-    [self.scene addChild:menu];
-    self.scene.physicsWorld.speed = 0;
-    
-    
-    
-    [self removeFromParent];
+    if([self.scene isKindOfClass:[MyScene class]])
+    {
+        MyScene *scene = (MyScene*) self.scene;
+        [scene pause];
+    }
 }
 @end

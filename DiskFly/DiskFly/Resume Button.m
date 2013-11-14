@@ -9,6 +9,8 @@
 #import "Resume Button.h"
 #import "Triangle.h"
 #import "Circle.h"
+#import "MyScene.h"
+
 @interface Resume_Button()
 @property CGPoint lastTouchLocation;
 @end
@@ -40,12 +42,15 @@
     [self addChild:Resume];
 }
 
-/*-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    
     UITouch *touch = [touches anyObject];
     self.lastTouchLocation = [touch locationInNode:self];
     
-    
-}*/
+    if([self.scene isKindOfClass:[MyScene class]])
+    {
+        MyScene *scene = (MyScene*) self.scene;
+        [scene resume];
+    }
+}
 @end

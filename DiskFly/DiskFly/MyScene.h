@@ -11,6 +11,9 @@
 
 @interface MyScene : SKScene
 
+-(void) pause;
+-(void) resume;
+
 @property MenuNode *menu;
 
 @end

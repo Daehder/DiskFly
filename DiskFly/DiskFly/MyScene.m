@@ -69,11 +69,13 @@
         
         [self addChild:star];
         
-        /*Pause_Button *PauseButton = [[Pause_Button alloc]init];
+        self.menu = [[MenuNode alloc] initWithColor:[SKColor whiteColor] size: self.frame.size];
+        
+        Pause_Button *PauseButton = [[Pause_Button alloc]init];
         PauseButton.xScale = .5;
         PauseButton.yScale = .5;
         PauseButton.position = CGPointMake(self.frame.size.width *.1, self.frame.size.height *.19);
-        [self addChild:PauseButton];*/
+        [self addChild:PauseButton];
         
        
         
@@ -88,7 +90,6 @@
 
 -(void)pause
 {
-    self.menu = [[MenuNode alloc] initWithColor:[SKColor whiteColor] size: self.frame.size];
     [self addChild:self.menu];
     self.scene.physicsWorld.speed = 0;
 }
