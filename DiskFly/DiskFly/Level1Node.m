@@ -36,7 +36,7 @@
     Label.text = @"1";
     Label.fontSize = 55;
     Label.position = CGPointMake(-3.5, -18.5);
-    Label.fontColor = [SKColor grayColor];
+    Label.fontColor = [SKColor blackColor];
     [self addChild:Label];
 }
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
