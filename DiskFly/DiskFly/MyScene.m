@@ -86,8 +86,14 @@
 
 -(void)update:(CFTimeInterval)currentTime
 {
-    if (self.cue.physicsBody.resting && self.cue.userHasInteracted) {
-        [self.cue resetDisc];
+    /*if (self.cue.physicsBody.resting && self.cue.userHasInteracted && self.cue.position.y > 75) {
+        self.cue.position = CGPointMake(self.frame.size.width / 2, 37.5);
+    }*/
+    
+    if (self.cue.physicsBody.velocity.dx < .5 && self.cue.physicsBody.velocity.dy < .5 && self.cue.userHasInteracted && self.cue.position.y > 75) {
+        self.cue.position = CGPointMake(self.frame.size.width / 2, 37.5);
+        self.cue.physicsBody.velocity = CGVectorMake(0, 0);
+        
     }
 }
 
