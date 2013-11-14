@@ -13,14 +13,24 @@
 #import "MenuNode.h"
 #import "MoveZone.h"
 
+@interface MyScene()
+@property Disc *cue;
+@property Disc *star;
+@end
+
 @implementation MyScene
+
+
 
 -(id)initWithSize:(CGSize)size
 {
     if (self = [super initWithSize:size])
     {
-        //self.backgroundColor = [SKColor colorWithRed:(99.0/255.0) green:(184.0/255) blue:(254.0/255) alpha:1];
-        self.backgroundColor = [SKColor whiteColor];
+        self.backgroundColor = [SKColor colorWithRed:(99.0/255.0) green:(184.0/255) blue:(254.0/255) alpha:1];
+        //self.backgroundColor = [SKColor whiteColor];
+        
+        SKPhysicsBody *edge = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
+        self.physicsBody = edge;
         
         MoveZone *zone = [[MoveZone alloc] initWithWidth:self.frame.size.width andHeight:75 andScene:self];
         zone.fillColor = [SKColor grayColor];
@@ -33,58 +43,35 @@
         
         GoalNode *middleGoal = [[GoalNode alloc] initWithWidth:self.frame.size.width - 60
                                                      andHeight:80
-                                                      andScene:self];
-        middleGoal.strokeColor = [SKColor whiteColor];
-        middleGoal.fillColor = [SKColor whiteColor];
+                                                      andScene:self
+                                                      andColor: [SKColor colorWithRed:(99.0/255.0) green:(184.0/255) blue:(254.0/255) alpha:1]];
         [self addChild:middleGoal];
         
         GoalNode *insideGoal = [[GoalNode alloc] initWithWidth:self.frame.size.width - 90
                                                      andHeight:60
                                                       andScene:self];
         [self addChild:insideGoal];
-
         
         
-        
-        
-        /*Disc *cue = [[Disc alloc] init];
-        cue.position = CGPointMake(self.frame.size.width / 2, 37.5);
-        cue.fillColor = [SKColor yellowColor];
-        [self addChild:cue];
-        
-        Disc *star = [[Disc alloc] init];
-        star.position = CGPointMake(self.frame.size.width / 2, self.frame.size.height * 2 / 3);
-        star.fillColor = [SKColor blueColor];
-        [self addChild:star];
-        */
-
-        
-        
-        
-        /*Disc *cue = [[Disc alloc] initWithImageNamed:@"yellowdisk.png"];
-        cue.size = CGSizeMake(50, 50);
-        cue.position = CGPointMake(self.frame.size.width / 2, 37.5);
-        //cue.fillColor = [SKColor yellowColor];
-        [cue setPhysicsBody];
-        [self addChild:cue];
-        
-        
-        Disc *star = [[Disc alloc] initWithImage:@"bluedisk"
-                                     andLocation:CGPointMake(self.frame.size.width / 2, self.frame.size.height * 2 / 3)
-                              andUserInteraction:NO];
-        [self addChild:star];
-        */
-        Disc *cue = [[Disc alloc] initWithImage:@"yellowdisk"
+        self.cue = [[Disc alloc] initWithImage:@"yellowdisk"
                                     andLocation:CGPointMake(self.frame.size.width / 2, 37.5)
                              andUserInteraction:YES];
-        [self addChild:cue];
+        [self addChild:self.cue];
         
         
-        Disc *star = [[Disc alloc] initWithImage:@"bluedisk.png"
+        self.star = [[Disc alloc] initWithImage:@"bluedisk"
                                      andLocation:CGPointMake(self.frame.size.width / 2, self.frame.size.height * 2 / 3)
                               andUserInteraction:NO];
-        [self addChild:star];
-       
+        [self addChild:self.star];
+        
+
+        
+        /*Pause_Button *PauseButton = [[Pause_Button alloc]init];
+        PauseButton.xScale = .5;
+        PauseButton.yScale = .5;
+        PauseButton.position = CGPointMake(self.frame.size.width *.1, self.frame.size.height *.19);
+        [self addChild:PauseButton];*/
+        
         
        
         }
@@ -104,7 +91,9 @@
 
 -(void)update:(CFTimeInterval)currentTime
 {
-    /* Called before each frame is rendered */
+    if (self.cue.physicsBody.resting && self.cue.userHasInteracted) {
+        [self.cue resetDisc];
+    }
 }
 
 @end

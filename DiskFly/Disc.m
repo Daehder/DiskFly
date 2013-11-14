@@ -10,10 +10,9 @@
 
 @interface Disc ()
 @property CGPoint lastTouchLocation;
-@property CGPoint touchLocation;
-@property UIPanGestureRecognizer *flick;
-@property UIView *flickView;
-@property CGPoint flickVector;
+@property CGPoint firstTouchLocation;
+@property NSDate *startTime;
+@property CGPoint startPosition;
 @end
 
 @implementation Disc
@@ -25,34 +24,30 @@
     self.position = location;
     self.userInteractionEnabled = interactable;
     self.size = CGSizeMake(50, 50);
+    self.startPosition = location;
     [self setPhysicsBody];
+    self.userHasInteracted = NO;
     
     return self;
 }
 
--(void) setPhysicsBody {
+-(void) createDisc
+{
+    UIBezierPath *path = [[UIBezierPath alloc] init];
+    [path addArcWithCenter:CGPointMake(0, 0) radius:25 startAngle:0 endAngle:2 * M_PI clockwise:YES];
+    [self setPhysicsBody];
     
-    SKPhysicsBody *physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
-    physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:25];
-    physicsBody.velocity = CGVectorMake(0, 0);
-    physicsBody.linearDamping = 1;
-    physicsBody.affectedByGravity = NO;
-    
-    self.physicsBody = physicsBody;
+    self.userInteractionEnabled = YES;
 }
-
-
 
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     UITouch *touch = [touches anyObject];
-    self.firstTouchLocation = [touch locationInView:Nil];
+    self.firstTouchLocation = [touch locationInView:self.scene.view];
     self.lastTouchLocation = [touch locationInNode:self];
-    
-    self.flickView = [[UIView alloc] initWithFrame:self.frame];
-    
-    self.flick = [[UIPanGestureRecognizer alloc] init];
-    self.flick.minimumNumberOfTouches = self.flick.maximumNumberOfTouches = 1;
+    self.startTime = [NSDate date];
+    self.physicsBody.velocity = CGVectorMake(0, 0);
+    self.userHasInteracted = YES;
 }
 
 -(void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
@@ -66,35 +61,35 @@
     
     self.position = newPosition;
     self.lastTouchLocation = [touch locationInNode:self];
-    self.flickVector = [self.flick velocityInView:self.flickView];
     
-    NSLog([NSString stringWithFormat:@"Velocity - X-Axis - %f ", self.flickVector.x]);
-    NSLog([NSString stringWithFormat:@"Velocity - Y-Axis - %f ", self.flickVector.y]);
 }
 
--(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+-(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     UITouch *touch = [touches anyObject];
-    self.touchLocation = [touch locationInNode:self];
+    CGPoint endTouchLocation = [touch locationInView:self.scene.view];
+    NSTimeInterval swipeTime = [self.startTime timeIntervalSinceNow];
     
-    /*if(self.touchLocation.y > 50)
-     {
-     //self.physicsBody.velocity = "velocity of swipe"
-     self.physicsBody.velocity = CGVectorMake(self.flickVector.x, self.flickVector.y);
-     }
-     else
-     {
-     self.physicsBody.velocity = CGVectorMake(0, 0);
-     }*/
-    
-    
-    self.physicsBody.velocity = CGVectorMake(self.flickVector.x, self.flickVector.y);
+    if (self.position.y > 75) {
+        self.physicsBody.velocity = CGVectorMake((endTouchLocation.x - self.firstTouchLocation.x) / (- swipeTime), (endTouchLocation.y - self.firstTouchLocation.y) / swipeTime);
+    }
     
 }
 
--(void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
-{
+- (void) setPhysicsBody {
     
+    SKPhysicsBody *physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
+    physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:25];
+    //physicsBody.velocity = CGVectorMake(0, 0);
+    physicsBody.linearDamping = 1;
+    physicsBody.affectedByGravity = NO;
+    
+    self.physicsBody = physicsBody;
+}
+
+-(void) resetDisc {
+    self.position = self.startPosition;
+    self.userHasInteracted = NO;
 }
 
 @end
