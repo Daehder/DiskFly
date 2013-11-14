@@ -10,7 +10,9 @@
 
 @interface Disc : SKSpriteNode
 
--(instancetype) init;
+-(instancetype) initWithImage:(NSString *)fileName andLocation:(CGPoint)location andUserInteraction:(BOOL)interactable;
 -(void) setPhysicsBody;
+-(void) createDisc;
+
 
 @end
