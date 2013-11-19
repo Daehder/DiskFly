@@ -28,6 +28,7 @@
 		369EE73B182975960066BDD0 /* MoveZone.m in Sources */ = {isa = PBXBuildFile; fileRef = 369EE73A182975960066BDD0 /* MoveZone.m */; };
 		3723CBF01822E90200C07CFF /* GoalNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 3723CBEF1822E90200C07CFF /* GoalNode.m */; };
 		3782B6921822DEAE00C8E79F /* Disc.m in Sources */ = {isa = PBXBuildFile; fileRef = 3782B6911822DEAE00C8E79F /* Disc.m */; };
+		8C1EF3E8183C07FF00795B81 /* yellowstar.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C1EF3E7183C07FF00795B81 /* yellowstar.png */; };
 		8C5CB26D182C1B2500148D8F /* CongratulationsScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5CB26C182C1B2500148D8F /* CongratulationsScene.m */; };
 		8C5CB270182C1B3300148D8F /* MenuNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5CB26F182C1B3300148D8F /* MenuNode.m */; };
 		8C5CB273182C1B6600148D8F /* Circle.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5CB272182C1B6600148D8F /* Circle.m */; };
@@ -85,6 +86,7 @@
 		3723CBEF1822E90200C07CFF /* GoalNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoalNode.m; sourceTree = "<group>"; };
 		3782B6901822DEAE00C8E79F /* Disc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Disc.h; path = ../Disc.h; sourceTree = "<group>"; };
 		3782B6911822DEAE00C8E79F /* Disc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Disc.m; path = ../Disc.m; sourceTree = "<group>"; };
+		8C1EF3E7183C07FF00795B81 /* yellowstar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellowstar.png; sourceTree = "<group>"; };
 		8C5CB26B182C1B2500148D8F /* CongratulationsScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CongratulationsScene.h; sourceTree = "<group>"; };
 		8C5CB26C182C1B2500148D8F /* CongratulationsScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CongratulationsScene.m; sourceTree = "<group>"; };
 		8C5CB26E182C1B3300148D8F /* MenuNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuNode.h; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 				03F2C2B6181DABFB00DBAA85 /* Spaceship.png */,
 				F6F7FC8B1830D519000B9F7B /* yellowdisk.png */,
 				F6F7FC891830D507000B9F7B /* bluedisk.png */,
+				8C1EF3E7183C07FF00795B81 /* yellowstar.png */,
 				03F2C2B8181DABFB00DBAA85 /* Images.xcassets */,
 				03F2C2A0181DABFB00DBAA85 /* DiskFly-Info.plist */,
 				03F2C2A1181DABFB00DBAA85 /* InfoPlist.strings */,
@@ -334,6 +337,7 @@
 				03F2C2AC181DABFB00DBAA85 /* Main_iPhone.storyboard in Resources */,
 				F6F7FC8A1830D507000B9F7B /* bluedisk.png in Resources */,
 				03F2C2A3181DABFB00DBAA85 /* InfoPlist.strings in Resources */,
+				8C1EF3E8183C07FF00795B81 /* yellowstar.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
