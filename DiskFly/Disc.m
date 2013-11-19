@@ -24,6 +24,8 @@
     self.userInteractionEnabled = interactable;
     self.size = CGSizeMake(50, 50);
     [self setPhysicsBody];
+    self.canReset = NO;
+    self.physicsBody.restitution = .5;
     
     return self;
 }
@@ -39,6 +41,8 @@
 
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    
+    [self setPhysicsBody];
     UITouch *touch = [touches anyObject];
     self.firstTouchLocation = [touch locationInView:Nil];
     self.lastTouchLocation = [touch locationInNode:self];
@@ -50,6 +54,8 @@
 {
     UITouch *touch = [touches anyObject];
     CGPoint touchPoint = [touch locationInNode:self];
+    
+    //NSLog([NSString stringWithFormat:@"touchPoint: (%.2f, %.2f)", touchPoint.x, touchPoint.y]);
     
     CGPoint newPosition = self.position;
     newPosition.x = newPosition.x + (touchPoint.x - self.lastTouchLocation.x);
@@ -67,6 +73,8 @@
     
     if (self.position.y > 75) {
         self.physicsBody.velocity = CGVectorMake((endTouchLocation.x - self.firstTouchLocation.x) / (- swipeTime), (endTouchLocation.y - self.firstTouchLocation.y) / swipeTime);
+        self.canReset = YES;
+        self.userInteractionEnabled = NO;
     }
     
 }
@@ -78,8 +86,18 @@
     physicsBody.velocity = CGVectorMake(0, 0);
     physicsBody.linearDamping = 1;
     physicsBody.affectedByGravity = NO;
+    physicsBody.allowsRotation = NO;
     
     self.physicsBody = physicsBody;
+}
+
+-(void) resetDisc {
+    self.position = self.startPosition;
+}
+
+-(void) deleteDisc
+{
+    [self removeFromParent];
 }
 
 @end
