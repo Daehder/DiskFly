@@ -37,7 +37,7 @@
                              andUserInteraction:YES];
         [self addChild:self.cue];
         
-        [self makeObstacles];
+        [self makeStar];
         
         [self makeInterface];
     }
@@ -75,7 +75,7 @@
     [self addChild:insideGoal];
 }
 
--(void)makeObstacles
+-(void)makeStar
 {
     self.star = [[Disc alloc] initWithImage:@"bluedisk"
                                 andLocation:CGPointMake(self.frame.size.width / 2, self.frame.size.height * 2 / 3)
@@ -115,9 +115,11 @@
     }
     
     if (self.star.physicsBody.velocity.dx < .5 &&
+        self.star.physicsBody.velocity.dx > -.5 &&
         self.star.physicsBody.velocity.dy < .5 &&
-        self.star.position.y > 380 &&
-        self.star.position.y < 525)
+        self.star.physicsBody.velocity.dy > -.5 &&
+        self.star.position.y > 470 &&
+        self.star.position.y < 545 )
     {
         CongratulationsScene * scene = [CongratulationsScene sceneWithSize:self.scene.size];
         scene.scaleMode = SKSceneScaleModeAspectFill;
