@@ -52,6 +52,7 @@
     //self.backgroundColor = [SKColor whiteColor];
     
     SKPhysicsBody *edge = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
+    edge.restitution = .5;
     self.physicsBody = edge;
     
     MoveZone *zone = [[MoveZone alloc] initWithWidth:self.frame.size.width andHeight:75 andScene:self];
@@ -109,8 +110,16 @@
         self.cue.canReset)
     {
         if (self.stillFrames++ == 30) {
-            self.cue.position = CGPointMake(self.frame.size.width / 2, 37.5);
-            self.cue.physicsBody.velocity = CGVectorMake(0, 0);
+            //self.cue.position = CGPointMake(self.frame.size.width / 2, 37.5);
+            //self.cue.physicsBody.velocity = CGVectorMake(0, 0);
+            [self.cue deleteDisc];
+            
+            self.cue = [[Disc alloc] initWithImage:@"yellowdisk"
+                                       andLocation:CGPointMake(self.frame.size.width / 2, 37.5)
+                                andUserInteraction:YES];
+            [self addChild:self.cue];
+            
+            self.stillFrames = 0;
         }
     }
     
