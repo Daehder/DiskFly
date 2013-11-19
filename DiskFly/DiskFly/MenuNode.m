@@ -9,6 +9,7 @@
 #import "MenuNode.h"
 #import "Circle.h"
 #import "Resume Button.h"
+#import "Back Button.h"
 
 @interface MenuNode()
 @property CGPoint lastTouchLocation;
@@ -44,6 +45,22 @@
     restartButton.position = CGPointMake(70 + self.screenWidth/2, 130 + self.screenLength/2);
     restartButton.strokeColor = [SKColor grayColor];
     [self addChild:restartButton];
+    
+    //MAIN MENU BUTTON
+    Back_Button *MainMenu = [[Back_Button alloc] init];
+    MainMenu.position = CGPointMake(60,300);
+    MainMenu.xScale = 1;
+    MainMenu.yScale = .5;
+    [self addChild:MainMenu];
+    
+    SKLabelNode *MainMenuLabel = [SKLabelNode labelNodeWithFontNamed:@"Helvetica"];
+    MainMenuLabel.text = @"Main Menu";
+    MainMenuLabel.fontColor = [SKColor whiteColor];
+    MainMenuLabel.fontSize = 40;
+    MainMenuLabel.xScale = .80;
+    MainMenuLabel.yScale = 1.3;
+    MainMenuLabel.position = CGPointMake(100, 30);
+    [MainMenu addChild:MainMenuLabel];
     
     self.userInteractionEnabled =  YES;
 }
