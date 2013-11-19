@@ -116,8 +116,12 @@
     
     if (self.star.physicsBody.velocity.dx < .5 &&
         self.star.physicsBody.velocity.dy < .5 &&
-        self.star.position.y > 380 &&
-        self.star.position.y < 525)
+        self.star.physicsBody.velocity.dx > -.5 &&
+        self.star.physicsBody.velocity.dy > -.5 &&
+        self.star.position.y > self.frame.size.height - 90 &&
+        self.star.position.y < self.frame.size.height - 40 &&
+        self.star.position.x > 40 &&
+        self.star.position.x < self.frame.size.width - 40)
     {
         CongratulationsScene * scene = [CongratulationsScene sceneWithSize:self.scene.size];
         scene.scaleMode = SKSceneScaleModeAspectFill;
