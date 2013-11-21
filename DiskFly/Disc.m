@@ -12,7 +12,6 @@
 @property CGPoint lastTouchLocation;
 @property CGPoint firstTouchLocation;
 @property NSDate *startTime;
-@property CGPoint startPosition;
 @end
 
 @implementation Disc
@@ -24,11 +23,9 @@
     self.position = location;
     self.userInteractionEnabled = interactable;
     self.size = CGSizeMake(50, 50);
-    self.startPosition = location;
     [self setPhysicsBody];
     self.canReset = NO;
     self.physicsBody.restitution = .5;
-    
     
     return self;
 }
@@ -47,7 +44,7 @@
     
     [self setPhysicsBody];
     UITouch *touch = [touches anyObject];
-    self.firstTouchLocation = [touch locationInView:self.scene.view];
+    self.firstTouchLocation = [touch locationInView:Nil];
     self.lastTouchLocation = [touch locationInNode:self];
     self.startTime = [NSDate date];
     self.physicsBody.velocity = CGVectorMake(0, 0);
@@ -66,13 +63,12 @@
     
     self.position = newPosition;
     self.lastTouchLocation = [touch locationInNode:self];
-    
 }
 
 -(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     UITouch *touch = [touches anyObject];
-    CGPoint endTouchLocation = [touch locationInView:self.scene.view];
+    CGPoint endTouchLocation = [touch locationInView:nil];
     NSTimeInterval swipeTime = [self.startTime timeIntervalSinceNow];
     
     if (self.position.y > 75) {
