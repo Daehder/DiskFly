@@ -22,23 +22,17 @@
 
 @implementation MyScene
 
-
-
 -(id)initWithSize:(CGSize)size
 {
     if (self = [super initWithSize:size])
     {
         self.stillFrames = 0;
-        
         [self makeGoal];
-        
         self.cue = [[Disc alloc] initWithImage:@"yellowdisk"
                                    andLocation:CGPointMake(self.frame.size.width / 2, 37.5)
                             andUserInteraction:YES];
         [self addChild:self.cue];
-        
         [self makeStar];
-        
         [self makeInterface];
     }
     return self;
@@ -94,6 +88,25 @@
     //PauseButton.position = CGPointMake(self.frame.size.width *.1, self.frame.size.height *.95);
     PauseButton.position = CGPointMake(self.frame.size.width *.1, self.frame.size.height *.19);
     [self addChild:PauseButton];
+}
+
+-(Boolean)targetRestingInGoal
+{
+    return self.star.physicsBody.velocity.dx < .5 &&
+    self.star.physicsBody.velocity.dx > -.5 &&
+    self.star.physicsBody.velocity.dy < .5 &&
+    self.star.physicsBody.velocity.dy > -.5 &&
+    self.star.position.y > 470 &&
+    self.star.position.y < 545;
+}
+
+-(Boolean)diskCanReset
+{
+    return self.cue.physicsBody.velocity.dx < .1 &&
+           self.cue.physicsBody.velocity.dy < .1 &&
+           self.cue.position.y > 75 &&
+           self.cue.canReset&&
+           self.scene.physicsWorld.speed != 0;
 }
 
 -(void)update:(CFTimeInterval)currentTime

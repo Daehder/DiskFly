@@ -32,6 +32,7 @@
 		8C5CB26D182C1B2500148D8F /* CongratulationsScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5CB26C182C1B2500148D8F /* CongratulationsScene.m */; };
 		8C5CB270182C1B3300148D8F /* MenuNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5CB26F182C1B3300148D8F /* MenuNode.m */; };
 		8C5CB273182C1B6600148D8F /* Circle.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5CB272182C1B6600148D8F /* Circle.m */; };
+		8C73374B183EA0A7000CF0EE /* whiterect.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C73374A183EA0A7000CF0EE /* whiterect.png */; };
 		F6292B9E1832CDC000128EEA /* Triangle.m in Sources */ = {isa = PBXBuildFile; fileRef = F6292B9D1832CDC000128EEA /* Triangle.m */; };
 		F6292BA11832CEBA00128EEA /* Resume Button.m in Sources */ = {isa = PBXBuildFile; fileRef = F6292BA01832CEBA00128EEA /* Resume Button.m */; };
 		F635B904182C2FE7009D04D1 /* MainMenuScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = F635B903182C2FE7009D04D1 /* MainMenuScreen.m */; };
@@ -93,6 +94,7 @@
 		8C5CB26F182C1B3300148D8F /* MenuNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuNode.m; sourceTree = "<group>"; };
 		8C5CB271182C1B6600148D8F /* Circle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Circle.h; sourceTree = "<group>"; };
 		8C5CB272182C1B6600148D8F /* Circle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Circle.m; sourceTree = "<group>"; };
+		8C73374A183EA0A7000CF0EE /* whiterect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiterect.png; sourceTree = "<group>"; };
 		F6292B9C1832CDC000128EEA /* Triangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Triangle.h; sourceTree = "<group>"; };
 		F6292B9D1832CDC000128EEA /* Triangle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Triangle.m; sourceTree = "<group>"; };
 		F6292B9F1832CEBA00128EEA /* Resume Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Resume Button.h"; sourceTree = "<group>"; };
@@ -140,6 +142,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		038EC1D5183C0CA600CC887C /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				F6F7FC861830CFD1000B9F7B /* Pause Button.h */,
+				F6F7FC871830CFD1000B9F7B /* Pause Button.m */,
+				F6292B9F1832CEBA00128EEA /* Resume Button.h */,
+				F6292BA01832CEBA00128EEA /* Resume Button.m */,
+				F6E1D0DE182C74B50041FB92 /* Level Select Button.h */,
+				F635B906182C3753009D04D1 /* Level Select Button.m */,
+				F6E1D0DB182C74870041FB92 /* Level Select Scene.h */,
+				F6E1D0DC182C74870041FB92 /* Level Select Scene.m */,
+				F6E1D0DF182C77440041FB92 /* Back Button.h */,
+				F6E1D0E0182C77440041FB92 /* Back Button.m */,
+				F6B9C819182C9DAF00B667E6 /* Level1Node.h */,
+				F6B9C81A182C9DAF00B667E6 /* Level1Node.m */,
+			);
+			name = Buttons;
+			sourceTree = "<group>";
+		};
 		03F2C28A181DABFB00DBAA85 = {
 			isa = PBXGroup;
 			children = (
@@ -182,22 +203,11 @@
 				3723CBEF1822E90200C07CFF /* GoalNode.m */,
 				3782B6901822DEAE00C8E79F /* Disc.h */,
 				3782B6911822DEAE00C8E79F /* Disc.m */,
-				F6F7FC861830CFD1000B9F7B /* Pause Button.h */,
-				F6F7FC871830CFD1000B9F7B /* Pause Button.m */,
+				038EC1D5183C0CA600CC887C /* Buttons */,
 				8C5CB26E182C1B3300148D8F /* MenuNode.h */,
 				8C5CB26F182C1B3300148D8F /* MenuNode.m */,
-				F6292B9F1832CEBA00128EEA /* Resume Button.h */,
-				F6292BA01832CEBA00128EEA /* Resume Button.m */,
 				F635B902182C2FE7009D04D1 /* MainMenuScreen.h */,
 				F635B903182C2FE7009D04D1 /* MainMenuScreen.m */,
-				F6E1D0DE182C74B50041FB92 /* Level Select Button.h */,
-				F635B906182C3753009D04D1 /* Level Select Button.m */,
-				F6E1D0DB182C74870041FB92 /* Level Select Scene.h */,
-				F6E1D0DC182C74870041FB92 /* Level Select Scene.m */,
-				F6E1D0DF182C77440041FB92 /* Back Button.h */,
-				F6E1D0E0182C77440041FB92 /* Back Button.m */,
-				F6B9C819182C9DAF00B667E6 /* Level1Node.h */,
-				F6B9C81A182C9DAF00B667E6 /* Level1Node.m */,
 				F635B908182C39B3009D04D1 /* RectangleNode.h */,
 				F635B909182C39B3009D04D1 /* RectangleNode.m */,
 				F6292B9C1832CDC000128EEA /* Triangle.h */,
@@ -224,6 +234,7 @@
 				F6F7FC8B1830D519000B9F7B /* yellowdisk.png */,
 				F6F7FC891830D507000B9F7B /* bluedisk.png */,
 				8C1EF3E7183C07FF00795B81 /* yellowstar.png */,
+				8C73374A183EA0A7000CF0EE /* whiterect.png */,
 				03F2C2B8181DABFB00DBAA85 /* Images.xcassets */,
 				03F2C2A0181DABFB00DBAA85 /* DiskFly-Info.plist */,
 				03F2C2A1181DABFB00DBAA85 /* InfoPlist.strings */,
@@ -338,6 +349,7 @@
 				F6F7FC8A1830D507000B9F7B /* bluedisk.png in Resources */,
 				03F2C2A3181DABFB00DBAA85 /* InfoPlist.strings in Resources */,
 				8C1EF3E8183C07FF00795B81 /* yellowstar.png in Resources */,
+				8C73374B183EA0A7000CF0EE /* whiterect.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

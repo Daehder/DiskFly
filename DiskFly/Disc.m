@@ -12,7 +12,6 @@
 @property CGPoint lastTouchLocation;
 @property CGPoint firstTouchLocation;
 @property NSDate *startTime;
-@property CGPoint startPosition;
 @end
 
 @implementation Disc
@@ -24,12 +23,10 @@
     self.position = location;
     self.userInteractionEnabled = interactable;
     self.size = CGSizeMake(50, 50);
-    self.startPosition = location;
     [self setPhysicsBody];
     self.canReset = NO;
     self.physicsBody.restitution = .5;
     self.physicsBody.usesPreciseCollisionDetection = YES;
-    
     
     return self;
 }
@@ -64,7 +61,6 @@
     
     self.position = newPosition;
     self.lastTouchLocation = [touch locationInNode:self];
-    
 }
 
 -(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event

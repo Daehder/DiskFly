@@ -8,6 +8,7 @@
 
 #import "CongratulationsScene.h"
 #import "Back Button.h"
+#import "MyScene.h"
 
 @implementation CongratulationsScene
 
@@ -66,7 +67,7 @@
         
         /*skLabel = [SKLabelNode labelNodeWithFontNamed:@"HelviticaNeue"];
         
-        skLabel.text = @"Home";
+        skLabel.text = @"Menu";
         skLabel.fontSize = 25;
         skLabel.fontColor = [SKColor blueColor];
         skLabel.position = CGPointMake(160, 85);
@@ -85,13 +86,24 @@
         MainMenuLabel.position = CGPointMake(100, 30);
         [MainMenu addChild:MainMenuLabel];
         
+      
+        
         
     }
     return self;
+}
+
+ - (void) createReplayButton
+{
+        
+}
     
-  
+ - (void) replay
+{
+    MyScene * currentLevel = [MyScene sceneWithSize:self.scene.size];
+    currentLevel.scaleMode = SKSceneScaleModeAspectFill;
     
-    
+    [self.view presentScene:currentLevel];
 }
 
 @end
