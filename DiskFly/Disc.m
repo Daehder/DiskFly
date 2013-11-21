@@ -45,12 +45,9 @@
 
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    
     [self setPhysicsBody];
     UITouch *touch = [touches anyObject];
-    self.firstTouchLocation = [touch locationInView:self.scene.view];
     self.lastTouchLocation = [touch locationInNode:self];
-    self.startTime = [NSDate date];
     self.physicsBody.velocity = CGVectorMake(0, 0);
 }
 
@@ -72,16 +69,7 @@
 
 -(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    UITouch *touch = [touches anyObject];
-    CGPoint endTouchLocation = [touch locationInView:self.scene.view];
-    NSTimeInterval swipeTime = [self.startTime timeIntervalSinceNow];
-    
-    if (self.position.y > 75) {
-        self.physicsBody.velocity = CGVectorMake((endTouchLocation.x - self.firstTouchLocation.x) / (- swipeTime), (endTouchLocation.y - self.firstTouchLocation.y) / swipeTime);
-        self.canReset = YES;
-        self.userInteractionEnabled = NO;
-    }
-    
+
 }
 
 - (void) setPhysicsBody {
