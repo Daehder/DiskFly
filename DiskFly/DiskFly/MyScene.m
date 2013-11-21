@@ -33,8 +33,8 @@
         [self makeGoal];
         
         self.cue = [[Disc alloc] initWithImage:@"yellowdisk"
-                                    andLocation:CGPointMake(self.frame.size.width / 2, 37.5)
-                             andUserInteraction:YES];
+                                   andLocation:CGPointMake(self.frame.size.width / 2, 37.5)
+                            andUserInteraction:YES];
         [self addChild:self.cue];
         
         [self makeStar];
@@ -99,13 +99,15 @@
 -(void)update:(CFTimeInterval)currentTime
 {
     /*if (self.cue.physicsBody.resting && self.cue.userHasInteracted && self.cue.position.y > 75) {
-        self.cue.position = CGPointMake(self.frame.size.width / 2, 37.5);
-    }*/
+     self.cue.position = CGPointMake(self.frame.size.width / 2, 37.5);
+     }*/
     
     
     
     if (self.cue.physicsBody.velocity.dx < .1 &&
         self.cue.physicsBody.velocity.dy < .1 &&
+        self.cue.physicsBody.velocity.dx > -.1 &&
+        self.cue.physicsBody.velocity.dy > -.1 &&
         self.cue.position.y > 75 &&
         self.cue.canReset)
     {
@@ -124,11 +126,13 @@
     }
     
     if (self.star.physicsBody.velocity.dx < .5 &&
-        self.star.physicsBody.velocity.dx > -.5 &&
         self.star.physicsBody.velocity.dy < .5 &&
+        self.star.physicsBody.velocity.dx > -.5 &&
         self.star.physicsBody.velocity.dy > -.5 &&
-        self.star.position.y > 470 &&
-        self.star.position.y < 545 )
+        self.star.position.y > self.frame.size.height - 90 &&
+        self.star.position.y < self.frame.size.height - 40 &&
+        self.star.position.x > 40 &&
+        self.star.position.x < self.frame.size.width - 40)
     {
         CongratulationsScene * scene = [CongratulationsScene sceneWithSize:self.scene.size];
         scene.scaleMode = SKSceneScaleModeAspectFill;

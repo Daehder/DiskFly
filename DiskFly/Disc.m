@@ -28,6 +28,7 @@
     [self setPhysicsBody];
     self.canReset = NO;
     self.physicsBody.restitution = .5;
+    self.physicsBody.usesPreciseCollisionDetection = YES;
     
     
     return self;
