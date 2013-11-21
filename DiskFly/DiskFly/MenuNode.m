@@ -21,13 +21,7 @@
  - (instancetype) initWithColor:(UIColor *)color size:(CGSize)size
 {
     self = [super init];
-    SKSpriteNode *background = [[SKSpriteNode alloc]initWithColor:color size:size];
-    self.screenWidth = background.size.width;
-    self.screenLength = background.size.height;
-    background.position = CGPointMake(self.screenWidth/2, self.screenLength/2);
-    background.alpha = .9;
-    
-    [self addChild:background];
+    [self setupBackgroundWithColor:color size:size];
     [self setupMenu];
     
     return self;
@@ -65,6 +59,17 @@
     self.userInteractionEnabled =  YES;
 }
 
+ - (void) setupBackgroundWithColor:(UIColor *)color size:(CGSize)size
+{
+    SKSpriteNode *background = [[SKSpriteNode alloc]initWithColor:color size:size];
+    self.screenWidth = background.size.width;
+    self.screenLength = background.size.height;
+    background.position = CGPointMake(self.screenWidth/2, self.screenLength/2);
+    background.alpha = .9;
+    
+    [self addChild:background];
+}
+
 // Called when the resume button is pressed
 - (void) resume
 {
@@ -74,9 +79,10 @@
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    // Do we Need the following commented code?
     
-    UITouch *touch = [touches anyObject];
-    self.lastTouchLocation = [touch locationInNode:self.resumeButton];
+    //UITouch *touch = [touches anyObject];
+    //self.lastTouchLocation = [touch locationInNode:self.resumeButton];
 }
 
 @end

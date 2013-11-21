@@ -13,6 +13,9 @@
 
 -(void) pause;
 -(void) resume;
+-(Boolean)targetRestingInGoal;
+-(Boolean)diskCanReset;
+
 
 @property MenuNode *menu;
 
