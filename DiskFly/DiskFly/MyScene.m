@@ -30,11 +30,14 @@
         self.stillFrames = 0;
         [self makeGoal];
         [self makeObstacles];
+        
         self.cue = [[Disc alloc] initWithImage:@"yellowdisk"
                                     andLocation:CGPointMake(self.frame.size.width / 2, 37.5)
                              andUserInteraction:YES];
         [self addChild:self.cue];
-        [self makeStar];
+
+                [self makeStar];
+        
         [self makeInterface];
     }
     return self;
@@ -75,10 +78,10 @@
 
 - (void) makeObstacles
 {
-    Obstacles *RecObstacle = [[Obstacles alloc] init];
-    RecObstacle.position = CGPointMake(100, 150);
-    RecObstacle.fillColor = [SKColor whiteColor];
-    RecObstacle.strokeColor = [SKColor whiteColor];
+    Obstacles *RecObstacle = [[Obstacles alloc] initWithImageNamed:@"whiterect"];
+    RecObstacle.position = CGPointMake(150, 150);
+    RecObstacle.xScale = 1;
+    RecObstacle.yScale = 1;
     
     [self addChild: RecObstacle];
 }
@@ -146,14 +149,7 @@
         }
     }
     
-    if (self.star.physicsBody.velocity.dx < .5 &&
-        self.star.physicsBody.velocity.dy < .5 &&
-        self.star.physicsBody.velocity.dx > -.5 &&
-        self.star.physicsBody.velocity.dy > -.5 &&
-        self.star.position.y > self.frame.size.height - 90 &&
-        self.star.position.y < self.frame.size.height - 40 &&
-        self.star.position.x > 40 &&
-        self.star.position.x < self.frame.size.width - 40)
+    if([self targetRestingInGoal])
     {
         CongratulationsScene * scene = [CongratulationsScene sceneWithSize:self.scene.size];
         scene.scaleMode = SKSceneScaleModeAspectFill;

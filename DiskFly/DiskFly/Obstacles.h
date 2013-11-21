@@ -8,7 +8,9 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface Obstacles : SKShapeNode
+@interface Obstacles : SKSpriteNode
 
-- (instancetype) init;
+-(instancetype) initWithImageNamed:(NSString *)name;
+
+
 @end

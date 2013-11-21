@@ -10,32 +10,33 @@
 
 @implementation Obstacles
 
--(instancetype) init
+-(instancetype) initWithImageNamed:(NSString *)name
 {
-    self = [super init];
-    UIBezierPath *ObstaclePath;
+   
     
-    ObstaclePath = [[UIBezierPath alloc] init];
-    [ObstaclePath moveToPoint:CGPointMake(0, 0)];
-     [ObstaclePath addLineToPoint:CGPointMake(100 , 0)];
-     [ObstaclePath addLineToPoint:CGPointMake(100, 50 )];
-     [ObstaclePath addLineToPoint:CGPointMake(0, 50 )];
-     [ObstaclePath closePath];
+    self = [super initWithImageNamed:@"whiterect"];
     
-    self.fillColor = [[SKColor alloc] initWithRed:0 green:1 blue:0 alpha:.5];
-   self.strokeColor = [[SKColor alloc] initWithRed:0 green:1 blue:0 alpha:.5];
-    [self setPhysicsBody];
-    self.path = ObstaclePath.CGPath;
+    self.size = CGSizeMake(50, 50);
+    
+    SKPhysicsBody *physicsBody;
+    physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
+    physicsBody.usesPreciseCollisionDetection = YES;
+    self.physicsBody = physicsBody;
+
+
+    
+    
+    
     return self;
 }
-- (void) setPhysicsBody
-{
+/*- (void) setPhysicsBody {
     
-    SKPhysicsBody *recphysicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
-    recphysicsBody.velocity = CGVectorMake(0, 0);
-    recphysicsBody.linearDamping = 1;
-    recphysicsBody.affectedByGravity = NO;
-
+    SKPhysicsBody *physicsBody;
+    physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
+    
+    
+    self.physicsBody = physicsBody;
 }
+*/
 
 @end
