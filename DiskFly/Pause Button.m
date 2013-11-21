@@ -37,15 +37,13 @@
     SKLabelNode *Lable;
     Lable = [SKLabelNode labelNodeWithFontNamed:@"helvetica"];
     Lable.text = @"l l";
-    Lable.fontSize = 50;
+    Lable.fontSize = 60;
     Lable.fontColor = [SKColor whiteColor];
-    Lable.position = CGPointMake(0, -18);
+    Lable.position = CGPointMake(0, -23);
     [self addChild:Lable];
     
 }
 
-
-//Erik: put in the menunode.
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     UITouch *touch = [touches anyObject];

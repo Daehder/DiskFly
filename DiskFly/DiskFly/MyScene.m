@@ -23,23 +23,18 @@
 
 @implementation MyScene
 
-
-
 -(id)initWithSize:(CGSize)size
 {
     if (self = [super initWithSize:size])
     {
         self.stillFrames = 0;
-        
         [self makeGoal];
         [self makeObstacles];
         self.cue = [[Disc alloc] initWithImage:@"yellowdisk"
                                     andLocation:CGPointMake(self.frame.size.width / 2, 37.5)
                              andUserInteraction:YES];
         [self addChild:self.cue];
-        
         [self makeStar];
-        
         [self makeInterface];
     }
     return self;
@@ -53,6 +48,7 @@
     //self.backgroundColor = [SKColor whiteColor];
     
     SKPhysicsBody *edge = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
+    edge.restitution = .5;
     self.physicsBody = edge;
     self.physicsBody.restitution = .4;
     
@@ -107,6 +103,25 @@
     [self addChild:PauseButton];
 }
 
+-(Boolean)targetRestingInGoal
+{
+    return self.star.physicsBody.velocity.dx < .5 &&
+    self.star.physicsBody.velocity.dx > -.5 &&
+    self.star.physicsBody.velocity.dy < .5 &&
+    self.star.physicsBody.velocity.dy > -.5 &&
+    self.star.position.y > 470 &&
+    self.star.position.y < 545;
+}
+
+-(Boolean)diskCanReset
+{
+    return self.cue.physicsBody.velocity.dx < .1 &&
+           self.cue.physicsBody.velocity.dy < .1 &&
+           self.cue.position.y > 75 &&
+           self.cue.canReset&&
+           self.scene.physicsWorld.speed != 0;
+}
+
 -(void)update:(CFTimeInterval)currentTime
 {
     /*if (self.cue.physicsBody.resting && self.cue.userHasInteracted && self.cue.position.y > 75) {
@@ -115,14 +130,19 @@
     
     
     
-    if (self.cue.physicsBody.velocity.dx < .1 &&
-        self.cue.physicsBody.velocity.dy < .1 &&
-        self.cue.position.y > 75 &&
-        self.cue.canReset)
+    if ([self diskCanReset])
     {
         if (self.stillFrames++ == 30) {
-            self.cue.position = CGPointMake(self.frame.size.width / 2, 37.5);
-            self.cue.physicsBody.velocity = CGVectorMake(0, 0);
+            //self.cue.position = CGPointMake(self.frame.size.width / 2, 37.5);
+            //self.cue.physicsBody.velocity = CGVectorMake(0, 0);
+            [self.cue deleteDisc];
+            
+            self.cue = [[Disc alloc] initWithImage:@"yellowdisk"
+                                       andLocation:CGPointMake(self.frame.size.width / 2, 37.5)
+                                andUserInteraction:YES];
+            [self addChild:self.cue];
+            
+            self.stillFrames = 0;
         }
     }
     

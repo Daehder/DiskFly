@@ -12,7 +12,6 @@
 @property CGPoint lastTouchLocation;
 @property CGPoint firstTouchLocation;
 @property NSDate *startTime;
-@property CGPoint startPosition;
 @end
 
 @implementation Disc
@@ -24,9 +23,9 @@
     self.position = location;
     self.userInteractionEnabled = interactable;
     self.size = CGSizeMake(50, 50);
-    self.startPosition = location;
     [self setPhysicsBody];
     self.canReset = NO;
+    self.physicsBody.restitution = .5;
     
     return self;
 }
@@ -43,8 +42,9 @@
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     
+    [self setPhysicsBody];
     UITouch *touch = [touches anyObject];
-    self.firstTouchLocation = [touch locationInView:self.scene.view];
+    self.firstTouchLocation = [touch locationInView:Nil];
     self.lastTouchLocation = [touch locationInNode:self];
     self.startTime = [NSDate date];
     self.physicsBody.velocity = CGVectorMake(0, 0);
@@ -55,24 +55,26 @@
     UITouch *touch = [touches anyObject];
     CGPoint touchPoint = [touch locationInNode:self];
     
+    //NSLog([NSString stringWithFormat:@"touchPoint: (%.2f, %.2f)", touchPoint.x, touchPoint.y]);
+    
     CGPoint newPosition = self.position;
     newPosition.x = newPosition.x + (touchPoint.x - self.lastTouchLocation.x);
     newPosition.y = newPosition.y + (touchPoint.y - self.lastTouchLocation.y);
     
     self.position = newPosition;
     self.lastTouchLocation = [touch locationInNode:self];
-    
 }
 
 -(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     UITouch *touch = [touches anyObject];
-    CGPoint endTouchLocation = [touch locationInView:self.scene.view];
+    CGPoint endTouchLocation = [touch locationInView:nil];
     NSTimeInterval swipeTime = [self.startTime timeIntervalSinceNow];
     
     if (self.position.y > 75) {
         self.physicsBody.velocity = CGVectorMake((endTouchLocation.x - self.firstTouchLocation.x) / (- swipeTime), (endTouchLocation.y - self.firstTouchLocation.y) / swipeTime);
         self.canReset = YES;
+        self.userInteractionEnabled = NO;
     }
     
 }
@@ -84,12 +86,18 @@
     physicsBody.velocity = CGVectorMake(0, 0);
     physicsBody.linearDamping = 1;
     physicsBody.affectedByGravity = NO;
+    physicsBody.allowsRotation = NO;
     
     self.physicsBody = physicsBody;
 }
 
 -(void) resetDisc {
     self.position = self.startPosition;
+}
+
+-(void) deleteDisc
+{
+    [self removeFromParent];
 }
 
 @end

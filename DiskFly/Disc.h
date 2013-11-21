@@ -15,7 +15,6 @@
 -(void) setPhysicsBody;
 -(void) createDisc;
 -(void) resetDisc;
-
-
+-(void) deleteDisc;
 
 @end
