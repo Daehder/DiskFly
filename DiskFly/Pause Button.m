@@ -34,13 +34,13 @@
     Button.fillColor = [SKColor clearColor];
     [self addChild:Button];
     
-    SKLabelNode *Lable;
-    Lable = [SKLabelNode labelNodeWithFontNamed:@"helvetica"];
-    Lable.text = @"l l";
-    Lable.fontSize = 60;
-    Lable.fontColor = [SKColor whiteColor];
-    Lable.position = CGPointMake(0, -23);
-    [self addChild:Lable];
+    SKLabelNode *Label;
+    Label = [SKLabelNode labelNodeWithFontNamed:@"helvetica"];
+    Label.text = @"l l";
+    Label.fontSize = 60;
+    Label.fontColor = [SKColor whiteColor];
+    Label.position = CGPointMake(0, -23);
+    [self addChild:Label];
     
 }
 
