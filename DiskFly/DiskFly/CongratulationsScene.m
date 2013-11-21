@@ -8,6 +8,7 @@
 
 #import "CongratulationsScene.h"
 #import "Back Button.h"
+#import "MyScene.h"
 
 @implementation CongratulationsScene
 
@@ -90,10 +91,19 @@
         
     }
     return self;
+}
+
+ - (void) createReplayButton
+{
+        
+}
     
-  
+ - (void) replay
+{
+    MyScene * currentLevel = [MyScene sceneWithSize:self.scene.size];
+    currentLevel.scaleMode = SKSceneScaleModeAspectFill;
     
-    
+    [self.view presentScene:currentLevel];
 }
 
 @end
