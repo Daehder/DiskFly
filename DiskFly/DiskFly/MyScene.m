@@ -13,6 +13,7 @@
 #import "MenuNode.h"
 #import "MoveZone.h"
 #import "Pause Button.h"
+#import "Obstacles.h"
 
 @interface MyScene()
 @property Disc *cue;
@@ -31,7 +32,7 @@
         self.stillFrames = 0;
         
         [self makeGoal];
-        
+        [self makeObstacles];
         self.cue = [[Disc alloc] initWithImage:@"yellowdisk"
                                     andLocation:CGPointMake(self.frame.size.width / 2, 37.5)
                              andUserInteraction:YES];
@@ -53,6 +54,7 @@
     
     SKPhysicsBody *edge = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
     self.physicsBody = edge;
+    self.physicsBody.restitution = .4;
     
     MoveZone *zone = [[MoveZone alloc] initWithWidth:self.frame.size.width andHeight:75 andScene:self];
     zone.fillColor = [SKColor grayColor];
@@ -73,6 +75,16 @@
                                                  andHeight:60
                                                   andScene:self];
     [self addChild:insideGoal];
+}
+
+- (void) makeObstacles
+{
+    Obstacles *RecObstacle = [[Obstacles alloc] init];
+    RecObstacle.position = CGPointMake(100, 150);
+    RecObstacle.fillColor = [SKColor whiteColor];
+    RecObstacle.strokeColor = [SKColor whiteColor];
+    
+    [self addChild: RecObstacle];
 }
 
 -(void)makeStar
@@ -115,11 +127,13 @@
     }
     
     if (self.star.physicsBody.velocity.dx < .5 &&
-        self.star.physicsBody.velocity.dx > -.5 &&
         self.star.physicsBody.velocity.dy < .5 &&
+        self.star.physicsBody.velocity.dx > -.5 &&
         self.star.physicsBody.velocity.dy > -.5 &&
-        self.star.position.y > 470 &&
-        self.star.position.y < 545 )
+        self.star.position.y > self.frame.size.height - 90 &&
+        self.star.position.y < self.frame.size.height - 40 &&
+        self.star.position.x > 40 &&
+        self.star.position.x < self.frame.size.width - 40)
     {
         CongratulationsScene * scene = [CongratulationsScene sceneWithSize:self.scene.size];
         scene.scaleMode = SKSceneScaleModeAspectFill;

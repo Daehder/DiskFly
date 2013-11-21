@@ -25,6 +25,7 @@
 		03F2C2C2181DABFB00DBAA85 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03F2C29A181DABFB00DBAA85 /* UIKit.framework */; };
 		03F2C2CA181DABFB00DBAA85 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 03F2C2C8181DABFB00DBAA85 /* InfoPlist.strings */; };
 		03F2C2CC181DABFB00DBAA85 /* DiskFlyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F2C2CB181DABFB00DBAA85 /* DiskFlyTests.m */; };
+		368FDFDD183C032E00E360C0 /* Obstacles.m in Sources */ = {isa = PBXBuildFile; fileRef = 368FDFDC183C032E00E360C0 /* Obstacles.m */; };
 		369EE73B182975960066BDD0 /* MoveZone.m in Sources */ = {isa = PBXBuildFile; fileRef = 369EE73A182975960066BDD0 /* MoveZone.m */; };
 		3723CBF01822E90200C07CFF /* GoalNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 3723CBEF1822E90200C07CFF /* GoalNode.m */; };
 		3782B6921822DEAE00C8E79F /* Disc.m in Sources */ = {isa = PBXBuildFile; fileRef = 3782B6911822DEAE00C8E79F /* Disc.m */; };
@@ -79,6 +80,8 @@
 		03F2C2C7181DABFB00DBAA85 /* DiskFlyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DiskFlyTests-Info.plist"; sourceTree = "<group>"; };
 		03F2C2C9181DABFB00DBAA85 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		03F2C2CB181DABFB00DBAA85 /* DiskFlyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DiskFlyTests.m; sourceTree = "<group>"; };
+		368FDFDB183C032E00E360C0 /* Obstacles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Obstacles.h; sourceTree = "<group>"; };
+		368FDFDC183C032E00E360C0 /* Obstacles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Obstacles.m; sourceTree = "<group>"; };
 		369EE739182975960066BDD0 /* MoveZone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MoveZone.h; path = ../MoveZone.h; sourceTree = "<group>"; };
 		369EE73A182975960066BDD0 /* MoveZone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MoveZone.m; path = ../MoveZone.m; sourceTree = "<group>"; };
 		3723CBEE1822E90200C07CFF /* GoalNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoalNode.h; sourceTree = "<group>"; };
@@ -176,6 +179,8 @@
 				03F2C2B1181DABFB00DBAA85 /* ViewController.m */,
 				03F2C2B3181DABFB00DBAA85 /* MyScene.h */,
 				03F2C2B4181DABFB00DBAA85 /* MyScene.m */,
+				368FDFDB183C032E00E360C0 /* Obstacles.h */,
+				368FDFDC183C032E00E360C0 /* Obstacles.m */,
 				3723CBEE1822E90200C07CFF /* GoalNode.h */,
 				3723CBEF1822E90200C07CFF /* GoalNode.m */,
 				3782B6901822DEAE00C8E79F /* Disc.h */,
@@ -362,6 +367,7 @@
 				03F2C2B5181DABFB00DBAA85 /* MyScene.m in Sources */,
 				F6292BA11832CEBA00128EEA /* Resume Button.m in Sources */,
 				8C5CB26D182C1B2500148D8F /* CongratulationsScene.m in Sources */,
+				368FDFDD183C032E00E360C0 /* Obstacles.m in Sources */,
 				F635B904182C2FE7009D04D1 /* MainMenuScreen.m in Sources */,
 				03F2C2B2181DABFB00DBAA85 /* ViewController.m in Sources */,
 				F6292B9E1832CDC000128EEA /* Triangle.m in Sources */,
