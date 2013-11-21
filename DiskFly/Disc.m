@@ -11,6 +11,7 @@
 @interface Disc ()
 @property CGPoint lastTouchLocation;
 @property CGPoint firstTouchLocation;
+@property CGPoint startPosition;
 @property NSDate *startTime;
 @property CGPoint startPosition;
 @end
@@ -27,6 +28,7 @@
     [self setPhysicsBody];
     self.canReset = NO;
     self.physicsBody.restitution = .5;
+    self.startPosition = location;
     
     return self;
 }
@@ -93,7 +95,7 @@
 }
 
 -(void) resetDisc {
-    self.position = self.startPosition;
+    self.position = *(self.startPosition);
 }
 
 -(void) deleteDisc
