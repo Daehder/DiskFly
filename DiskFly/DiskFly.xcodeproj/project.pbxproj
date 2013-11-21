@@ -237,6 +237,7 @@
 				F6F7FC8B1830D519000B9F7B /* yellowdisk.png */,
 				F6F7FC891830D507000B9F7B /* bluedisk.png */,
 				8C1EF3E7183C07FF00795B81 /* yellowstar.png */,
+				8C73374C183EA72C000CF0EE /* blackrect.png */,
 				03F2C2B8181DABFB00DBAA85 /* Images.xcassets */,
 				03F2C2A0181DABFB00DBAA85 /* DiskFly-Info.plist */,
 				03F2C2A1181DABFB00DBAA85 /* InfoPlist.strings */,
@@ -350,6 +351,7 @@
 				03F2C2AC181DABFB00DBAA85 /* Main_iPhone.storyboard in Resources */,
 				F6F7FC8A1830D507000B9F7B /* bluedisk.png in Resources */,
 				03F2C2A3181DABFB00DBAA85 /* InfoPlist.strings in Resources */,
+				8C73374D183EA72C000CF0EE /* blackrect.png in Resources */,
 				8C1EF3E8183C07FF00795B81 /* yellowstar.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
