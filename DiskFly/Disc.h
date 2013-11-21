@@ -17,6 +17,4 @@
 -(void) resetDisc;
 -(void) deleteDisc;
 
-
-
 @end

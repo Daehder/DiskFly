@@ -67,7 +67,7 @@
         
         /*skLabel = [SKLabelNode labelNodeWithFontNamed:@"HelviticaNeue"];
         
-        skLabel.text = @"Home";
+        skLabel.text = @"Menu";
         skLabel.fontSize = 25;
         skLabel.fontColor = [SKColor blueColor];
         skLabel.position = CGPointMake(160, 85);
