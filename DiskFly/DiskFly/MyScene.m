@@ -28,12 +28,12 @@
     {
         self.stillFrames = 0;
         [self makeGoal];
+        [self makeInterface];
         self.cue = [[Disc alloc] initWithImage:@"yellowdisk"
                                     andLocation:CGPointMake(self.frame.size.width / 2, 37.5)
                              andUserInteraction:YES];
-        [self addChild:self.cue];
-        [self makeStar];
-        [self makeInterface];
+        [self addChild:self.cue]; 
+        //[self makeStar];
     }
     return self;
 }
