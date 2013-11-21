@@ -85,6 +85,10 @@
         MainMenuLabel.fontSize = 50;
         MainMenuLabel.position = CGPointMake(100, 30);
         [MainMenu addChild:MainMenuLabel];
+        
+      
+        
+        
     }
     return self;
 }
