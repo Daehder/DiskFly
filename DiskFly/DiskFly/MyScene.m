@@ -13,6 +13,7 @@
 #import "MenuNode.h"
 #import "MoveZone.h"
 #import "Pause Button.h"
+#import "LevelCreator.h"
 
 @interface MyScene()
 @property Disc *cue;
@@ -36,6 +37,11 @@
         //[self makeStar];
     }
     return self;
+}
+
+-(void)loadLevel: (int) level
+{
+     
 }
 
 -(void)makeGoal
@@ -149,7 +155,7 @@
     self.scene.physicsWorld.speed = 0;
 }
 
--(void) resume
+-(void)resume
 {
     [self.menu resume];
 }
