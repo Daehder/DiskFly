@@ -9,6 +9,7 @@
 #import "CongratulationsScene.h"
 #import "Back Button.h"
 #import "MyScene.h"
+#import "ReplayButton.h"
 
 @implementation CongratulationsScene
 
@@ -47,14 +48,27 @@
         
          [self addChild:skLabel];
         
-        skLabel = [SKLabelNode labelNodeWithFontNamed:@"HelviticaNeue"];
+        /*skLabel = [SKLabelNode labelNodeWithFontNamed:@"HelviticaNeue"];
         
         skLabel.text = @"Replay";
         skLabel.fontSize = 25;
         skLabel.fontColor = [SKColor blueColor];
         skLabel.position = CGPointMake(80, 150);
         
-        [self addChild:skLabel];
+        [self addChild:skLabel];*/
+        
+        ReplayButton *button = [[ReplayButton alloc] init];
+        button.position = CGPointMake(20, 150);
+        button.xScale = .5;
+        button.yScale = .5;
+        [self addChild:button];
+        
+        SKLabelNode *ReplayButtonLabel = [SKLabelNode labelNodeWithFontNamed:@"Helvetica"];
+        ReplayButtonLabel.text = @"Replay";
+        ReplayButtonLabel.fontSize = 50;
+        ReplayButtonLabel.position = CGPointMake(100, 35);
+        [button addChild:ReplayButtonLabel];
+                                            
         
         skLabel = [SKLabelNode labelNodeWithFontNamed:@"HelviticaNeue"];
         
@@ -93,7 +107,7 @@
     return self;
 }
 
- - (void) createReplayButton
+/* - (void) createReplayButton
 {
         
 }

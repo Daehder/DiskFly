@@ -54,6 +54,7 @@
     SKPhysicsBody *edge = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
     edge.restitution = .5;
     self.physicsBody = edge;
+    self.physicsBody.restitution = .4;
     
     MoveZone *zone = [[MoveZone alloc] initWithWidth:self.frame.size.width andHeight:75 andScene:self];
     zone.fillColor = [SKColor grayColor];
@@ -74,6 +75,16 @@
                                                  andHeight:60
                                                   andScene:self];
     [self addChild:insideGoal];
+}
+
+- (void) makeObstacles
+{
+    Obstacles *RecObstacle = [[Obstacles alloc] initWithImageNamed:@"whiterect"];
+    RecObstacle.position = CGPointMake(150, 150);
+    RecObstacle.xScale = 1;
+    RecObstacle.yScale = 1;
+    
+    [self addChild: RecObstacle];
 }
 
 -(void)makeStar
