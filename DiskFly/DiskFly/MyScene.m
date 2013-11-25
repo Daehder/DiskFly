@@ -104,6 +104,8 @@
 {
     return self.cue.physicsBody.velocity.dx < .1 &&
            self.cue.physicsBody.velocity.dy < .1 &&
+           self.cue.physicsBody.velocity.dx > -.1 &&
+           self.cue.physicsBody.velocity.dy > -.1 &&
            self.cue.position.y > 75 &&
            self.cue.canReset&&
            self.scene.physicsWorld.speed != 0;
@@ -111,22 +113,11 @@
 
 -(void)update:(CFTimeInterval)currentTime
 {
-    /*if (self.cue.physicsBody.resting && self.cue.userHasInteracted && self.cue.position.y > 75) {
-     self.cue.position = CGPointMake(self.frame.size.width / 2, 37.5);
-     }*/
     
-    
-    
-    if (self.cue.physicsBody.velocity.dx < .1 &&
-        self.cue.physicsBody.velocity.dy < .1 &&
-        self.cue.physicsBody.velocity.dx > -.1 &&
-        self.cue.physicsBody.velocity.dy > -.1 &&
-        self.cue.position.y > 75 &&
-        self.cue.canReset)
+    if ([self diskCanReset])
     {
         if (self.stillFrames++ == 30) {
-            //self.cue.position = CGPointMake(self.frame.size.width / 2, 37.5);
-            //self.cue.physicsBody.velocity = CGVectorMake(0, 0);
+            
             [self.cue deleteDisc];
             
             self.cue = [[Disc alloc] initWithImage:@"yellowdisk"
@@ -138,14 +129,7 @@
         }
     }
     
-    if (self.star.physicsBody.velocity.dx < .5 &&
-        self.star.physicsBody.velocity.dy < .5 &&
-        self.star.physicsBody.velocity.dx > -.5 &&
-        self.star.physicsBody.velocity.dy > -.5 &&
-        self.star.position.y > self.frame.size.height - 90 &&
-        self.star.position.y < self.frame.size.height - 40 &&
-        self.star.position.x > 40 &&
-        self.star.position.x < self.frame.size.width - 40)
+    if([self targetRestingInGoal])
     {
         CongratulationsScene * scene = [CongratulationsScene sceneWithSize:self.scene.size];
         scene.scaleMode = SKSceneScaleModeAspectFill;

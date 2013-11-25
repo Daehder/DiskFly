@@ -10,8 +10,11 @@
 
 @interface Disc ()
 @property CGPoint lastTouchLocation;
-@property CGPoint firstTouchLocation;
 @property NSDate *startTime;
+@property CGPoint startPosition;
+@property NSDate *lastTimeInZone;
+@property CGPoint lastPositionInZone;
+@property CGPoint firstPositionOutOfZone;
 @end
 
 @implementation Disc
@@ -50,22 +53,40 @@
 
 -(void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    
     UITouch *touch = [touches anyObject];
     CGPoint touchPoint = [touch locationInNode:self];
+    CGPoint touchPointInView = [touch locationInView:self.scene.view];
     
-    //NSLog([NSString stringWithFormat:@"touchPoint: (%.2f, %.2f)", touchPoint.x, touchPoint.y]);
+    if ((self.scene.size.height - touchPointInView.y) < 75) {
+        CGPoint newPosition = self.position;
+        newPosition.x = newPosition.x + (touchPoint.x - self.lastTouchLocation.x);
+        newPosition.y = newPosition.y + (touchPoint.y - self.lastTouchLocation.y);
     
-    CGPoint newPosition = self.position;
-    newPosition.x = newPosition.x + (touchPoint.x - self.lastTouchLocation.x);
-    newPosition.y = newPosition.y + (touchPoint.y - self.lastTouchLocation.y);
+        self.position = newPosition;
+        self.lastTouchLocation = [touch locationInNode:self];
     
-    self.position = newPosition;
-    self.lastTouchLocation = [touch locationInNode:self];
+    
+        self.lastTimeInZone = [NSDate date];
+        self.lastPositionInZone = touchPointInView;
+    }
+    
+    if ((self.scene.size.height - touchPointInView.y) > 80 &&
+        !self.canReset) {
+        self.firstPositionOutOfZone = touchPointInView;
+        self.physicsBody.velocity = CGVectorMake(-(self.firstPositionOutOfZone.x - self.lastPositionInZone.x) /
+                                                 self.lastTimeInZone.timeIntervalSinceNow,
+                                                 (self.firstPositionOutOfZone.y - self.lastPositionInZone.y) /
+                                                 self.lastTimeInZone.timeIntervalSinceNow);
+        self.userInteractionEnabled = NO;
+        self.canReset = YES;
+    }
+    
 }
 
 -(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-
+    
 }
 
 - (void) setPhysicsBody {
