@@ -39,14 +39,17 @@
         
         [self addChild:skLabel];
         
-        skLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+        /*skLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
          
          skLabel.text = @"Score: 2341";
          skLabel.fontSize = 35;
          skLabel.fontColor = [SKColor blackColor];
          skLabel.position = CGPointMake(160, 240);
         
-         [self addChild:skLabel];
+         [self addChild:skLabel];*/
+        
+        
+        
         
         /*skLabel = [SKLabelNode labelNodeWithFontNamed:@"HelviticaNeue"];
         
@@ -105,6 +108,18 @@
         
     }
     return self;
+}
+
+-(void) displayStars: (int) starsEarned {
+    
+    SKSpriteNode *star;
+    
+    for (int starCounter = 0; starCounter < starsEarned; starCounter++) {
+        star = [[SKSpriteNode alloc] initWithImageNamed:@"yellowstar"];
+        star.size = CGSizeMake(50, 50);
+        star.position = CGPointMake(self.scene.size.width / 2 - (2 - starCounter) * 50, 260);
+        [self addChild:star];
+    }
 }
 
 /* - (void) createReplayButton

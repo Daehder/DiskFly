@@ -205,6 +205,8 @@
 				03F2C2B1181DABFB00DBAA85 /* ViewController.m */,
 				03F2C2B3181DABFB00DBAA85 /* MyScene.h */,
 				03F2C2B4181DABFB00DBAA85 /* MyScene.m */,
+				8C5CB26B182C1B2500148D8F /* CongratulationsScene.h */,
+				8C5CB26C182C1B2500148D8F /* CongratulationsScene.m */,
 				368FDFDB183C032E00E360C0 /* Obstacles.h */,
 				368FDFDC183C032E00E360C0 /* Obstacles.m */,
 				3723CBEE1822E90200C07CFF /* GoalNode.h */,
@@ -220,8 +222,6 @@
 				F635B909182C39B3009D04D1 /* RectangleNode.m */,
 				F6292B9C1832CDC000128EEA /* Triangle.h */,
 				F6292B9D1832CDC000128EEA /* Triangle.m */,
-				8C5CB26B182C1B2500148D8F /* CongratulationsScene.h */,
-				8C5CB26C182C1B2500148D8F /* CongratulationsScene.m */,
 				8C5CB271182C1B6600148D8F /* Circle.h */,
 				8C5CB272182C1B6600148D8F /* Circle.m */,
 				369EE739182975960066BDD0 /* MoveZone.h */,
@@ -242,7 +242,6 @@
 				F6F7FC8B1830D519000B9F7B /* yellowdisk.png */,
 				F6F7FC891830D507000B9F7B /* bluedisk.png */,
 				8C1EF3E7183C07FF00795B81 /* yellowstar.png */,
-				8C73374C183EA72C000CF0EE /* blackrect.png */,
 				03F2C2B8181DABFB00DBAA85 /* Images.xcassets */,
 				03F2C2A0181DABFB00DBAA85 /* DiskFly-Info.plist */,
 				03F2C2A1181DABFB00DBAA85 /* InfoPlist.strings */,
@@ -356,7 +355,6 @@
 				03F2C2AC181DABFB00DBAA85 /* Main_iPhone.storyboard in Resources */,
 				F6F7FC8A1830D507000B9F7B /* bluedisk.png in Resources */,
 				03F2C2A3181DABFB00DBAA85 /* InfoPlist.strings in Resources */,
-				8C73374D183EA72C000CF0EE /* blackrect.png in Resources */,
 				8C1EF3E8183C07FF00795B81 /* yellowstar.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

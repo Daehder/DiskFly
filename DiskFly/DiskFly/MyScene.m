@@ -82,10 +82,9 @@
 
 - (void) makeObstacles
 {
-    Obstacles *RecObstacle = [[Obstacles alloc] initWithImageNamed:@"whiterect"];
-    RecObstacle.position = CGPointMake(150, 150);
-    RecObstacle.xScale = 1;
-    RecObstacle.yScale = 1;
+    Obstacles *RecObstacle;
+    RecObstacle = [[Obstacles alloc] initWithImageNamed:@"whiterect"];
+    RecObstacle.position = CGPointMake(50, 150);
     
     [self addChild: RecObstacle];
 }
@@ -141,7 +140,11 @@
     
     if ([self diskCanReset])
     {
-        if (self.stillFrames++ == 30) {
+        if (self.stillFrames++ == 30 &&
+            self.star.physicsBody.velocity.dx < .5 &&
+            self.star.physicsBody.velocity.dx > -.5 &&
+            self.star.physicsBody.velocity.dy < .5 &&
+            self.star.physicsBody.velocity.dy > -.5) {
             
             [self.cue deleteDisc];
             
@@ -161,6 +164,7 @@
     {
         CongratulationsScene * scene = [CongratulationsScene sceneWithSize:self.scene.size];
         scene.scaleMode = SKSceneScaleModeAspectFill;
+        [scene displayStars: [self starsEarned]];
         
         [self.view presentScene:scene];
     }
@@ -180,16 +184,16 @@
 -(int) starsEarned{
     
     if ([self starInInsideGoal]) {
-        return 3 - self.swipes;
+        return 5 - self.swipes;
     }
     
     else if ([self starInMiddleGoal]){
-        return 2 - self.swipes;
+        return 4 - self.swipes;
         
     }
     
     else if ([self starInOutsideGoal]){
-        return 1 - self.swipes;
+        return 3 - self.swipes;
     }
     
     return 0;
