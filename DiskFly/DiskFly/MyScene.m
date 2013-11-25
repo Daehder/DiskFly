@@ -112,8 +112,10 @@
     self.star.physicsBody.velocity.dx > -.5 &&
     self.star.physicsBody.velocity.dy < .5 &&
     self.star.physicsBody.velocity.dy > -.5 &&
-    self.star.position.y > 470 &&
-    self.star.position.y < 545;
+    self.star.position.y > self.frame.size.height - 90 &&
+    self.star.position.y < self.frame.size.height - 40 &&
+    self.star.position.x > 40 &&
+    self.star.position.x < self.frame.size.width - 40;
 }
 
 -(Boolean)diskCanReset
@@ -122,13 +124,16 @@
            self.cue.physicsBody.velocity.dy < .1 &&
            self.cue.physicsBody.velocity.dx > -.1 &&
            self.cue.physicsBody.velocity.dy > -.1 &&
-           self.cue.position.y > 75 &&
-           self.cue.canReset&&
+           self.cue.canReset &&
            self.scene.physicsWorld.speed != 0;
 }
 
 -(void)update:(CFTimeInterval)currentTime
 {
+    /*if (self.star.position.y > self.frame.size.height - 90 &&
+        self.star.position.y < self.frame.size.height - 40) {
+        self.star.physicsBody.friction = 1;
+    }*/
     
     if ([self diskCanReset])
     {
@@ -152,7 +157,6 @@
         
         [self.view presentScene:scene];
     }
-    
 }
 
 -(void)pause
@@ -164,6 +168,45 @@
 -(void) resume
 {
     [self.menu resume];
+}
+
+-(int) starsEarned{
+    
+    if ([self starInInsideGoal]) {
+        return 3;
+    }
+    
+    else if ([self starInMiddleGoal]){
+        return 2;
+        
+    }
+    
+    else if ([self starInOutsideGoal]){
+        return 1;
+    }
+    
+    return 0;
+}
+
+-(BOOL) starInOutsideGoal{
+    return  self.star.position.x > 40 &&
+            self.star.position.x < self.scene.size.width - 40 &&
+            self.star.position.y > self.scene.size.height - 90 &&
+            self.star.position.y < self.scene.size.height - 40;
+}
+
+-(BOOL) starInMiddleGoal {
+    return  self.star.position.x > 55 &&
+            self.star.position.x < self.scene.size.width - 55 &&
+            self.star.position.y > self.scene.size.height - 80 &&
+            self.star.position.y < self.scene.size.height - 50;
+}
+
+-(BOOL) starInInsideGoal {
+    return  self.star.position.x > 70 &&
+            self.star.position.x < self.scene.size.width - 70 &&
+            self.star.position.y > self.scene.size.height - 70 &&
+            self.star.position.y < self.scene.size.height - 60;
 }
 
 @end

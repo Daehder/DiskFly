@@ -10,8 +10,9 @@
 
 @interface Disc ()
 @property CGPoint lastTouchLocation;
-@property NSDate *startTime;
+@property CGPoint firstTouchLocation;
 @property CGPoint startPosition;
+@property NSDate *startTime;
 @property NSDate *lastTimeInZone;
 @property CGPoint lastPositionInZone;
 @property CGPoint firstPositionOutOfZone;
@@ -30,6 +31,7 @@
     self.canReset = NO;
     self.physicsBody.restitution = .5;
     self.physicsBody.usesPreciseCollisionDetection = YES;
+    self.startPosition = location;
     
     return self;
 }
@@ -102,7 +104,7 @@
 }
 
 -(void) resetDisc {
-    self.position = *(self.startPosition);
+    self.position = self.startPosition;
 }
 
 -(void) deleteDisc
