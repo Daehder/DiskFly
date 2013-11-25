@@ -19,6 +19,8 @@
 @property Disc *cue;
 @property Disc *star;
 @property int stillFrames;
+@property MoveZone *zone;
+@property int swipes;
 @end
 
 @implementation MyScene
@@ -28,6 +30,8 @@
     if (self = [super initWithSize:size])
     {
         self.stillFrames = 0;
+        self.swipes = 0;
+        
         [self makeGoal];
         [self makeObstacles];
         
@@ -55,9 +59,9 @@
     self.physicsBody = edge;
     self.physicsBody.restitution = .4;
     
-    MoveZone *zone = [[MoveZone alloc] initWithWidth:self.frame.size.width andHeight:75 andScene:self];
-    zone.fillColor = [SKColor grayColor];
-    [self addChild:zone];
+    self.zone = [[MoveZone alloc] initWithWidth:self.frame.size.width andHeight:75 andScene:self];
+    self.zone.fillColor = [SKColor grayColor];
+    [self addChild:self.zone];
     
     GoalNode *outsideGoal = [[GoalNode alloc] initWithWidth:self.frame.size.width - 30
                                                   andHeight:100
@@ -130,10 +134,10 @@
 
 -(void)update:(CFTimeInterval)currentTime
 {
-    /*if (self.star.position.y > self.frame.size.height - 90 &&
-        self.star.position.y < self.frame.size.height - 40) {
-        self.star.physicsBody.friction = 1;
-    }*/
+    if (self.cue.position.y > 100) {
+        [self.zone makePhysicsBody];
+        self.zone.physicsBody.categoryBitMask = 0xFFFFFFFF;
+    }
     
     if ([self diskCanReset])
     {
@@ -146,7 +150,10 @@
                                 andUserInteraction:YES];
             [self addChild:self.cue];
             
+            self.zone.physicsBody.categoryBitMask = 0x0;
+            
             self.stillFrames = 0;
+            self.swipes ++;
         }
     }
     
@@ -173,16 +180,16 @@
 -(int) starsEarned{
     
     if ([self starInInsideGoal]) {
-        return 3;
+        return 3 - self.swipes;
     }
     
     else if ([self starInMiddleGoal]){
-        return 2;
+        return 2 - self.swipes;
         
     }
     
     else if ([self starInOutsideGoal]){
-        return 1;
+        return 1 - self.swipes;
     }
     
     return 0;

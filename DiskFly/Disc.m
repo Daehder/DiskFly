@@ -73,7 +73,7 @@
         self.lastPositionInZone = touchPointInView;
     }
     
-    if ((self.scene.size.height - touchPointInView.y) > 80 &&
+    if ((self.scene.size.height - touchPointInView.y) > 75 &&
         !self.canReset) {
         self.firstPositionOutOfZone = touchPointInView;
         self.physicsBody.velocity = CGVectorMake(-(self.firstPositionOutOfZone.x - self.lastPositionInZone.x) /

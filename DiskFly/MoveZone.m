@@ -27,7 +27,15 @@
     
      self.path = border.CGPath;
     
+    
     return self;
+}
+
+-(void) makePhysicsBody {
+    SKPhysicsBody *physicsBody;
+    physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
+    physicsBody.usesPreciseCollisionDetection = YES;
+    self.physicsBody = physicsBody;
 }
                         
 @end
