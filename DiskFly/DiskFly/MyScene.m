@@ -13,6 +13,7 @@
 #import "MenuNode.h"
 #import "MoveZone.h"
 #import "Pause Button.h"
+#import "Obstacles.h"
 
 @interface MyScene()
 @property Disc *cue;
@@ -28,11 +29,15 @@
     {
         self.stillFrames = 0;
         [self makeGoal];
+        [self makeObstacles];
+        
         self.cue = [[Disc alloc] initWithImage:@"yellowdisk"
                                    andLocation:CGPointMake(self.frame.size.width / 2, 37.5)
                             andUserInteraction:YES];
         [self addChild:self.cue];
-        [self makeStar];
+
+                [self makeStar];
+        
         [self makeInterface];
     }
     return self;
@@ -48,6 +53,7 @@
     SKPhysicsBody *edge = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
     edge.restitution = .5;
     self.physicsBody = edge;
+    self.physicsBody.restitution = .4;
     
     MoveZone *zone = [[MoveZone alloc] initWithWidth:self.frame.size.width andHeight:75 andScene:self];
     zone.fillColor = [SKColor grayColor];
@@ -68,6 +74,16 @@
                                                  andHeight:60
                                                   andScene:self];
     [self addChild:insideGoal];
+}
+
+- (void) makeObstacles
+{
+    Obstacles *RecObstacle = [[Obstacles alloc] initWithImageNamed:@"whiterect"];
+    RecObstacle.position = CGPointMake(150, 150);
+    RecObstacle.xScale = 1;
+    RecObstacle.yScale = 1;
+    
+    [self addChild: RecObstacle];
 }
 
 -(void)makeStar

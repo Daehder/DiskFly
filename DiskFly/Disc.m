@@ -102,7 +102,7 @@
 }
 
 -(void) resetDisc {
-    self.position = self.startPosition;
+    self.position = *(self.startPosition);
 }
 
 -(void) deleteDisc
