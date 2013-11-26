@@ -97,6 +97,7 @@
     physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:25];
     physicsBody.velocity = CGVectorMake(0, 0);
     physicsBody.linearDamping = 1;
+    physicsBody.friction = 1;
     physicsBody.affectedByGravity = NO;
     physicsBody.allowsRotation = NO;
     
