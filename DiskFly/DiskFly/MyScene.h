@@ -17,7 +17,6 @@
 -(Boolean) diskCanReset;
 -(int) starsEarned;
 -(void) makeStar;
--(BOOL) starTouchingGoal;
 
 
 @property MenuNode *menu;

@@ -69,13 +69,13 @@
     self.zone.fillColor = [SKColor grayColor];
     [self addChild:self.zone];
     
-    GoalNode *outsideGoal = [[GoalNode alloc] initWithWidth:self.frame.size.width - 30
-                                                  andHeight:100
+    GoalNode *outsideGoal = [[GoalNode alloc] initWithWidth:self.frame.size.width
+                                                  andHeight:115
                                                    andScene:self];
     [self addChild:outsideGoal];
     
-    GoalNode *middleGoal = [[GoalNode alloc] initWithWidth:self.frame.size.width - 60
-                                                 andHeight:80
+    GoalNode *middleGoal = [[GoalNode alloc] initWithWidth:self.frame.size.width - 45
+                                                 andHeight:87.5
                                                   andScene:self
                                                   andColor:skyBlueColor];
     [self addChild:middleGoal];
@@ -121,7 +121,7 @@
     self.star.physicsBody.velocity.dx > -.5 &&
     self.star.physicsBody.velocity.dy < .5 &&
     self.star.physicsBody.velocity.dy > -.5 &&
-    self.star.position.y > self.scene.frame.size.height - 140;
+    self.star.position.y > self.scene.frame.size.height - 90;
 }
 
 -(Boolean) diskCanReset
@@ -202,38 +202,28 @@
         else {
         return 3 - self.swipes;
         }
-    }
-    
-    else if ([self starTouchingGoal]){
-        return 1 - self.swipes;
+
     }
     
     return 0;
 }
 
 -(BOOL) starInOutsideGoal{
-    return  self.star.position.x > 40 &&
-            self.star.position.x < self.scene.size.width - 40 &&
-            self.star.position.y > self.scene.size.height - 90 &&
-            self.star.position.y < self.scene.size.height - 40;
+    return  self.star.position.y > self.scene.size.height - 90;
 }
 
 -(BOOL) starInMiddleGoal {
-    return  self.star.position.x > 55 &&
-            self.star.position.x < self.scene.size.width - 55 &&
-            self.star.position.y > self.scene.size.height - 80 &&
-            self.star.position.y < self.scene.size.height - 50;
+    return  self.star.position.x > 47.5 &&
+            self.star.position.x < self.scene.size.width - 47.5 &&
+            self.star.position.y > self.scene.size.height - 76.25 &&
+            self.star.position.y < self.scene.size.height - 38.75;
 }
 
 -(BOOL) starInInsideGoal {
     return  self.star.position.x > 70 &&
             self.star.position.x < self.scene.size.width - 70 &&
-            self.star.position.y > self.scene.size.height - 70 &&
-            self.star.position.y < self.scene.size.height - 60;
-}
-
--(BOOL) starTouchingGoal {
-    return self.star.position.y > self.scene.size.height - 115;
+            self.star.position.y > self.scene.size.height - 62.5 &&
+            self.star.position.y < self.scene.size.height - 52.5;
 }
 
 @end
