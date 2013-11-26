@@ -53,7 +53,7 @@
     [maker createLevel:1 inScene:self];
 }
 
--(void)makeGoal
+-(void) makeGoal
 {
     SKColor *skyBlueColor = [SKColor colorWithRed:(99.0/255.0) green:(184.0/255) blue:(254.0/255) alpha:1];
     
@@ -94,7 +94,7 @@
     [self addChild: RecObstacle];
 }
 
--(void)makeStar
+-(void) makeStar
 {
     self.star = [[Disc alloc] initWithImage:@"bluedisk"
                                 andLocation:CGPointMake(self.frame.size.width / 2, self.frame.size.height * 2 / 3)
@@ -102,7 +102,7 @@
     [self addChild:self.star];
 }
 
--(void)makeInterface
+-(void) makeInterface
 {
     self.menu = [[MenuNode alloc] initWithColor:[SKColor whiteColor] size: self.frame.size];
     
@@ -114,7 +114,7 @@
     [self addChild:PauseButton];
 }
 
--(Boolean)targetRestingInGoal
+-(Boolean) targetRestingInGoal
 {
     return self.star.physicsBody.velocity.dx < .5 &&
     self.star.physicsBody.velocity.dx > -.5 &&
@@ -126,7 +126,7 @@
     self.star.position.x < self.frame.size.width - 40;
 }
 
--(Boolean)diskCanReset
+-(Boolean) diskCanReset
 {
     return self.cue.physicsBody.velocity.dx < .1 &&
            self.cue.physicsBody.velocity.dy < .1 &&
@@ -136,7 +136,7 @@
            self.scene.physicsWorld.speed != 0;
 }
 
--(void)update:(CFTimeInterval)currentTime
+-(void) update:(CFTimeInterval)currentTime
 {
     if (self.cue.position.y > 100) {
         [self.zone makePhysicsBody];
@@ -175,13 +175,13 @@
     }
 }
 
--(void)pause
+-(void) pause
 {
     [self addChild:self.menu];
     self.scene.physicsWorld.speed = 0;
 }
 
--(void)resume
+-(void) resume
 {
     [self.menu resume];
 }

@@ -13,9 +13,10 @@
 
 -(void) pause;
 -(void) resume;
--(Boolean)targetRestingInGoal;
--(Boolean)diskCanReset;
+-(Boolean) targetRestingInGoal;
+-(Boolean) diskCanReset;
 -(int) starsEarned;
+-(void) makeStar;
 
 
 @property MenuNode *menu;

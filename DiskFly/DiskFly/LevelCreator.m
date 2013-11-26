@@ -24,8 +24,8 @@
 
 - (NSArray*) getLevel:(int) level
 {
-    // Each dictonary represents a level
-    // Create more dictionaries for additional levels, then combine into an arraylist
+    // Each Array represents a level
+    // Create more Arrays for additional levels, then combine into an array
     NSArray *l1 = @[ @{@"type": @"rect", @"x":@0, @"y":@400},
                      @{@"type": @"rect", @"x":@300, @"y":@400},
                      @{@"type": @"circle", @"x":@150, @"y":@300}];
@@ -46,9 +46,11 @@
         }
         else if ([object[@"type"] isEqualToString:@"circle"])
         {
-            Disc *Circle = [[Disc alloc] init];
-            Circle.position = CGPointMake([object[@"x"] floatValue], [object[@"y"] floatValue]);
-            [scene addChild:Circle];
+            if([scene isKindOfClass:[MyScene class]])
+            {
+                MyScene *myScene = (MyScene*) scene;
+                [myScene makeStar];
+            }
         }
     }
 }
