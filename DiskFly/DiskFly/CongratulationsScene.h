@@ -10,4 +10,6 @@
 
 @interface CongratulationsScene : SKScene
 
+-(void) displayStars: (int) starsEarned;
+
 @end

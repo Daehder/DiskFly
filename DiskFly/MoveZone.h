@@ -11,5 +11,6 @@
 @interface MoveZone : SKShapeNode
 
 -(instancetype) initWithWidth:(int) width andHeight:(int) height andScene:(SKScene*)scence;
+-(void) makePhysicsBody;
 
 @end

@@ -28,6 +28,7 @@
     [self setPhysicsBody];
     self.canReset = NO;
     self.physicsBody.restitution = .5;
+    self.physicsBody.usesPreciseCollisionDetection = YES;
     self.startPosition = location;
     
     return self;
@@ -44,41 +45,47 @@
 
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    
     [self setPhysicsBody];
     UITouch *touch = [touches anyObject];
-    self.firstTouchLocation = [touch locationInView:Nil];
     self.lastTouchLocation = [touch locationInNode:self];
-    self.startTime = [NSDate date];
     self.physicsBody.velocity = CGVectorMake(0, 0);
 }
 
 -(void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    
     UITouch *touch = [touches anyObject];
     CGPoint touchPoint = [touch locationInNode:self];
+    CGPoint touchPointInView = [touch locationInView:self.scene.view];
     
-    //NSLog([NSString stringWithFormat:@"touchPoint: (%.2f, %.2f)", touchPoint.x, touchPoint.y]);
+    if ((self.scene.size.height - touchPointInView.y) < 75) {
+        CGPoint newPosition = self.position;
+        newPosition.x = newPosition.x + (touchPoint.x - self.lastTouchLocation.x);
+        newPosition.y = newPosition.y + (touchPoint.y - self.lastTouchLocation.y);
     
-    CGPoint newPosition = self.position;
-    newPosition.x = newPosition.x + (touchPoint.x - self.lastTouchLocation.x);
-    newPosition.y = newPosition.y + (touchPoint.y - self.lastTouchLocation.y);
+        self.position = newPosition;
+        self.lastTouchLocation = [touch locationInNode:self];
     
-    self.position = newPosition;
-    self.lastTouchLocation = [touch locationInNode:self];
+    
+        self.lastTimeInZone = [NSDate date];
+        self.lastPositionInZone = touchPointInView;
+    }
+    
+    if ((self.scene.size.height - touchPointInView.y) > 75 &&
+        !self.canReset) {
+        self.firstPositionOutOfZone = touchPointInView;
+        self.physicsBody.velocity = CGVectorMake(-(self.firstPositionOutOfZone.x - self.lastPositionInZone.x) /
+                                                 self.lastTimeInZone.timeIntervalSinceNow,
+                                                 (self.firstPositionOutOfZone.y - self.lastPositionInZone.y) /
+                                                 self.lastTimeInZone.timeIntervalSinceNow);
+        self.userInteractionEnabled = NO;
+        self.canReset = YES;
+    }
+    
 }
 
 -(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    UITouch *touch = [touches anyObject];
-    CGPoint endTouchLocation = [touch locationInView:nil];
-    NSTimeInterval swipeTime = [self.startTime timeIntervalSinceNow];
-    
-    if (self.position.y > 75) {
-        self.physicsBody.velocity = CGVectorMake((endTouchLocation.x - self.firstTouchLocation.x) / (- swipeTime), (endTouchLocation.y - self.firstTouchLocation.y) / swipeTime);
-        self.canReset = YES;
-        self.userInteractionEnabled = NO;
-    }
     
 }
 

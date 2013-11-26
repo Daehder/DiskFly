@@ -19,6 +19,8 @@
 @property Disc *cue;
 @property Disc *star;
 @property int stillFrames;
+@property MoveZone *zone;
+@property int swipes;
 @end
 
 @implementation MyScene
@@ -28,12 +30,14 @@
     if (self = [super initWithSize:size])
     {
         self.stillFrames = 0;
+        self.swipes = 0;
+        
         [self makeGoal];
         [self makeObstacles];
         
         self.cue = [[Disc alloc] initWithImage:@"yellowdisk"
-                                    andLocation:CGPointMake(self.frame.size.width / 2, 37.5)
-                             andUserInteraction:YES];
+                                   andLocation:CGPointMake(self.frame.size.width / 2, 37.5)
+                            andUserInteraction:YES];
         [self addChild:self.cue];
 
                 [self makeStar];
@@ -55,9 +59,9 @@
     self.physicsBody = edge;
     self.physicsBody.restitution = .4;
     
-    MoveZone *zone = [[MoveZone alloc] initWithWidth:self.frame.size.width andHeight:75 andScene:self];
-    zone.fillColor = [SKColor grayColor];
-    [self addChild:zone];
+    self.zone = [[MoveZone alloc] initWithWidth:self.frame.size.width andHeight:75 andScene:self];
+    self.zone.fillColor = [SKColor grayColor];
+    [self addChild:self.zone];
     
     GoalNode *outsideGoal = [[GoalNode alloc] initWithWidth:self.frame.size.width - 30
                                                   andHeight:100
@@ -78,10 +82,9 @@
 
 - (void) makeObstacles
 {
-    Obstacles *RecObstacle = [[Obstacles alloc] initWithImageNamed:@"whiterect"];
-    RecObstacle.position = CGPointMake(150, 150);
-    RecObstacle.xScale = 1;
-    RecObstacle.yScale = 1;
+    Obstacles *RecObstacle;
+    RecObstacle = [[Obstacles alloc] initWithImageNamed:@"whiterect"];
+    RecObstacle.position = CGPointMake(50, 150);
     
     [self addChild: RecObstacle];
 }
@@ -112,32 +115,37 @@
     self.star.physicsBody.velocity.dx > -.5 &&
     self.star.physicsBody.velocity.dy < .5 &&
     self.star.physicsBody.velocity.dy > -.5 &&
-    self.star.position.y > 470 &&
-    self.star.position.y < 545;
+    self.star.position.y > self.frame.size.height - 90 &&
+    self.star.position.y < self.frame.size.height - 40 &&
+    self.star.position.x > 40 &&
+    self.star.position.x < self.frame.size.width - 40;
 }
 
 -(Boolean)diskCanReset
 {
     return self.cue.physicsBody.velocity.dx < .1 &&
            self.cue.physicsBody.velocity.dy < .1 &&
-           self.cue.position.y > 75 &&
-           self.cue.canReset&&
+           self.cue.physicsBody.velocity.dx > -.1 &&
+           self.cue.physicsBody.velocity.dy > -.1 &&
+           self.cue.canReset &&
            self.scene.physicsWorld.speed != 0;
 }
 
 -(void)update:(CFTimeInterval)currentTime
 {
-    /*if (self.cue.physicsBody.resting && self.cue.userHasInteracted && self.cue.position.y > 75) {
-        self.cue.position = CGPointMake(self.frame.size.width / 2, 37.5);
-    }*/
-    
-    
+    if (self.cue.position.y > 100) {
+        [self.zone makePhysicsBody];
+        self.zone.physicsBody.categoryBitMask = 0xFFFFFFFF;
+    }
     
     if ([self diskCanReset])
     {
-        if (self.stillFrames++ == 30) {
-            //self.cue.position = CGPointMake(self.frame.size.width / 2, 37.5);
-            //self.cue.physicsBody.velocity = CGVectorMake(0, 0);
+        if (self.stillFrames++ == 30 &&
+            self.star.physicsBody.velocity.dx < .5 &&
+            self.star.physicsBody.velocity.dx > -.5 &&
+            self.star.physicsBody.velocity.dy < .5 &&
+            self.star.physicsBody.velocity.dy > -.5) {
+            
             [self.cue deleteDisc];
             
             self.cue = [[Disc alloc] initWithImage:@"yellowdisk"
@@ -145,7 +153,10 @@
                                 andUserInteraction:YES];
             [self addChild:self.cue];
             
+            self.zone.physicsBody.categoryBitMask = 0x0;
+            
             self.stillFrames = 0;
+            self.swipes ++;
         }
     }
     
@@ -153,10 +164,10 @@
     {
         CongratulationsScene * scene = [CongratulationsScene sceneWithSize:self.scene.size];
         scene.scaleMode = SKSceneScaleModeAspectFill;
+        [scene displayStars: [self starsEarned]];
         
         [self.view presentScene:scene];
     }
-    
 }
 
 -(void)pause
@@ -168,6 +179,45 @@
 -(void) resume
 {
     [self.menu resume];
+}
+
+-(int) starsEarned{
+    
+    if ([self starInInsideGoal]) {
+        return 5 - self.swipes;
+    }
+    
+    else if ([self starInMiddleGoal]){
+        return 4 - self.swipes;
+        
+    }
+    
+    else if ([self starInOutsideGoal]){
+        return 3 - self.swipes;
+    }
+    
+    return 0;
+}
+
+-(BOOL) starInOutsideGoal{
+    return  self.star.position.x > 40 &&
+            self.star.position.x < self.scene.size.width - 40 &&
+            self.star.position.y > self.scene.size.height - 90 &&
+            self.star.position.y < self.scene.size.height - 40;
+}
+
+-(BOOL) starInMiddleGoal {
+    return  self.star.position.x > 55 &&
+            self.star.position.x < self.scene.size.width - 55 &&
+            self.star.position.y > self.scene.size.height - 80 &&
+            self.star.position.y < self.scene.size.height - 50;
+}
+
+-(BOOL) starInInsideGoal {
+    return  self.star.position.x > 70 &&
+            self.star.position.x < self.scene.size.width - 70 &&
+            self.star.position.y > self.scene.size.height - 70 &&
+            self.star.position.y < self.scene.size.height - 60;
 }
 
 @end
