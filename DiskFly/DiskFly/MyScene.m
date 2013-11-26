@@ -192,8 +192,13 @@
         
     }
     
-    else if ([self starInOutsideGoal]){
+    if ([self starInOutsideGoal]){
+        if (self.swipes >= 3) {
+            return 1;
+        }
+        else {
         return 3 - self.swipes;
+        }
     }
     
     return 0;
