@@ -25,6 +25,11 @@
     return [self initWithImage:@"bluedisk" andLocation:(CGPointMake(0, 0)) andUserInteraction:NO];
 }
 
+-(instancetype) initAsCue
+{
+    return [self initWithImage:@"yellowdisk" andLocation:(CGPointMake(0, 0)) andUserInteraction:YES];
+}
+
 -(instancetype) initWithImage:(NSString *)fileName andLocation:(CGPoint)location andUserInteraction:(BOOL)interactable
 {
     self = [super initWithImageNamed:fileName];
@@ -64,7 +69,8 @@
     CGPoint touchPoint = [touch locationInNode:self];
     CGPoint touchPointInView = [touch locationInView:self.scene.view];
     
-    if ((self.scene.size.height - touchPointInView.y) < 75) {
+    if ((self.scene.size.height - touchPointInView.y) < 75)
+    {
         CGPoint newPosition = self.position;
         newPosition.x = newPosition.x + (touchPoint.x - self.lastTouchLocation.x);
         newPosition.y = newPosition.y + (touchPoint.y - self.lastTouchLocation.y);
@@ -78,7 +84,8 @@
     }
     
     if ((self.scene.size.height - touchPointInView.y) > 75 &&
-        !self.canReset) {
+        !self.canReset)
+    {
         self.firstPositionOutOfZone = touchPointInView;
         self.physicsBody.velocity = CGVectorMake(-(self.firstPositionOutOfZone.x - self.lastPositionInZone.x) /
                                                  self.lastTimeInZone.timeIntervalSinceNow,
@@ -108,8 +115,11 @@
     self.physicsBody = physicsBody;
 }
 
--(void) resetDisc {
-    self.position = self.startPosition;
+-(void) resetDisc
+{
+    //self.position = self.startPosition;
+    self.userInteractionEnabled = YES;
+    self.canReset = NO;
 }
 
 -(void) deleteDisc

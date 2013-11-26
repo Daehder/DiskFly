@@ -35,14 +35,8 @@
         
         [self makeGoal];
         [self makeInterface];
-        //[self makeObstacles];
+        [self makeCue];
         [self loadLevel:1];
-        
-        self.cue = [[Disc alloc] initWithImage:@"yellowdisk"
-                                    andLocation:CGPointMake(self.frame.size.width / 2, 37.5)
-                             andUserInteraction:YES];
-        [self addChild:self.cue]; 
-        //[self makeStar];
     }
     return self;
 }
@@ -51,6 +45,13 @@
 {
     LevelCreator *maker = [[LevelCreator alloc] init];
     [maker createLevel:1 inScene:self];
+}
+
+-(void) makeCue
+{
+    self.cue = [[Disc alloc] initAsCue];
+    self.cue.position = CGPointMake(self.frame.size.width / 2, 37.5);
+    [self addChild:self.cue];
 }
 
 -(void) makeGoal
@@ -143,23 +144,15 @@
     
     if ([self diskCanReset])
     {
-        if (self.stillFrames++ > 30 &&
-            self.star.physicsBody.velocity.dx < .5 &&
-            self.star.physicsBody.velocity.dx > -.5 &&
-            self.star.physicsBody.velocity.dy < .5 &&
-            self.star.physicsBody.velocity.dy > -.5) {
-            
-            [self.cue deleteDisc];
+        if ([self diskAtRest])
+        {
+            [self resetDisk];
+            /*[self.cue deleteDisc];
             
             self.cue = [[Disc alloc] initWithImage:@"yellowdisk"
                                        andLocation:CGPointMake(self.frame.size.width / 2, 37.5)
                                 andUserInteraction:YES];
-            [self addChild:self.cue];
-            
-            self.zone.physicsBody.categoryBitMask = 0x0;
-            
-            self.stillFrames = 0;
-            self.swipes ++;
+            [self addChild:self.cue];*/
         }
     }
     
@@ -171,6 +164,25 @@
         
         [self.view presentScene:scene];
     }
+}
+
+-(Boolean) diskAtRest
+{
+    return self.stillFrames++ > 30 &&
+           self.star.physicsBody.velocity.dx < .5 &&
+           self.star.physicsBody.velocity.dx > -.5 &&
+           self.star.physicsBody.velocity.dy < .5 &&
+           self.star.physicsBody.velocity.dy > -.5;
+}
+
+-(void) resetDisk
+{
+    self.cue.position = CGPointMake(self.frame.size.width / 2, 37.5);
+    [self.cue resetDisc];
+    self.zone.physicsBody.categoryBitMask = 0x0;
+    
+    self.stillFrames = 0;
+    self.swipes ++;
 }
 
 -(void) pause
@@ -230,6 +242,10 @@
             self.star.position.x < self.scene.size.width - 70 &&
             self.star.position.y > self.scene.size.height - 70 &&
             self.star.position.y < self.scene.size.height - 60;
+}
+
+-(BOOL) starTouchingGoal {
+    return self.star.position.y > self.scene.size.height - 140;
 }
 
 @end
