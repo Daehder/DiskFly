@@ -13,7 +13,9 @@
 @property CGPoint firstTouchLocation;
 @property CGPoint startPosition;
 @property NSDate *startTime;
-//@property CGPoint *startPosition;
+@property NSDate *lastTimeInZone;
+@property CGPoint lastPositionInZone;
+@property CGPoint firstPositionOutOfZone;
 @end
 
 @implementation Disc

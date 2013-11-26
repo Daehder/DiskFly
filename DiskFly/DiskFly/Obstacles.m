@@ -10,7 +10,7 @@
 
 @implementation Obstacles
 
--(instancetype) initWithImageNamed:(NSString *)name
+-(instancetype) init
 {
    
     
@@ -29,14 +29,5 @@
     
     return self;
 }
-/*- (void) setPhysicsBody {
-    
-    SKPhysicsBody *physicsBody;
-    physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
-    
-    
-    self.physicsBody = physicsBody;
-}
-*/
 
 @end

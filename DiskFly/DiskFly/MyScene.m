@@ -83,7 +83,7 @@
 - (void) makeObstacles
 {
     Obstacles *RecObstacle;
-    RecObstacle = [[Obstacles alloc] initWithImageNamed:@"whiterect"];
+    RecObstacle = [[Obstacles alloc] init];
     RecObstacle.position = CGPointMake(50, 150);
     
     [self addChild: RecObstacle];
