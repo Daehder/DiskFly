@@ -10,7 +10,7 @@
 
 @implementation Obstacles
 
--(instancetype) initWithImageNamed:(NSString *)name
+-(instancetype) init
 {
    
     

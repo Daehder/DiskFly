@@ -13,11 +13,14 @@
 @property CGPoint firstTouchLocation;
 @property CGPoint startPosition;
 @property NSDate *startTime;
-@property CGPoint startPosition;
 @end
 
 @implementation Disc
 
+-(instancetype) init
+{
+    return [self initWithImage:@"bluedisk" andLocation:(CGPointMake(0, 0)) andUserInteraction:NO];
+}
 
 -(instancetype) initWithImage:(NSString *)fileName andLocation:(CGPoint)location andUserInteraction:(BOOL)interactable
 {
@@ -95,7 +98,7 @@
 }
 
 -(void) resetDisc {
-    self.position = *(self.startPosition);
+    self.position = (self.startPosition);
 }
 
 -(void) deleteDisc

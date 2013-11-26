@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <SpriteKit/SpriteKit.h>
 
 @interface LevelCreator : NSObject
+
+- (void) createLevel:(int) levelNum inScene: (SKScene*) scene;
 
 @end

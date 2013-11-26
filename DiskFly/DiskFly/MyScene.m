@@ -14,6 +14,7 @@
 #import "MoveZone.h"
 #import "Pause Button.h"
 #import "LevelCreator.h"
+#import "Obstacles.h"
 
 @interface MyScene()
 @property Disc *cue;
@@ -30,6 +31,9 @@
         self.stillFrames = 0;
         [self makeGoal];
         [self makeInterface];
+        //[self makeObstacles];
+        [self loadLevel:1];
+        
         self.cue = [[Disc alloc] initWithImage:@"yellowdisk"
                                     andLocation:CGPointMake(self.frame.size.width / 2, 37.5)
                              andUserInteraction:YES];
@@ -41,7 +45,8 @@
 
 -(void)loadLevel: (int) level
 {
-     
+    LevelCreator *maker = [[LevelCreator alloc] init];
+    [maker createLevel:1 inScene:self];
 }
 
 -(void)makeGoal
@@ -79,7 +84,7 @@
 
 - (void) makeObstacles
 {
-    Obstacles *RecObstacle = [[Obstacles alloc] initWithImageNamed:@"whiterect"];
+    Obstacles *RecObstacle = [[Obstacles alloc] init];
     RecObstacle.position = CGPointMake(150, 150);
     RecObstacle.xScale = 1;
     RecObstacle.yScale = 1;

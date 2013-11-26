@@ -114,9 +114,13 @@
     
  - (void) replay
 {
-    MyScene * currentLevel = [MyScene sceneWithSize:self.scene.size];
-    currentLevel.scaleMode = SKSceneScaleModeAspectFill;
-    [self.view presentScene:currentLevel];
-}
+    ReplayButton *button = [[ReplayButton alloc] init];
+    button.position = CGPointMake(80, 150);
+    button.xScale = .5;
+    button.yScale = .5;
+    [self addChild:button];
+    
+}*/
+
 
 @end
