@@ -44,7 +44,7 @@
 -(void)loadLevel: (int) level
 {
     LevelCreator *maker = [[LevelCreator alloc] init];
-    [maker createLevel:1 inScene:self];
+    [maker createLevel:level inScene:self];
 }
 
 -(void) makeCue
@@ -97,9 +97,8 @@
 
 -(void) makeStar
 {
-    self.star = [[Disc alloc] initWithImage:@"bluedisk"
-                                andLocation:CGPointMake(self.frame.size.width / 2, self.frame.size.height * 2 / 3)
-                         andUserInteraction:NO];
+    self.star = [[Disc alloc] init];
+    self.star.position = CGPointMake(self.frame.size.width / 2, self.frame.size.height * 2 / 3);
     [self addChild:self.star];
 }
 

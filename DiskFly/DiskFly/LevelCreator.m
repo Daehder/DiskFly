@@ -30,8 +30,11 @@
                      @{@"type": @"rect", @"x":@300, @"y":@400},
                      @{@"type": @"circle", @"x":@150, @"y":@300}];
     
+    NSArray *l2 = @[ @{@"type": @"circle", @"x":@150, @"y":@300}];
+    
+    NSArray *levels = @[l1, l2];
     // replace with method to return correct arraylist
-    return  l1;
+    return  levels[level - 1];
 }
 
  - (void) putObjectsInScene: (SKScene*) scene fromLevel: (NSArray*) level
