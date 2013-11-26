@@ -61,7 +61,7 @@
     //self.backgroundColor = [SKColor whiteColor];
     
     SKPhysicsBody *edge = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
-    edge.restitution = .5;
+    edge.restitution = .3;
     self.physicsBody = edge;
     self.physicsBody.restitution = .4;
     
@@ -116,14 +116,12 @@
 
 -(Boolean) targetRestingInGoal
 {
+
     return self.star.physicsBody.velocity.dx < .5 &&
     self.star.physicsBody.velocity.dx > -.5 &&
     self.star.physicsBody.velocity.dy < .5 &&
     self.star.physicsBody.velocity.dy > -.5 &&
-    self.star.position.y > self.frame.size.height - 90 &&
-    self.star.position.y < self.frame.size.height - 40 &&
-    self.star.position.x > 40 &&
-    self.star.position.x < self.frame.size.width - 40;
+    self.star.position.y > self.scene.frame.size.height - 140;
 }
 
 -(Boolean) diskCanReset
@@ -145,7 +143,7 @@
     
     if ([self diskCanReset])
     {
-        if (self.stillFrames++ == 30 &&
+        if (self.stillFrames++ > 30 &&
             self.star.physicsBody.velocity.dx < .5 &&
             self.star.physicsBody.velocity.dx > -.5 &&
             self.star.physicsBody.velocity.dy < .5 &&
@@ -197,18 +195,27 @@
         
     }
     
-    else if ([self starInOutsideGoal]){
+    if ([self starInOutsideGoal]){
+        if (self.swipes >= 3) {
+            return 1;
+        }
+        else {
         return 3 - self.swipes;
+        }
+    }
+    
+    else if ([self starTouchingGoal]){
+        return 1 - self.swipes;
     }
     
     return 0;
 }
 
 -(BOOL) starInOutsideGoal{
-    return  self.star.position.x > 40 &&
-            self.star.position.x < self.scene.size.width - 40 &&
-            self.star.position.y > self.scene.size.height - 90 &&
-            self.star.position.y < self.scene.size.height - 40;
+    return  self.star.position.x > 25 &&
+            self.star.position.x < self.scene.size.width - 25 &&
+            self.star.position.y > self.scene.size.height - 105 &&
+            self.star.position.y < self.scene.size.height - 25;
 }
 
 -(BOOL) starInMiddleGoal {

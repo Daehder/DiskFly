@@ -14,7 +14,7 @@
 {
    
     
-    self = [super initWithImageNamed:@"whiterect"];
+    self = [super initWithImageNamed:@"blacksquare"];
     
     self.size = CGSizeMake(50, 50);
     
@@ -29,14 +29,5 @@
     
     return self;
 }
-/*- (void) setPhysicsBody {
-    
-    SKPhysicsBody *physicsBody;
-    physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
-    
-    
-    self.physicsBody = physicsBody;
-}
-*/
 
 @end
