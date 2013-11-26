@@ -26,9 +26,9 @@
 {
     // Each dictonary represents a level
     // Create more dictionaries for additional levels, then combine into an arraylist
-    NSArray *l1 = @[ @{@"type": @"rect", @"x":@150, @"y":@400},
-                     @{@"type": @"rect", @"x":@195, @"y":@400},
-                     @{@"type": @"circle", @"x":@300, @"y":@300}];
+    NSArray *l1 = @[ @{@"type": @"rect", @"x":@0, @"y":@400},
+                     @{@"type": @"rect", @"x":@300, @"y":@400},
+                     @{@"type": @"circle", @"x":@150, @"y":@300}];
     
     // replace with method to return correct arraylist
     return  l1;

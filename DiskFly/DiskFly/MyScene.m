@@ -90,8 +90,6 @@
 {
     Obstacles *RecObstacle = [[Obstacles alloc] init];
     RecObstacle.position = CGPointMake(150, 150);
-    RecObstacle.xScale = 1;
-    RecObstacle.yScale = 1;
     
     [self addChild: RecObstacle];
 }

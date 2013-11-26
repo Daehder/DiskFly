@@ -13,6 +13,9 @@
 @property CGPoint firstTouchLocation;
 @property CGPoint startPosition;
 @property NSDate *startTime;
+@property NSDate *lastTimeInZone;
+@property CGPoint lastPositionInZone;
+@property CGPoint firstPositionOutOfZone;
 @end
 
 @implementation Disc
@@ -105,7 +108,7 @@
 }
 
 -(void) resetDisc {
-    self.position = (self.startPosition);
+    self.position = self.startPosition;
 }
 
 -(void) deleteDisc
