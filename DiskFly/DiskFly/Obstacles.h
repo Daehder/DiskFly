@@ -10,7 +10,7 @@
 
 @interface Obstacles : SKSpriteNode
 
--(instancetype) initWithImageNamed:(NSString *)name;
+-(instancetype) init;
 
 
 @end
