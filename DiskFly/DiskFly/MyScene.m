@@ -212,10 +212,10 @@
 }
 
 -(BOOL) starInOutsideGoal{
-    return  self.star.position.x > 25 &&
-            self.star.position.x < self.scene.size.width - 25 &&
-            self.star.position.y > self.scene.size.height - 105 &&
-            self.star.position.y < self.scene.size.height - 25;
+    return  self.star.position.x > 40 &&
+            self.star.position.x < self.scene.size.width - 40 &&
+            self.star.position.y > self.scene.size.height - 90 &&
+            self.star.position.y < self.scene.size.height - 40;
 }
 
 -(BOOL) starInMiddleGoal {
@@ -230,6 +230,10 @@
             self.star.position.x < self.scene.size.width - 70 &&
             self.star.position.y > self.scene.size.height - 70 &&
             self.star.position.y < self.scene.size.height - 60;
+}
+
+-(BOOL) starTouchingGoal {
+    return self.star.position.y > self.scene.size.height - 115;
 }
 
 @end
