@@ -33,6 +33,7 @@
 		8C5CB26D182C1B2500148D8F /* CongratulationsScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5CB26C182C1B2500148D8F /* CongratulationsScene.m */; };
 		8C5CB270182C1B3300148D8F /* MenuNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5CB26F182C1B3300148D8F /* MenuNode.m */; };
 		8C5CB273182C1B6600148D8F /* Circle.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5CB272182C1B6600148D8F /* Circle.m */; };
+		8C69548A18451AD200A61AD2 /* blacksquare.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C69548918451AD200A61AD2 /* blacksquare.png */; };
 		DF5C2EE2183E903400DEAB29 /* ReplayButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DF5C2EE1183E903400DEAB29 /* ReplayButton.m */; };
 		F6292B9E1832CDC000128EEA /* Triangle.m in Sources */ = {isa = PBXBuildFile; fileRef = F6292B9D1832CDC000128EEA /* Triangle.m */; };
 		F6292BA11832CEBA00128EEA /* Resume Button.m in Sources */ = {isa = PBXBuildFile; fileRef = F6292BA01832CEBA00128EEA /* Resume Button.m */; };
@@ -97,6 +98,7 @@
 		8C5CB26F182C1B3300148D8F /* MenuNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuNode.m; sourceTree = "<group>"; };
 		8C5CB271182C1B6600148D8F /* Circle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Circle.h; sourceTree = "<group>"; };
 		8C5CB272182C1B6600148D8F /* Circle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Circle.m; sourceTree = "<group>"; };
+		8C69548918451AD200A61AD2 /* blacksquare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blacksquare.png; sourceTree = "<group>"; };
 		DF5C2EE0183E903300DEAB29 /* ReplayButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReplayButton.h; sourceTree = "<group>"; };
 		DF5C2EE1183E903400DEAB29 /* ReplayButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReplayButton.m; sourceTree = "<group>"; };
 		F6292B9C1832CDC000128EEA /* Triangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Triangle.h; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 				F6F7FC8B1830D519000B9F7B /* yellowdisk.png */,
 				F6F7FC891830D507000B9F7B /* bluedisk.png */,
 				8C1EF3E7183C07FF00795B81 /* yellowstar.png */,
+				8C69548918451AD200A61AD2 /* blacksquare.png */,
 				03F2C2B8181DABFB00DBAA85 /* Images.xcassets */,
 				03F2C2A0181DABFB00DBAA85 /* DiskFly-Info.plist */,
 				03F2C2A1181DABFB00DBAA85 /* InfoPlist.strings */,
@@ -349,6 +352,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6F7FC8C1830D519000B9F7B /* yellowdisk.png in Resources */,
+				8C69548A18451AD200A61AD2 /* blacksquare.png in Resources */,
 				03F2C2B7181DABFB00DBAA85 /* Spaceship.png in Resources */,
 				03F2C2B9181DABFB00DBAA85 /* Images.xcassets in Resources */,
 				03F2C2AF181DABFB00DBAA85 /* Main_iPad.storyboard in Resources */,
