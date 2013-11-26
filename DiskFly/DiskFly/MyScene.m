@@ -111,14 +111,12 @@
 
 -(Boolean)targetRestingInGoal
 {
+
     return self.star.physicsBody.velocity.dx < .5 &&
     self.star.physicsBody.velocity.dx > -.5 &&
     self.star.physicsBody.velocity.dy < .5 &&
     self.star.physicsBody.velocity.dy > -.5 &&
-    self.star.position.y > self.frame.size.height - 90 &&
-    self.star.position.y < self.frame.size.height - 40 &&
-    self.star.position.x > 40 &&
-    self.star.position.x < self.frame.size.width - 40;
+    self.star.position.y > self.scene.frame.size.height - 140;
 }
 
 -(Boolean)diskCanReset
@@ -196,6 +194,10 @@
         return 3 - self.swipes;
     }
     
+    else if ([self starTouchingGoal]){
+        return 1 - self.swipes;
+    }
+    
     return 0;
 }
 
@@ -218,6 +220,10 @@
             self.star.position.x < self.scene.size.width - 70 &&
             self.star.position.y > self.scene.size.height - 70 &&
             self.star.position.y < self.scene.size.height - 60;
+}
+
+-(BOOL) starTouchingGoal {
+    return self.star.position.y > self.scene.size.height - 140;
 }
 
 @end
