@@ -55,7 +55,7 @@
     //self.backgroundColor = [SKColor whiteColor];
     
     SKPhysicsBody *edge = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
-    edge.restitution = .5;
+    edge.restitution = .3;
     self.physicsBody = edge;
     self.physicsBody.restitution = .4;
     
@@ -84,7 +84,7 @@
 {
     Obstacles *RecObstacle;
     RecObstacle = [[Obstacles alloc] init];
-    RecObstacle.position = CGPointMake(50, 150);
+    RecObstacle.position = CGPointMake(50, 300);
     
     [self addChild: RecObstacle];
 }
@@ -140,7 +140,7 @@
     
     if ([self diskCanReset])
     {
-        if (self.stillFrames++ == 30 &&
+        if (self.stillFrames++ > 30 &&
             self.star.physicsBody.velocity.dx < .5 &&
             self.star.physicsBody.velocity.dx > -.5 &&
             self.star.physicsBody.velocity.dy < .5 &&
@@ -200,10 +200,10 @@
 }
 
 -(BOOL) starInOutsideGoal{
-    return  self.star.position.x > 40 &&
-            self.star.position.x < self.scene.size.width - 40 &&
-            self.star.position.y > self.scene.size.height - 90 &&
-            self.star.position.y < self.scene.size.height - 40;
+    return  self.star.position.x > 25 &&
+            self.star.position.x < self.scene.size.width - 25 &&
+            self.star.position.y > self.scene.size.height - 105 &&
+            self.star.position.y < self.scene.size.height - 25;
 }
 
 -(BOOL) starInMiddleGoal {
