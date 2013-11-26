@@ -84,7 +84,7 @@
 {
     Obstacles *RecObstacle;
     RecObstacle = [[Obstacles alloc] init];
-    RecObstacle.position = CGPointMake(50, 300);
+    RecObstacle.position = CGPointMake(50, 150);
     
     [self addChild: RecObstacle];
 }
