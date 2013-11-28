@@ -244,7 +244,7 @@
 }
 
 -(BOOL) starTouchingGoal {
-    return self.star.position.y > self.scene.size.height - 140;
+    return self.star.position.y > self.scene.size.height - 115;
 }
 
 @end
