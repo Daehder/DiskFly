@@ -7,21 +7,16 @@
 //
 
 #import "MyScene.h"
-#import "Disc.h"
-#import "GoalNode.h"
-#import "CongratulationsScene.h"
-#import "MenuNode.h"
-#import "MoveZone.h"
-#import "Pause Button.h"
-#import "LevelCreator.h"
-#import "Obstacles.h"
 
 @interface MyScene()
+
 @property Disc *cue;
 @property Disc *star;
 @property int stillFrames;
 @property MoveZone *zone;
 @property int swipes;
+@property NSMutableArray *obstacles;
+
 @end
 
 @implementation MyScene
@@ -36,6 +31,7 @@
         [self makeGoal];
         [self makeInterface];
         [self makeCue];
+        
         [self loadLevel:1];
     }
     return self;
@@ -44,7 +40,7 @@
 -(void)loadLevel: (int) level
 {
     LevelCreator *maker = [[LevelCreator alloc] init];
-    [maker createLevel:level inScene:self];
+    self.obstacles = [maker createLevel:level inScene:self];
 }
 
 -(void) makeCue
@@ -99,7 +95,13 @@
 {
     self.star = [[Disc alloc] init];
     self.star.position = CGPointMake(self.frame.size.width / 2, self.frame.size.height * 2 / 3);
-    [self addChild:self.star];
+    [self addChild: self.star];
+}
+
+-(Disc*) makeStarReturn
+{
+    [self makeStar];
+    return self.star;
 }
 
 -(void) makeInterface
@@ -176,6 +178,7 @@
 
 -(void) resetDisk
 {
+    self.cue.physicsBody.velocity = CGVectorMake(0, 0);
     self.cue.position = CGPointMake(self.frame.size.width / 2, 37.5);
     [self.cue resetDisc];
     self.zone.physicsBody.categoryBitMask = 0x0;
@@ -195,7 +198,28 @@
     [self.menu resume];
 }
 
--(int) starsEarned{
+-(void) retry
+{
+    //Code for retry
+    [self resume];
+    
+    [self resetDisk];
+    [self clearObstacles];
+    [self loadLevel:1];
+}
+
+-(void) clearObstacles
+{
+    [self.scene removeChildrenInArray: self.obstacles];
+    /*for (SKNode *object in self.obstacles)
+    {
+        [object removeFromParent];
+    }*/
+    [self.obstacles removeAllObjects];
+}
+
+-(int) starsEarned
+{
     
     if ([self starInInsideGoal]) {
         return 5 - self.swipes;

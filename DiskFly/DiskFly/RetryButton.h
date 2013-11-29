@@ -1,13 +1,15 @@
 //
-//  ReplayButton.h
+//  Pause Button.h
 //  DiskFly
 //
-//  Created by Tristan Honda on 11/21/13.
+//  Created by Derek T. Nguyen on 11/11/13.
 //  Copyright (c) 2013 InitToWinIt. All rights reserved.
 //
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface ReplayButton : SKShapeNode
+@interface RetryButton : SKShapeNode
+
 -(instancetype) init;
+
 @end

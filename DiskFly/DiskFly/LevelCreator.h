@@ -11,6 +11,6 @@
 
 @interface LevelCreator : NSObject
 
-- (void) createLevel:(int) levelNum inScene: (SKScene*) scene;
+- (NSMutableArray*) createLevel:(int) levelNum inScene: (SKScene*) scene;
 
 @end

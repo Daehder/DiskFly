@@ -10,6 +10,7 @@
 #import "Circle.h"
 #import "Resume Button.h"
 #import "Back Button.h"
+#import "RetryButton.h"
 
 @interface MenuNode()
 @property CGPoint lastTouchLocation;
@@ -29,16 +30,15 @@
 
  - (void) setupMenu
 {
-    //CHANGE FROM CIRCLE NODE TO RESUME_BUTTON NODE
     self.resumeButton = [[Resume_Button alloc] init];
     self.resumeButton.position = CGPointMake(-70 + self.screenWidth/2, 130 + self.screenLength/2);
-    self.resumeButton.strokeColor = [SKColor grayColor];
+    //self.resumeButton.strokeColor = [SKColor grayColor];
     [self addChild:self.resumeButton];
     
-    Circle *restartButton = [[Circle alloc] init];
-    restartButton.position = CGPointMake(70 + self.screenWidth/2, 130 + self.screenLength/2);
-    restartButton.strokeColor = [SKColor grayColor];
-    [self addChild:restartButton];
+    RetryButton *retryButton = [[RetryButton alloc] init];
+    retryButton.position = CGPointMake(70 + self.screenWidth/2, 130 + self.screenLength/2);
+    //retryButton.strokeColor = [SKColor grayColor];
+    [self addChild:retryButton];
     
     //MAIN MENU BUTTON
     Back_Button *MainMenu = [[Back_Button alloc] init];

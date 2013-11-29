@@ -27,4 +27,16 @@
     return self;
 }
 
+- (instancetype) initReload
+{
+    self = [super init];
+    
+    UIBezierPath *path = [[UIBezierPath alloc] init];
+    [path addArcWithCenter:CGPointMake(0, 0) radius: 25 startAngle:M_PI / 2 endAngle: 0 clockwise:YES];
+    
+    self.path = path.CGPath;
+    
+    return self;
+}
+
 @end

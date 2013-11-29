@@ -10,12 +10,12 @@
 #import "Back Button.h"
 #import "Level1Node.h"
 @interface Level_Select_Scene()
+
 @property BOOL contentCreated;
+
 @end
 
 @implementation Level_Select_Scene
-
-
 
 -(void) didMoveToView:(SKView *)view
 {

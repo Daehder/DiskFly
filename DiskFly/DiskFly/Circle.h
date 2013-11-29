@@ -10,4 +10,6 @@
 
 @interface Circle : SKShapeNode
 
+- (instancetype) initReload;
+
 @end
