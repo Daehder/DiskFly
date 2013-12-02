@@ -206,6 +206,8 @@
     [self resetDisk];
     [self clearObstacles];
     [self loadLevel:1];
+    
+    self.swipes = 0;
 }
 
 -(void) clearObstacles
