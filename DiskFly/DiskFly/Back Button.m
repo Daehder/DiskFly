@@ -17,15 +17,42 @@
 -(instancetype) init
 {
     self = [super init];
-    [self BackButton];
+    [self mainMenuButton];
     self.userInteractionEnabled = YES;
     
     return self;
 }
--(void) BackButton
+
+-(instancetype) initBackButton
+{
+    self = [super init];
+    [self backButton];
+    self.userInteractionEnabled = YES;
+    
+    return self;
+}
+
+-(void) mainMenuButton
 {
     SKShapeNode *Button;
     Button = [[RectangleNode alloc] initWithRadius:.5];
+    Button.fillColor = [SKColor grayColor];
+    Button.lineWidth = 0;
+    [self addChild:Button];
+    
+    SKLabelNode *mainMenu;
+    mainMenu = [SKLabelNode labelNodeWithFontNamed:@"helvetica"];
+    mainMenu.text = @"Main Menu";
+    mainMenu.fontSize = 35;
+    mainMenu.fontColor = [SKColor whiteColor];
+    mainMenu.position = CGPointMake(100, 12);
+    [self addChild:mainMenu];
+}
+
+-(void) backButton
+{
+    SKShapeNode *Button;
+    Button = [[RectangleNode alloc] initBackRect];
     Button.fillColor = [SKColor grayColor];
     Button.lineWidth = 0;
     [self addChild:Button];
@@ -38,6 +65,7 @@
     Back.position = CGPointMake(100, 12);
     [self addChild:Back];
 }
+
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     UITouch *touch = [touches anyObject];
