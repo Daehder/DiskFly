@@ -28,8 +28,8 @@
 {
     // Each Array represents a level
     // Create more Arrays for additional levels, then combine into an array
-    NSArray *l1 = @[ @{@"type": @"rect", @"x":@0, @"y":@400},
-                     @{@"type": @"rect", @"x":@300, @"y":@400},
+    NSArray *l1 = @[ @{@"type": @"rect", @"x":@25, @"y":@400},
+                     @{@"type": @"rect", @"x":@295, @"y":@400},
                      @{@"type": @"circle", @"x":@150, @"y":@300}];
     
     NSArray *l2 = @[ @{@"type": @"circle", @"x":@150, @"y":@300}];
