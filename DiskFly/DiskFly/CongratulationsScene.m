@@ -110,7 +110,7 @@
     
     skLabel.text = @"Way to Go!";
     skLabel.fontSize = 60;
-    skLabel.fontColor = [SKColor blackColor];
+    skLabel.fontColor = [SKColor whiteColor];
     skLabel.position = CGPointMake(160,400);
     
     [self addChild:skLabel];
@@ -119,7 +119,7 @@
     
     skLabel.text = @"You completed the level!";
     skLabel.fontSize = 20;
-    skLabel.fontColor = [SKColor blackColor];
+    skLabel.fontColor = [SKColor whiteColor];
     skLabel.position = CGPointMake(160, 330);
     
     [self addChild:skLabel];

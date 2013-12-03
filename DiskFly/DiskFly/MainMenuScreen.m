@@ -33,7 +33,7 @@
     DISKFLY = [SKLabelNode labelNodeWithFontNamed:@"Helvetica"];
     DISKFLY.text = @"DISK FLY";
     DISKFLY.fontSize = 50;
-    DISKFLY.fontColor = [SKColor blackColor];
+    DISKFLY.fontColor = [SKColor whiteColor];
     DISKFLY.position  = CGPointMake(self.frame.size.width * .5, self.frame.size.height * .8);
     [self addChild:DISKFLY];
     

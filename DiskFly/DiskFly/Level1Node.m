@@ -35,7 +35,7 @@
     SKShapeNode *Button;
     Button = [[Circle alloc]initWithRadius:32];
     Button.fillColor = [SKColor clearColor];
-    Button.strokeColor = [SKColor grayColor];
+    Button.strokeColor = [SKColor whiteColor];
     Button.lineWidth = .5;
     [self addChild:Button];
     
@@ -44,7 +44,7 @@
     Label.text = @"1";
     Label.fontSize = 55;
     Label.position = CGPointMake(-3.5, -18.5);
-    Label.fontColor = [SKColor blackColor];
+    Label.fontColor = [SKColor whiteColor];
     [self addChild:Label];
 }
 
