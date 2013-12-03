@@ -41,7 +41,7 @@
     
     SKLabelNode *Label;
     Label = [SKLabelNode labelNodeWithFontNamed:@"helvetica"];
-    Label.text = @"1";
+    Label.text = [[NSNumber numberWithInt:self.level] stringValue];
     Label.fontSize = 55;
     Label.position = CGPointMake(-3.5, -18.5);
     Label.fontColor = [SKColor whiteColor];
