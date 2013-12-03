@@ -10,6 +10,7 @@
 
 @interface Circle : SKShapeNode
 
-- (instancetype) initReload;
+- (instancetype) initReloadCircle;
+- (instancetype) initWithRadius: (double) radius;
 
 @end

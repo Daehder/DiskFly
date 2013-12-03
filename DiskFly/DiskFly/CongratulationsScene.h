@@ -10,6 +10,8 @@
 
 @interface CongratulationsScene : SKScene
 
--(void) displayStars: (int) starsEarned;
+@property int currentLevelNumber;
+
+- (void) displayStars: (int) starsEarned;
 
 @end

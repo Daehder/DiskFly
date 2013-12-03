@@ -9,5 +9,8 @@
 #import <SpriteKit/SpriteKit.h>
 
 @interface RectangleNode : SKShapeNode
+
 - (instancetype) initWithRadius: (double) radius;
+- (instancetype) initNarrow;
 @end
+
