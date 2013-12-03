@@ -153,18 +153,8 @@
     }
     
     if ([self diskCanReset])
-    {
         if ([self diskAtRest])
-        {
             [self resetDisk];
-            /*[self.cue deleteDisc];
-            
-            self.cue = [[Disc alloc] initWithImage:@"yellowdisk"
-                                       andLocation:CGPointMake(self.frame.size.width / 2, 37.5)
-                                andUserInteraction:YES];
-            [self addChild:self.cue];*/
-        }
-    }
     
     if([self targetRestingInGoal])
     {
@@ -210,7 +200,6 @@
 
 -(void) retry
 {
-    //Code for retry
     [self resume];
     
     [self resetDisk];
@@ -223,10 +212,6 @@
 -(void) clearObstacles
 {
     [self.scene removeChildrenInArray: self.obstacles];
-    /*for (SKNode *object in self.obstacles)
-    {
-        [object removeFromParent];
-    }*/
     [self.obstacles removeAllObjects];
 }
 

@@ -18,76 +18,10 @@
 {
     if (self = [super initWithSize:size])
     {
-        
         self.backgroundColor = [SKColor colorWithRed:(99.0/255.0) green:(184.0/255) blue:(254.0/255) alpha:1];
         
         [self makeCongratulationsText];
-        
-        /*skLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-         
-         skLabel.text = @"Score: 2341";
-         skLabel.fontSize = 35;
-         skLabel.fontColor = [SKColor blackColor];
-         skLabel.position = CGPointMake(160, 240);
-        
-         [self addChild:skLabel];*/
-        
-        
-        
-        
-        /*skLabel = [SKLabelNode labelNodeWithFontNamed:@"HelviticaNeue"];
-        
-        skLabel.text = @"Replay";
-        skLabel.fontSize = 25;
-        skLabel.fontColor = [SKColor blueColor];
-        skLabel.position = CGPointMake(80, 150);
-        
-        [self addChild:skLabel];*/
-        
-        ReplayButton *button = [[ReplayButton alloc] init];
-        button.position = CGPointMake(20, 150);
-        //button.xScale = .5;
-        //button.yScale = .5;
-        [self addChild:button];
-        
-        /*SKLabelNode *ReplayButtonLabel = [SKLabelNode labelNodeWithFontNamed:@"Helvetica"];
-        ReplayButtonLabel.text = @"Replay";
-        ReplayButtonLabel.fontSize = 50;
-        ReplayButtonLabel.position = CGPointMake(100, 35);
-        [button addChild:ReplayButtonLabel];*/
-                                            
-        NextLevelButton * nextLevel = [[NextLevelButton alloc] init];
-        /*nextLevel = [SKLabelNode labelNodeWithFontNamed:@"HelviticaNeue"];
-        
-        nextLevel.text = @"Next Level";
-        nextLevel.fontSize = 25;
-        nextLevel.fontColor = [SKColor blueColor];*/
-        nextLevel.position = CGPointMake(175, 150);
-        nextLevel.currentLevelNumber = self.currentLevelNumber;
-        
-        [self addChild:nextLevel];
-        
-        /*skLabel = [SKLabelNode labelNodeWithFontNamed:@"HelviticaNeue"];
-        
-        skLabel.text = @"Menu";
-        skLabel.fontSize = 25;
-        skLabel.fontColor = [SKColor blueColor];
-        skLabel.position = CGPointMake(160, 85);
-        
-        [self addChild:skLabel];*/
-        
-        Back_Button *MainMenu = [[Back_Button alloc] init];
-        MainMenu.position = CGPointMake(60,85);
-        [self addChild:MainMenu];
-        
-        /*SKLabelNode *MainMenuLabel = [SKLabelNode labelNodeWithFontNamed:@"Helvetica"];
-        MainMenuLabel.text = @"Main Menu";
-        MainMenuLabel.fontColor = [SKColor whiteColor];
-        MainMenuLabel.fontSize = 40;
-        MainMenuLabel.xScale = .70;
-        MainMenuLabel.yScale = 1.3;
-        MainMenuLabel.position = CGPointMake(100, 30);
-        [MainMenu addChild:MainMenuLabel];*/
+        [self makeButtons];
     }
     return self;
 }
