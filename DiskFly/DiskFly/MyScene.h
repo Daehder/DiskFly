@@ -27,7 +27,10 @@
 -(int) starsEarned;
 -(void) makeStar;
 -(Disc*) makeStarReturn;
+-(void)loadCurrentLevel;
+-(void)loadLevel: (int) level;
 
+@property int currentLevelNumber;
 @property MenuNode *menu;
 
 @end

@@ -27,7 +27,7 @@
     return self;
 }
 
-- (instancetype) initReload
+- (instancetype) initReloadCircle
 {
     self = [super init];
     

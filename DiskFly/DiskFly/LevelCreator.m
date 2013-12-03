@@ -35,8 +35,15 @@
     NSArray *l2 = @[ @{@"type": @"circle", @"x":@150, @"y":@300}];
     
     NSArray *levels = @[l1, l2];
-    // replace with method to return correct arraylist
-    return  levels[level - 1];
+    
+    NSLog(@"sequence = %lu",(unsigned long)level);
+    
+    if(level >= [levels count])
+        return levels[[levels count] - 1];
+    else if (level < 1)
+        return levels[0];
+    else
+        return  levels[level - 1];
 }
 
  - (NSMutableArray*) putObjectsInScene: (SKScene*) scene fromLevel: (NSArray*) level

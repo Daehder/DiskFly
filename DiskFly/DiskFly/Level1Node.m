@@ -14,18 +14,26 @@
 @end
 
 @implementation Level1Node
+
 -(instancetype) init
 {
     self = [super init];
-    [self Level1Button];
+    [self levelButton];
     self.userInteractionEnabled = YES;
     
     return self;
 }
--(void) Level1Button
+
+-(instancetype) initWithLevel: (int) level
+{
+    self.level = level;
+    return [self init];
+}
+
+-(void) levelButton
 {
     SKShapeNode *Button;
-    Button = [[Circle alloc]init];
+    Button = [[Circle alloc]initWithRadius:32];
     Button.fillColor = [SKColor clearColor];
     Button.strokeColor = [SKColor grayColor];
     Button.lineWidth = .5;
@@ -39,6 +47,7 @@
     Label.fontColor = [SKColor blackColor];
     [self addChild:Label];
 }
+
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     UITouch *touch = [touches anyObject];
@@ -49,6 +58,7 @@
      {
          MyScene *Play = [MyScene sceneWithSize:self.scene.size];
          Play.scaleMode = SKSceneScaleModeAspectFill;
+         [Play loadLevel:self.level];
          [self.scene.view presentScene:Play];
      }];
 }
