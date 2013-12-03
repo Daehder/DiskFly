@@ -67,30 +67,19 @@
     button.position = CGPointMake(20, 150);
     [self addChild:button];
     
-    NextLevelButton * nextLevel = [[NextLevelButton alloc] init];
-    nextLevel.position = CGPointMake(230, 150);
-    nextLevel.currentLevelNumber = self.currentLevelNumber;
-    [self addChild:nextLevel];
+    self.nextLevel = [[NextLevelButton alloc] init];
+    self.nextLevel.position = CGPointMake(175, 150);
+    [self addChild:self.nextLevel];
     
     Back_Button *MainMenu = [[Back_Button alloc] init];
     MainMenu.position = CGPointMake(60,85);
     [self addChild:MainMenu];
 }
 
-/* - (void) createReplayButton
+- (void) setNextLevelButtonNumber:(int)currentLevelNumber
 {
- 
+    self.nextLevel.currentLevelNumber = currentLevelNumber;
 }
- 
- - (void) replay
-{
-    ReplayButton *button = [[ReplayButton alloc] init];
-    button.position = CGPointMake(80, 150);
-    button.xScale = .5;
-    button.yScale = .5;
-    [self addChild:button];
-    
-}*/
 
 
 @end

@@ -37,16 +37,6 @@
     return self;
 }
 
-/*-(int)getCurrentLevelNumber
-{
-    return self.currentLevelNumber;
-}
-
--(void)setCurrentLevelNumber:(int)currentLevel
-{
-    self.currentLevelNumber = currentLevel;
-}*/
-
 -(void)loadCurrentLevel
 {
     LevelCreator *maker = [[LevelCreator alloc] init];
@@ -180,7 +170,7 @@
     {
         CongratulationsScene * scene = [CongratulationsScene sceneWithSize:self.scene.size];
         scene.scaleMode = SKSceneScaleModeAspectFill;
-        scene.currentLevelNumber = self.currentLevelNumber;
+        [scene setNextLevelButtonNumber: self.currentLevelNumber];
         [scene displayStars: [self starsEarned]];
         
         [self.view presentScene:scene];
