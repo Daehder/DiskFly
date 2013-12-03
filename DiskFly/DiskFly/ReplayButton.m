@@ -15,6 +15,7 @@
 @end
 
 @implementation ReplayButton
+
 -(instancetype) init
 
 {   self = [super init];
@@ -25,11 +26,18 @@
 
 - (void) ReplayButton
 {
-    SKShapeNode *Button;
-    Button = [[RectangleNode alloc] initWithRadius:.5];
+    SKShapeNode *Button = [[RectangleNode alloc] initNarrow];
     Button.lineWidth = 0;
     Button.fillColor = [SKColor grayColor];
     [self addChild:Button];
+    
+    SKLabelNode *replay;
+    replay = [SKLabelNode labelNodeWithFontNamed:@"helvetica"];
+    replay.text = @"Replay";
+    replay.fontSize = 35;
+    replay.fontColor = [SKColor whiteColor];
+    replay.position = CGPointMake(65, 12);
+    [self addChild:replay];
 }
 
 
@@ -43,6 +51,7 @@
      {
          MyScene *scene = [MyScene sceneWithSize:self.scene.size];
          scene.scaleMode = SKSceneScaleModeAspectFill;
+         [scene loadCurrentLevel];
          [self.scene.view presentScene:scene];
      }];
 }

@@ -28,6 +28,7 @@
 -(void) makeStar;
 -(Disc*) makeStarReturnwithX:(float) x andY: (float) y;
 
+@property int currentLevelNumber;
 @property MenuNode *menu;
 
 @end

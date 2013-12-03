@@ -36,7 +36,7 @@
     [self addChild:Button];
     
     SKShapeNode *reloadButton;
-    reloadButton = [[Circle alloc] initReload];
+    reloadButton = [[Circle alloc] initReloadCircle];
     reloadButton.lineWidth = 2;
     reloadButton.strokeColor = [SKColor grayColor];
     reloadButton.fillColor = [SKColor clearColor];

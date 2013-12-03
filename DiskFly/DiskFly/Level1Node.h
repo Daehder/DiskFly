@@ -9,5 +9,10 @@
 #import <SpriteKit/SpriteKit.h>
 
 @interface Level1Node : SKShapeNode
+
+@property int level;
+
 -(instancetype) init;
+-(instancetype) initWithLevel: (int) level;
+
 @end

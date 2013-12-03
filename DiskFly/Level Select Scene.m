@@ -40,24 +40,24 @@
     [self addChild:Label];
     
     SKShapeNode *BackButton;
-    BackButton = [[Back_Button alloc]init];
+    BackButton = [[Back_Button alloc]initBackButton];
     BackButton.position = CGPointMake(self.frame.size.width *.05, self.frame.size.height *.89);
-    BackButton.xScale = .3;
-    BackButton.yScale = .3;
+    //ttBackButton.xScale = .3;
+    //BackButton.yScale = .3;
     [self addChild:BackButton];
     
-    SKLabelNode *Back;
+    /*SKLabelNode *Back;
     Back = [SKLabelNode labelNodeWithFontNamed:@"helvetica"];
     Back.text = @"BACK";
     Back.fontSize = 60;
     Back.fontColor = [SKColor blackColor];
     Back.position = CGPointMake(105,28);
-    [BackButton addChild:Back];
+    [BackButton addChild:Back];*/
     
     SKShapeNode *Level1;
-    Level1 = [[Level1Node alloc] init];
-    Level1.xScale = .8;
-    Level1.yScale = .8;
+    Level1 = [[Level1Node alloc] initWithLevel:1];
+    //Level1.xScale = .8;
+    //Level1.yScale = .8;
     Level1.position = CGPointMake(self.frame.size.width *.17, self.frame.size.height *.77);
     [self addChild:Level1];
 }

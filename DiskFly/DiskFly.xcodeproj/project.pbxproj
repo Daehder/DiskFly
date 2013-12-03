@@ -14,6 +14,7 @@
 		03B22A2318451AC60006B008 /* Obstacles.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B22A2218451AC60006B008 /* Obstacles.m */; };
 		03B22A26184528460006B008 /* CongratulationsScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B22A25184528460006B008 /* CongratulationsScene.m */; };
 		03B22A28184528AB0006B008 /* blacksquare.png in Resources */ = {isa = PBXBuildFile; fileRef = 03B22A27184528AB0006B008 /* blacksquare.png */; };
+		03BADF81184DA1B30048285B /* NextLevelButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 03BADF80184DA1B30048285B /* NextLevelButton.m */; };
 		03F2C297181DABFB00DBAA85 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03F2C296181DABFB00DBAA85 /* Foundation.framework */; };
 		03F2C299181DABFB00DBAA85 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03F2C298181DABFB00DBAA85 /* CoreGraphics.framework */; };
 		03F2C29B181DABFB00DBAA85 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03F2C29A181DABFB00DBAA85 /* UIKit.framework */; };
@@ -34,6 +35,7 @@
 		3723CBF01822E90200C07CFF /* GoalNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 3723CBEF1822E90200C07CFF /* GoalNode.m */; };
 		3782B6921822DEAE00C8E79F /* Disc.m in Sources */ = {isa = PBXBuildFile; fileRef = 3782B6911822DEAE00C8E79F /* Disc.m */; };
 		8C1EF3E8183C07FF00795B81 /* yellowstar.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C1EF3E7183C07FF00795B81 /* yellowstar.png */; };
+		8C4EE062184E77DE00BB6235 /* appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C4EE061184E77DE00BB6235 /* appicon.png */; };
 		8C5CB270182C1B3300148D8F /* MenuNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5CB26F182C1B3300148D8F /* MenuNode.m */; };
 		8C5CB273182C1B6600148D8F /* Circle.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5CB272182C1B6600148D8F /* Circle.m */; };
 		DF5C2EE2183E903400DEAB29 /* ReplayButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DF5C2EE1183E903400DEAB29 /* ReplayButton.m */; };
@@ -72,6 +74,8 @@
 		03B22A27184528AB0006B008 /* blacksquare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blacksquare.png; sourceTree = "<group>"; };
 		03B22A2A184528C60006B008 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		03B22A2C184528C60006B008 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		03BADF7F184DA1B30048285B /* NextLevelButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NextLevelButton.h; sourceTree = "<group>"; };
+		03BADF80184DA1B30048285B /* NextLevelButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NextLevelButton.m; sourceTree = "<group>"; };
 		03F2C293181DABFB00DBAA85 /* DiskFly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiskFly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03F2C296181DABFB00DBAA85 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		03F2C298181DABFB00DBAA85 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -103,6 +107,7 @@
 		3782B6901822DEAE00C8E79F /* Disc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Disc.h; path = ../Disc.h; sourceTree = "<group>"; };
 		3782B6911822DEAE00C8E79F /* Disc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Disc.m; path = ../Disc.m; sourceTree = "<group>"; };
 		8C1EF3E7183C07FF00795B81 /* yellowstar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellowstar.png; sourceTree = "<group>"; };
+		8C4EE061184E77DE00BB6235 /* appicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appicon.png; sourceTree = "<group>"; };
 		8C5CB26E182C1B3300148D8F /* MenuNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuNode.h; sourceTree = "<group>"; };
 		8C5CB26F182C1B3300148D8F /* MenuNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuNode.m; sourceTree = "<group>"; };
 		8C5CB271182C1B6600148D8F /* Circle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Circle.h; sourceTree = "<group>"; };
@@ -175,6 +180,8 @@
 				F6B9C81A182C9DAF00B667E6 /* Level1Node.m */,
 				DF5C2EE0183E903300DEAB29 /* ReplayButton.h */,
 				DF5C2EE1183E903400DEAB29 /* ReplayButton.m */,
+				03BADF7F184DA1B30048285B /* NextLevelButton.h */,
+				03BADF80184DA1B30048285B /* NextLevelButton.m */,
 			);
 			name = Buttons;
 			sourceTree = "<group>";
@@ -252,6 +259,7 @@
 		03F2C29F181DABFB00DBAA85 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8C4EE061184E77DE00BB6235 /* appicon.png */,
 				03F2C2B6181DABFB00DBAA85 /* Spaceship.png */,
 				03B22A27184528AB0006B008 /* blacksquare.png */,
 				03B22A29184528C60006B008 /* Main_iPad.storyboard */,
@@ -365,6 +373,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C4EE062184E77DE00BB6235 /* appicon.png in Resources */,
 				F6F7FC8C1830D519000B9F7B /* yellowdisk.png in Resources */,
 				03B22A28184528AB0006B008 /* blacksquare.png in Resources */,
 				03F2C2B7181DABFB00DBAA85 /* Spaceship.png in Resources */,
@@ -407,6 +416,7 @@
 				03AD16DD183EAA8400B6DBB1 /* LevelCreator.m in Sources */,
 				F635B904182C2FE7009D04D1 /* MainMenuScreen.m in Sources */,
 				03F2C2B2181DABFB00DBAA85 /* ViewController.m in Sources */,
+				03BADF81184DA1B30048285B /* NextLevelButton.m in Sources */,
 				F6292B9E1832CDC000128EEA /* Triangle.m in Sources */,
 				F6F7FC881830CFD1000B9F7B /* Pause Button.m in Sources */,
 				F6E1D0E1182C77440041FB92 /* Back Button.m in Sources */,
@@ -575,6 +585,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -592,6 +603,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
