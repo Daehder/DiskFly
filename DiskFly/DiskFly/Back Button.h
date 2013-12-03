@@ -9,5 +9,8 @@
 #import <SpriteKit/SpriteKit.h>
 
 @interface Back_Button : SKShapeNode
+
 -(instancetype) init;
+-(instancetype) initBackButton;
+
 @end
