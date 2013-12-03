@@ -34,7 +34,7 @@
     Back = [SKLabelNode labelNodeWithFontNamed:@"helvetica"];
     Back.text = @"Main Menu";
     Back.fontSize = 35;
-    Back.fontColor = [SKColor whiteColor];
+    Back.fontColor = [SKColor blackColor];
     Back.position = CGPointMake(100, 12);
     [self addChild:Back];
 }

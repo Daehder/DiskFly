@@ -33,7 +33,7 @@
     nextLevel = [SKLabelNode labelNodeWithFontNamed:@"helvetica"];
     nextLevel.text = @"Next";
     nextLevel.fontSize = 35;
-    nextLevel.fontColor = [SKColor whiteColor];
+    nextLevel.fontColor = [SKColor blackColor];
     nextLevel.position = CGPointMake(65, 12);
     [self addChild:nextLevel];
 }

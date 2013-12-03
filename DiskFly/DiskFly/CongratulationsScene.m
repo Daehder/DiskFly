@@ -62,7 +62,7 @@
         nextLevel.text = @"Next Level";
         nextLevel.fontSize = 25;
         nextLevel.fontColor = [SKColor blueColor];*/
-        nextLevel.position = CGPointMake(230, 150);
+        nextLevel.position = CGPointMake(175, 150);
         nextLevel.currentLevelNumber = self.currentLevelNumber;
         
         [self addChild:nextLevel];
