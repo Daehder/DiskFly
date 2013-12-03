@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03ACED40184E7F7600EB8C5A /* CongratulationsScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 03ACED3F184E7F7600EB8C5A /* CongratulationsScene.m */; };
 		03AD16DD183EAA8400B6DBB1 /* LevelCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 03AD16DC183EAA8400B6DBB1 /* LevelCreator.m */; };
 		03AE98281846C86600DBD40B /* RetryButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 03AE98271846C86600DBD40B /* RetryButton.m */; };
 		03AE9829184860EE00DBD40B /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03F2C2AA181DABFB00DBAA85 /* Main_iPhone.storyboard */; };
 		03AE982A184860F000DBD40B /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03F2C2AD181DABFB00DBAA85 /* Main_iPad.storyboard */; };
 		03B22A2318451AC60006B008 /* Obstacles.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B22A2218451AC60006B008 /* Obstacles.m */; };
-		03B22A26184528460006B008 /* CongratulationsScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B22A25184528460006B008 /* CongratulationsScene.m */; };
 		03B22A28184528AB0006B008 /* blacksquare.png in Resources */ = {isa = PBXBuildFile; fileRef = 03B22A27184528AB0006B008 /* blacksquare.png */; };
 		03BADF81184DA1B30048285B /* NextLevelButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 03BADF80184DA1B30048285B /* NextLevelButton.m */; };
 		03F2C297181DABFB00DBAA85 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03F2C296181DABFB00DBAA85 /* Foundation.framework */; };
@@ -35,6 +35,7 @@
 		3723CBF01822E90200C07CFF /* GoalNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 3723CBEF1822E90200C07CFF /* GoalNode.m */; };
 		3782B6921822DEAE00C8E79F /* Disc.m in Sources */ = {isa = PBXBuildFile; fileRef = 3782B6911822DEAE00C8E79F /* Disc.m */; };
 		8C1EF3E8183C07FF00795B81 /* yellowstar.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C1EF3E7183C07FF00795B81 /* yellowstar.png */; };
+		8C4EE062184E77DE00BB6235 /* appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C4EE061184E77DE00BB6235 /* appicon.png */; };
 		8C5CB270182C1B3300148D8F /* MenuNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5CB26F182C1B3300148D8F /* MenuNode.m */; };
 		8C5CB273182C1B6600148D8F /* Circle.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5CB272182C1B6600148D8F /* Circle.m */; };
 		DF5C2EE2183E903400DEAB29 /* ReplayButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DF5C2EE1183E903400DEAB29 /* ReplayButton.m */; };
@@ -62,6 +63,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03ACED3F184E7F7600EB8C5A /* CongratulationsScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CongratulationsScene.m; sourceTree = "<group>"; };
 		03AD16DB183EAA8400B6DBB1 /* LevelCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelCreator.h; sourceTree = "<group>"; };
 		03AD16DC183EAA8400B6DBB1 /* LevelCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelCreator.m; sourceTree = "<group>"; };
 		03AE98261846C86600DBD40B /* RetryButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RetryButton.h; sourceTree = "<group>"; };
@@ -69,7 +71,6 @@
 		03B22A2118451AC60006B008 /* Obstacles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Obstacles.h; sourceTree = "<group>"; };
 		03B22A2218451AC60006B008 /* Obstacles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Obstacles.m; sourceTree = "<group>"; };
 		03B22A24184528460006B008 /* CongratulationsScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CongratulationsScene.h; sourceTree = "<group>"; };
-		03B22A25184528460006B008 /* CongratulationsScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CongratulationsScene.m; sourceTree = "<group>"; };
 		03B22A27184528AB0006B008 /* blacksquare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blacksquare.png; sourceTree = "<group>"; };
 		03B22A2A184528C60006B008 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		03B22A2C184528C60006B008 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
@@ -106,6 +107,7 @@
 		3782B6901822DEAE00C8E79F /* Disc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Disc.h; path = ../Disc.h; sourceTree = "<group>"; };
 		3782B6911822DEAE00C8E79F /* Disc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Disc.m; path = ../Disc.m; sourceTree = "<group>"; };
 		8C1EF3E7183C07FF00795B81 /* yellowstar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellowstar.png; sourceTree = "<group>"; };
+		8C4EE061184E77DE00BB6235 /* appicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appicon.png; sourceTree = "<group>"; };
 		8C5CB26E182C1B3300148D8F /* MenuNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuNode.h; sourceTree = "<group>"; };
 		8C5CB26F182C1B3300148D8F /* MenuNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuNode.m; sourceTree = "<group>"; };
 		8C5CB271182C1B6600148D8F /* Circle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Circle.h; sourceTree = "<group>"; };
@@ -238,7 +240,7 @@
 				F6292B9C1832CDC000128EEA /* Triangle.h */,
 				F6292B9D1832CDC000128EEA /* Triangle.m */,
 				03B22A24184528460006B008 /* CongratulationsScene.h */,
-				03B22A25184528460006B008 /* CongratulationsScene.m */,
+				03ACED3F184E7F7600EB8C5A /* CongratulationsScene.m */,
 				8C5CB271182C1B6600148D8F /* Circle.h */,
 				8C5CB272182C1B6600148D8F /* Circle.m */,
 				03B22A2118451AC60006B008 /* Obstacles.h */,
@@ -257,6 +259,7 @@
 		03F2C29F181DABFB00DBAA85 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8C4EE061184E77DE00BB6235 /* appicon.png */,
 				03F2C2B6181DABFB00DBAA85 /* Spaceship.png */,
 				03B22A27184528AB0006B008 /* blacksquare.png */,
 				03B22A29184528C60006B008 /* Main_iPad.storyboard */,
@@ -370,6 +373,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C4EE062184E77DE00BB6235 /* appicon.png in Resources */,
 				F6F7FC8C1830D519000B9F7B /* yellowdisk.png in Resources */,
 				03B22A28184528AB0006B008 /* blacksquare.png in Resources */,
 				03F2C2B7181DABFB00DBAA85 /* Spaceship.png in Resources */,
@@ -398,10 +402,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3723CBF01822E90200C07CFF /* GoalNode.m in Sources */,
-				03B22A26184528460006B008 /* CongratulationsScene.m in Sources */,
 				369EE73B182975960066BDD0 /* MoveZone.m in Sources */,
 				8C5CB270182C1B3300148D8F /* MenuNode.m in Sources */,
 				F635B90A182C39B3009D04D1 /* RectangleNode.m in Sources */,
+				03ACED40184E7F7600EB8C5A /* CongratulationsScene.m in Sources */,
 				03B22A2318451AC60006B008 /* Obstacles.m in Sources */,
 				3782B6921822DEAE00C8E79F /* Disc.m in Sources */,
 				F6E1D0DD182C74870041FB92 /* Level Select Scene.m in Sources */,
@@ -581,6 +585,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -598,6 +603,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

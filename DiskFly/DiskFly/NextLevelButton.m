@@ -48,7 +48,9 @@
      {
          MyScene *nextLevel = [MyScene sceneWithSize:self.scene.size];
          nextLevel.scaleMode = SKSceneScaleModeAspectFill;
-         [nextLevel loadLevel: self.currentLevelNumber++];
+         int nextLevelNumber = self.currentLevelNumber + 1;
+         [nextLevel loadLevel: nextLevelNumber];
+         
          [self.scene.view presentScene:nextLevel];
      }];
 }

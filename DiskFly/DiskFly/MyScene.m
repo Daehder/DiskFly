@@ -37,16 +37,6 @@
     return self;
 }
 
-/*-(int)getCurrentLevelNumber
-{
-    return self.currentLevelNumber;
-}
-
--(void)setCurrentLevelNumber:(int)currentLevel
-{
-    self.currentLevelNumber = currentLevel;
-}*/
-
 -(void)loadCurrentLevel
 {
     LevelCreator *maker = [[LevelCreator alloc] init];
@@ -111,13 +101,15 @@
 -(void) makeStar
 {
     self.star = [[Disc alloc] init];
-    self.star.position = CGPointMake(self.frame.size.width / 2, self.frame.size.height * 2 / 3);
+    self.star.position = CGPointMake(self.frame.size.width /2, 350);
     [self addChild: self.star];
 }
 
--(Disc*) makeStarReturn
+-(Disc*) makeStarReturnwithX:(float)x andY: (float)y
 {
-    [self makeStar];
+    self.star = [[Disc alloc] init];
+    self.star.position = CGPointMake(x, y);
+    [self addChild: self.star];
     return self.star;
 }
 
@@ -178,7 +170,7 @@
     {
         CongratulationsScene * scene = [CongratulationsScene sceneWithSize:self.scene.size];
         scene.scaleMode = SKSceneScaleModeAspectFill;
-        scene.currentLevelNumber = self.currentLevelNumber;
+        [scene setNextLevelButtonNumber: self.currentLevelNumber];
         [scene displayStars: [self starsEarned]];
         
         [self.view presentScene:scene];
