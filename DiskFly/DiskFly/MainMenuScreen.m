@@ -37,6 +37,14 @@
     DISKFLY.position  = CGPointMake(self.frame.size.width * .5, self.frame.size.height * .8);
     [self addChild:DISKFLY];
     
+    SKLabelNode *InitToWinIt;
+    InitToWinIt = [SKLabelNode labelNodeWithFontNamed:@"Helvetica"];
+    InitToWinIt.text = @"InitToWinIt";
+    InitToWinIt.fontSize = 14;
+    InitToWinIt.fontColor = [SKColor whiteColor];
+    InitToWinIt.position = CGPointMake(self.frame.size.width *.265, self.frame.size.height *.875);
+    [self addChild:InitToWinIt];
+    
     //Buttons
     Level_Select_Button *LevelSelect = [[Level_Select_Button alloc] init];
     LevelSelect.position = CGPointMake(self.frame.size.width *.18, self.frame.size.height *.30);
