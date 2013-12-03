@@ -34,7 +34,17 @@
     
     NSArray *l2 = @[ @{@"type": @"circle", @"x":@150, @"y":@300}];
     
-    NSArray *levels = @[l1, l2];
+    NSArray *l3 = @[ @{@"type": @"rect", @"x":@25, @"y":@200},
+                     @{@"type": @"rect", @"x":@75, @"y":@200},
+                     @{@"type": @"rect", @"x":@125, @"y":@200},
+                     @{@"type": @"rect", @"x":@175, @"y":@200},
+                     @{@"type": @"rect", @"x":@25, @"y":@300},
+                     @{@"type": @"rect", @"x":@75, @"y":@300},
+                     @{@"type": @"rect", @"x":@125, @"y":@300},
+                     @{@"type": @"rect", @"x":@175, @"y":@300},
+                     @{@"type": @"circle", @"x":@150, @"y":@250}];
+    
+    NSArray *levels = @[l1, l2, l3];
     
     NSLog(@"sequence = %lu",(unsigned long)level);
     
@@ -65,7 +75,7 @@
             if([scene isKindOfClass:[MyScene class]])
             {
                 MyScene *myScene = (MyScene*) scene;
-                Disc *star = [myScene makeStarReturn];
+                Disc *star = [myScene makeStarReturnwithX:[object[@"x"] floatValue] andY:[object[@"y"] floatValue]];
                 
                 [obstacles addObject:star];
             }
