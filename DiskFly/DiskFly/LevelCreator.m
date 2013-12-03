@@ -49,8 +49,6 @@
     
     NSArray *levels = @[l1, l2, l3, l4];
     
-    NSLog(@"sequence = %lu",(unsigned long)level);
-    
     if(level >= [levels count])
         return levels[[levels count] - 1];
     else if (level < 1)
