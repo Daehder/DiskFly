@@ -37,16 +37,6 @@
     return self;
 }
 
-/*-(int)getCurrentLevelNumber
-{
-    return self.currentLevelNumber;
-}
-
--(void)setCurrentLevelNumber:(int)currentLevel
-{
-    self.currentLevelNumber = currentLevel;
-}*/
-
 -(void)loadCurrentLevel
 {
     LevelCreator *maker = [[LevelCreator alloc] init];
@@ -56,8 +46,12 @@
 -(void)loadLevel: (int) level
 {
     LevelCreator *maker = [[LevelCreator alloc] init];
+    //NSLog(@"currentLevelNumber = %lu",(unsigned long)self.currentLevelNumber);
+    NSLog(@"Level = %lu",(unsigned long)level);
     self.obstacles = [maker createLevel:level inScene:self];
     self.currentLevelNumber = level;
+    
+    //NSLog(@"Updated currentLevelNumber = %lu",(unsigned long)self.currentLevelNumber);
 }
 
 -(void) makeCue
@@ -178,7 +172,11 @@
     {
         CongratulationsScene * scene = [CongratulationsScene sceneWithSize:self.scene.size];
         scene.scaleMode = SKSceneScaleModeAspectFill;
-        scene.currentLevelNumber = self.currentLevelNumber;
+        NSLog(@"toCongratulationLevelNumber = %lu",(unsigned long)self.currentLevelNumber);
+        
+        [scene setNextLevelButtonNumber: self.currentLevelNumber];
+        
+        //NSLog(@"CongratulationLevelNumber = %lu",(unsigned long)scene.currentLevelNumber);
         [scene displayStars: [self starsEarned]];
         
         [self.view presentScene:scene];
