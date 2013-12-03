@@ -105,13 +105,15 @@
 -(void) makeStar
 {
     self.star = [[Disc alloc] init];
-    self.star.position = CGPointMake(self.frame.size.width / 2, self.frame.size.height * 2 / 3);
+    self.star.position = CGPointMake(self.frame.size.width /2, 350);
     [self addChild: self.star];
 }
 
--(Disc*) makeStarReturn
+-(Disc*) makeStarReturnwithX:(float)x andY: (float)y
 {
-    [self makeStar];
+    self.star = [[Disc alloc] init];
+    self.star.position = CGPointMake(x, y);
+    [self addChild: self.star];
     return self.star;
 }
 

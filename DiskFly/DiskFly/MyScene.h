@@ -26,7 +26,7 @@
 -(Boolean) diskCanReset;
 -(int) starsEarned;
 -(void) makeStar;
--(Disc*) makeStarReturn;
+-(Disc*) makeStarReturnwithX:(float)x andY: (float)y;
 -(void)loadCurrentLevel;
 -(void)loadLevel: (int) level;
 
