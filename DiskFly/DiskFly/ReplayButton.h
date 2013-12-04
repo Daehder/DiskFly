@@ -9,5 +9,9 @@
 #import <SpriteKit/SpriteKit.h>
 
 @interface ReplayButton : SKShapeNode
+
+@property int currentLevelNumber;
+
 -(instancetype) init;
+
 @end

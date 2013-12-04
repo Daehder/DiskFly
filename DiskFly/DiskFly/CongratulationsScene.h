@@ -8,11 +8,13 @@
 
 #import <SpriteKit/SpriteKit.h>
 #import "NextLevelButton.h"
+#import "ReplayButton.h"
 
 @interface CongratulationsScene : SKScene
 
 @property int currentLevelNumber;
 @property NextLevelButton *nextLevel;
+@property ReplayButton *button;
 
 - (void) displayStars: (int) starsEarned;
 - (void) setNextLevelButtonNumber:(int)currentLevelNumber;
