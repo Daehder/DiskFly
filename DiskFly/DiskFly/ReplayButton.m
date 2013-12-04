@@ -34,7 +34,7 @@
     SKLabelNode *replay;
     replay = [SKLabelNode labelNodeWithFontNamed:@"helvetica"];
     replay.text = @"Replay";
-    replay.fontSize = 35;
+    replay.fontSize = 32;
     replay.fontColor = [SKColor whiteColor];
     replay.position = CGPointMake(65, 12);
     [self addChild:replay];

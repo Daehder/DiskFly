@@ -37,16 +37,6 @@
     return self;
 }
 
-/*-(int)getCurrentLevelNumber
-{
-    return self.currentLevelNumber;
-}
-
--(void)setCurrentLevelNumber:(int)currentLevel
-{
-    self.currentLevelNumber = currentLevel;
-}*/
-
 -(void)loadCurrentLevel
 {
     LevelCreator *maker = [[LevelCreator alloc] init];
@@ -111,7 +101,7 @@
 -(void) makeStar
 {
     self.star = [[Disc alloc] init];
-    self.star.position = CGPointMake(self.frame.size.width / 2, self.frame.size.height * 2 / 3);
+    self.star.position = CGPointMake(self.frame.size.width /2, 350);
     [self addChild: self.star];
 }
 
@@ -163,24 +153,14 @@
     }
     
     if ([self diskCanReset])
-    {
         if ([self diskAtRest])
-        {
             [self resetDisk];
-            /*[self.cue deleteDisc];
-            
-            self.cue = [[Disc alloc] initWithImage:@"yellowdisk"
-                                       andLocation:CGPointMake(self.frame.size.width / 2, 37.5)
-                                andUserInteraction:YES];
-            [self addChild:self.cue];*/
-        }
-    }
     
     if([self targetRestingInGoal])
     {
         CongratulationsScene * scene = [CongratulationsScene sceneWithSize:self.scene.size];
         scene.scaleMode = SKSceneScaleModeAspectFill;
-        scene.currentLevelNumber = self.currentLevelNumber;
+        [scene setNextLevelButtonNumber: self.currentLevelNumber];
         [scene displayStars: [self starsEarned]];
         
         [self.view presentScene:scene];
@@ -220,7 +200,6 @@
 
 -(void) retry
 {
-    //Code for retry
     [self resume];
     
     [self resetDisk];
@@ -233,10 +212,6 @@
 -(void) clearObstacles
 {
     [self.scene removeChildrenInArray: self.obstacles];
-    /*for (SKNode *object in self.obstacles)
-    {
-        [object removeFromParent];
-    }*/
     [self.obstacles removeAllObjects];
 }
 

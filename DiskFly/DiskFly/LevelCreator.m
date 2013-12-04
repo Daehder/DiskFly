@@ -32,7 +32,7 @@
                      @{@"type": @"rect", @"x":@295, @"y":@400},
                      @{@"type": @"circle", @"x":@150, @"y":@300}];*/
     
-    NSArray *l2 = @[ @{@"type": @"circle", @"x":@150, @"y":@300}];
+    NSArray *l4 = @[ @{@"type": @"circle", @"x":@150, @"y":@300}];
     
     NSArray *l1 = @[ @{@"type": @"rect", @"x":@25, @"y":@200},
                      @{@"type": @"rect", @"x":@75, @"y":@200},
@@ -46,7 +46,7 @@
     
     NSArray *levels = @[l1, l2];
     
-    NSLog(@"sequence = %lu",(unsigned long)level);
+    NSArray *levels = @[l1, l2, l3, l4];
     
     if(level >= [levels count])
         return levels[[levels count] - 1];
