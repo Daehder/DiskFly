@@ -36,7 +36,7 @@
     
     SKLabelNode *Text;
     Text = [SKLabelNode labelNodeWithFontNamed:@"helvetica"];
-    Text.text = @"Level Select";
+    Text.text = @"Play!";
     Text.fontSize = 30;
     Text.fontColor = [SKColor whiteColor];
     Text.position = CGPointMake(100, 15);
