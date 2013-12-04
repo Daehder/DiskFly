@@ -30,7 +30,7 @@
     // Create more Arrays for additional levels, then combine into an array
     NSArray *l1 = @[ @{@"type": @"rect", @"x":@0, @"y":@400},
                      @{@"type": @"rect", @"x":@300, @"y":@400},
-                     @{@"type": @"circle", @"x":@150, @"y":@300}];
+                     @{@"type": @"circle", @"x":@150, @"y":@400}];
    // NSArray *l1 = @[ @{@"type": @"rect", @"x":@100, @"y":@400},
      //                @{@"type": @"rect", @"x":@150, @"y":@400},
        //              @{@"type": @"rect", @"x":@50, @"y":@400},
