@@ -34,7 +34,7 @@
     nextLevel.text = @"Next";
     nextLevel.fontSize = 35;
     nextLevel.fontColor = [SKColor whiteColor];
-    nextLevel.position = CGPointMake(65, 12);
+    nextLevel.position = CGPointMake(62, 12);
     [self addChild:nextLevel];
 }
 

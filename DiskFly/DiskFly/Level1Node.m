@@ -33,7 +33,7 @@
 -(void) levelButton
 {
     SKShapeNode *Button;
-    Button = [[Circle alloc]initWithRadius:32];
+    Button = [[Circle alloc]initWithRadius:35];
     Button.fillColor = [SKColor clearColor];
     Button.strokeColor = [SKColor whiteColor];
     Button.lineWidth = .5;
@@ -43,7 +43,7 @@
     Label = [SKLabelNode labelNodeWithFontNamed:@"helvetica"];
     Label.text = [[NSNumber numberWithInt:self.level] stringValue];
     Label.fontSize = 55;
-    Label.position = CGPointMake(-3.5, -18.5);
+    Label.position = CGPointMake(-1.3, -18.5);
     Label.fontColor = [SKColor whiteColor];
     [self addChild:Label];
 }

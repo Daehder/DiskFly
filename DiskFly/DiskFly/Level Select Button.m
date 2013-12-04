@@ -28,6 +28,8 @@
     SKShapeNode *Button;
     Button = [[RectangleNode alloc] initWithRadius:1];
     Button.fillColor = [SKColor grayColor];
+    Button.xScale=2;
+    Button.yScale=2;
     Button.lineWidth = 0;
     [self addChild:Button];
     
