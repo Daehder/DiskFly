@@ -28,23 +28,23 @@
 {
     // Each Array represents a level
     // Create more Arrays for additional levels, then combine into an array
-    NSArray *l1 = @[ @{@"type": @"rect", @"x":@25, @"y":@400},
+    /*NSArray *l1 = @[ @{@"type": @"rect", @"x":@25, @"y":@400},
                      @{@"type": @"rect", @"x":@295, @"y":@400},
-                     @{@"type": @"circle", @"x":@150, @"y":@300}];
+                     @{@"type": @"circle", @"x":@150, @"y":@300}];*/
     
     NSArray *l2 = @[ @{@"type": @"circle", @"x":@150, @"y":@300}];
     
-    NSArray *l3 = @[ @{@"type": @"rect", @"x":@25, @"y":@200},
+    NSArray *l1 = @[ @{@"type": @"rect", @"x":@25, @"y":@200},
                      @{@"type": @"rect", @"x":@75, @"y":@200},
                      @{@"type": @"rect", @"x":@125, @"y":@200},
                      @{@"type": @"rect", @"x":@175, @"y":@200},
-                     @{@"type": @"rect", @"x":@25, @"y":@300},
-                     @{@"type": @"rect", @"x":@75, @"y":@300},
-                     @{@"type": @"rect", @"x":@125, @"y":@300},
-                     @{@"type": @"rect", @"x":@175, @"y":@300},
-                     @{@"type": @"circle", @"x":@150, @"y":@250}];
+                     @{@"type": @"rect", @"x":@145, @"y":@400},
+                     @{@"type": @"rect", @"x":@195, @"y":@400},
+                     @{@"type": @"rect", @"x":@245, @"y":@400},
+                     @{@"type": @"rect", @"x":@295, @"y":@400},
+                     @{@"type": @"circle", @"x":@150, @"y":@300}];
     
-    NSArray *levels = @[l1, l2, l3];
+    NSArray *levels = @[l1, l2];
     
     NSLog(@"sequence = %lu",(unsigned long)level);
     
