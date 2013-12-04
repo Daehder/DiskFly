@@ -52,7 +52,7 @@
 -(void) backButton
 {
     SKShapeNode *Button;
-    Button = [[RectangleNode alloc] initBackRect];
+    Button = [[RectangleNode alloc] initNarrow];
     Button.fillColor = [SKColor grayColor];
     Button.lineWidth = 0;
     [self addChild:Button];
