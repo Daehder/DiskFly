@@ -62,7 +62,7 @@
     Back.text = @"Back";
     Back.fontSize = 20;
     Back.fontColor = [SKColor whiteColor];
-    Back.position = CGPointMake(29, 7);
+    Back.position = CGPointMake(29,7);
     [self addChild:Back];
 }
 

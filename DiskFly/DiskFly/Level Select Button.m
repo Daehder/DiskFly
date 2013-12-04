@@ -27,8 +27,9 @@
 {
     SKShapeNode *Button;
     Button = [[RectangleNode alloc] initWithRadius:1];
-    Button.xScale = 2;
     Button.fillColor = [SKColor grayColor];
+    Button.xScale=2;
+    Button.yScale=2;
     Button.lineWidth = 0;
     [self addChild:Button];
     
@@ -37,7 +38,7 @@
     Text = [SKLabelNode labelNodeWithFontNamed:@"helvetica"];
     Text.text = @"Level Select";
     Text.fontSize = 30;
-    Text.fontColor = [SKColor blackColor];
+    Text.fontColor = [SKColor whiteColor];
     Text.position = CGPointMake(100, 15);
     [self addChild:Text];
 }

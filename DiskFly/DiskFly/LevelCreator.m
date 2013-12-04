@@ -38,14 +38,24 @@
            //          @{@"type": @"rect", @"x":@225, @"y":@400},
              //        @{@"type": @"circle", @"x":@160, @"y":@200}];
     
+    NSArray *l1 = @[ @{@"type": @"circle", @"x":@150, @"y":@300}];
     
-    NSArray *l2 = @[ @{@"type": @"circle", @"x":@150, @"y":@300}];
+    NSArray *l2 = @[ @{@"type": @"rect", @"x":@0, @"y":@400},
+                     @{@"type": @"rect", @"x":@300, @"y":@400},
+                     @{@"type": @"circle", @"x":@150, @"y":@300}];
     
     NSArray *l3 = @[ @{@"type": @"rect", @"x":@0, @"y":@400},
                      @{@"type": @"rect", @"x":@300, @"y":@400},
                      @{@"type": @"circle", @"x":@150, @"y":@300}];
     
     NSArray *l4 = @[ @{@"type": @"circle", @"x":@150, @"y":@300}];
+    
+    NSArray *l9 = @[ @{@"type": @"rect", @"x":@100, @"y":@400},
+                     @{@"type": @"rect", @"x":@150, @"y":@400},
+                     @{@"type": @"rect", @"x":@50, @"y":@400},
+                     @{@"type": @"rect", @"x":@200, @"y":@400},
+                     @{@"type": @"rect", @"x":@225, @"y":@400},
+                     @{@"type": @"circle", @"x":@160, @"y":@200}];
     
     NSArray *levels = @[l1, l2, l3, l4];
     
