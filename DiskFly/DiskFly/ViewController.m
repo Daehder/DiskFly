@@ -23,13 +23,12 @@
     //skView.showsNodeCount = YES;
     
     // Create and configure the scene.
-    MyScene * scene = [MyScene sceneWithSize:skView.bounds.size];
+    /*MyScene * scene = [MyScene sceneWithSize:skView.bounds.size];
     scene.scaleMode = SKSceneScaleModeAspectFill;
+    [scene loadLevel:1];*/
     
-    //SKScene * scenes = [CongratulationsScene sceneWithSize:skView.bounds.size];
+    MainMenuScreen *scene = [MainMenuScreen sceneWithSize:skView.bounds.size];
     scene.scaleMode = SKSceneScaleModeAspectFill;
-    
-    [scene loadLevel:1];
     
     // Present the scene.
     [skView presentScene:scene];

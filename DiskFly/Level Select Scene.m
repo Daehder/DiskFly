@@ -76,18 +76,23 @@
     
     SKShapeNode *Level7;
     Level7 = [[Level1Node alloc] initWithLevel:7];
-    Level7.position = CGPointMake(self.frame.size.width *.20, self.frame.size.height *.435);
+    Level7.position = CGPointMake(self.frame.size.width *.20, self.frame.size.height *.43);
     [self addChild:Level7];
     
     SKShapeNode *Level8;
     Level8 = [[Level1Node alloc] initWithLevel:8];
-    Level8.position = CGPointMake(self.frame.size.width *.50, self.frame.size.height *.435);
+    Level8.position = CGPointMake(self.frame.size.width *.50, self.frame.size.height *.43);
     [self addChild:Level8];
     
     SKShapeNode *Level9;
     Level9 = [[Level1Node alloc] initWithLevel:9];
-    Level9.position = CGPointMake(self.frame.size.width *.80, self.frame.size.height *.435);
+    Level9.position = CGPointMake(self.frame.size.width *.80, self.frame.size.height *.43);
     [self addChild:Level9];
+    
+    SKShapeNode *Level10;
+    Level10 = [[Level1Node alloc] initWithLevel:10];
+    Level10.position = CGPointMake(self.frame.size.width *.20, self.frame.size.height *.26);
+    [self addChild:Level10];
     
 }
 @end

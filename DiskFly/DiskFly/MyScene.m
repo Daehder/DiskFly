@@ -45,6 +45,7 @@
 
 -(void)loadLevel: (int) level
 {
+    self.swipes = 0;
     LevelCreator *maker = [[LevelCreator alloc] init];
     self.obstacles = [maker createLevel:level inScene:self];
     self.currentLevelNumber = level;
