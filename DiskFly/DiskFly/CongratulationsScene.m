@@ -33,7 +33,7 @@
     for (int starCounter = 0; starCounter < starsEarned; starCounter++) {
         star = [[SKSpriteNode alloc] initWithImageNamed:@"yellowstar"];
         star.size = CGSizeMake(50, 50);
-        star.position = CGPointMake(self.scene.size.width / 2 - (2 - starCounter) * 50, 260);
+        star.position = CGPointMake(self.scene.size.width / 2 - (2 - starCounter) * 50, 300);
         [self addChild:star];
     }
 }
@@ -45,7 +45,7 @@
     skLabel.text = @"Way to Go!";
     skLabel.fontSize = 60;
     skLabel.fontColor = [SKColor whiteColor];
-    skLabel.position = CGPointMake(160,400);
+    skLabel.position = CGPointMake(160,450);
     
     [self addChild:skLabel];
     
@@ -54,16 +54,16 @@
     skLabel.text = @"You completed the level!";
     skLabel.fontSize = 20;
     skLabel.fontColor = [SKColor whiteColor];
-    skLabel.position = CGPointMake(160, 330);
+    skLabel.position = CGPointMake(160, 390);
     
     [self addChild:skLabel];
 }
 
 - (void) makeButtons
 {
-    ReplayButton *button = [[ReplayButton alloc] init];
-    button.position = CGPointMake(20, 150);
-    [self addChild:button];
+    self.button = [[ReplayButton alloc] init];
+    self.button.position = CGPointMake(20, 150);
+    [self addChild:self.button];
     
     self.nextLevel = [[NextLevelButton alloc] init];
     self.nextLevel.position = CGPointMake(175, 150);
@@ -77,6 +77,7 @@
 - (void) setNextLevelButtonNumber:(int)currentLevelNumber
 {
     self.nextLevel.currentLevelNumber = currentLevelNumber;
+    self.button.currentLevelNumber = currentLevelNumber;
 }
 
 

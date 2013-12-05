@@ -51,7 +51,7 @@
      {
          MyScene *scene = [MyScene sceneWithSize:self.scene.size];
          scene.scaleMode = SKSceneScaleModeAspectFill;
-         [scene loadCurrentLevel];
+         [scene loadLevel:self.currentLevelNumber];
          [self.scene.view presentScene:scene];
      }];
 }
