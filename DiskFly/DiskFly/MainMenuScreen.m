@@ -46,7 +46,7 @@
     [self addChild:InitToWinIt];
     
     //Buttons
-    Level_Select_Button *LevelSelect = [[Level_Select_Button alloc] init];
+    Level_Select_Button *LevelSelect = [[Level_Select_Button alloc] initPlayButton];
     LevelSelect.position = CGPointMake(self.frame.size.width *.18, self.frame.size.height *.30);
     [self addChild:LevelSelect];
 }

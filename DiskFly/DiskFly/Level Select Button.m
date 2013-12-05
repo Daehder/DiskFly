@@ -23,7 +23,35 @@
     
     return self;
 }
+- (instancetype) initPlayButton
+{
+    self = [super init];
+    
+    [self PlayButton];
+    self.userInteractionEnabled = YES;
+    
+    return self;
+}
 - (void) LevelSelectButton
+{
+    SKShapeNode *Button;
+    Button = [[RectangleNode alloc] initWithWidth:100 andHeight:25];
+    Button.fillColor = [SKColor grayColor];
+    Button.xScale=2;
+    Button.yScale=2;
+    Button.lineWidth = 0;
+    [self addChild:Button];
+    
+    
+    SKLabelNode *Text;
+    Text = [SKLabelNode labelNodeWithFontNamed:@"helvetica"];
+    Text.text = @"Level Select";
+    Text.fontSize = 30;
+    Text.fontColor = [SKColor whiteColor];
+    Text.position = CGPointMake(100, 15);
+    [self addChild:Text];
+}
+- (void) PlayButton
 {
     SKShapeNode *Button;
     Button = [[RectangleNode alloc] initWithWidth:100 andHeight:25];
@@ -47,7 +75,7 @@
     UITouch *touch = [touches anyObject];
     self.lastTouchLocation = [touch locationInNode:self];
     
-    SKAction *fadeout = [SKAction fadeOutWithDuration:.1];
+    SKAction *fadeout = [SKAction fadeOutWithDuration:.01];
     [self runAction:fadeout completion:^
      {
          Level_Select_Scene *LevelScreen = [Level_Select_Scene sceneWithSize:self.scene.size];

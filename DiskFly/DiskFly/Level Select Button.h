@@ -10,4 +10,5 @@
 
 @interface Level_Select_Button : SKShapeNode
 -(instancetype) init;
+-(instancetype) initPlayButton;
 @end
