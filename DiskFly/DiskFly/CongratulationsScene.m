@@ -61,9 +61,9 @@
 
 - (void) makeButtons
 {
-    ReplayButton *button = [[ReplayButton alloc] init];
-    button.position = CGPointMake(20, 150);
-    [self addChild:button];
+    self.button = [[ReplayButton alloc] init];
+    self.button.position = CGPointMake(20, 150);
+    [self addChild:self.button];
     
     self.nextLevel = [[NextLevelButton alloc] init];
     self.nextLevel.position = CGPointMake(175, 150);
@@ -77,6 +77,7 @@
 - (void) setNextLevelButtonNumber:(int)currentLevelNumber
 {
     self.nextLevel.currentLevelNumber = currentLevelNumber;
+    self.button.currentLevelNumber = currentLevelNumber;
 }
 
 

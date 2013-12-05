@@ -12,7 +12,6 @@
 
 - (instancetype) initWithRadius: (double) radius;
 - (instancetype) initNarrow;
-- (instancetype) initBackRect;
-
+- (instancetype) initWithWidth: (int) width andHeight: (int) height;
 @end
 

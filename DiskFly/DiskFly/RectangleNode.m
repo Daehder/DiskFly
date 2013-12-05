@@ -42,16 +42,16 @@
     return self;
 }
 
-- (instancetype) initBackRect
+- (instancetype) initWithWidth:(int)width andHeight:(int)height
 {
     self = [super init];
     UIBezierPath *path;
     path = [[UIBezierPath alloc] init];
     
     [path moveToPoint:CGPointMake(0, 0)];
-    [path addLineToPoint:CGPointMake(55, 0)];
-    [path addLineToPoint:CGPointMake(55, 30)];
-    [path addLineToPoint:CGPointMake(0, 30)];
+    [path addLineToPoint:CGPointMake(width, 0)];
+    [path addLineToPoint:CGPointMake(width, height)];
+    [path addLineToPoint:CGPointMake(0, height)];
     [path closePath];
     
     self.path = path.CGPath;
