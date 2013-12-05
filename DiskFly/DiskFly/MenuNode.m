@@ -11,7 +11,7 @@
 #import "Resume Button.h"
 #import "Back Button.h"
 #import "RetryButton.h"
-
+#import "Level Select Button.h"
 @interface MenuNode()
 @property CGPoint lastTouchLocation;
 @property Resume_Button *resumeButton;
@@ -44,6 +44,10 @@
     Back_Button *MainMenu = [[Back_Button alloc] init];
     MainMenu.position = CGPointMake(60,300);
     [self addChild:MainMenu];
+    
+    Level_Select_Button *LevelSelect = [[Level_Select_Button alloc] init];
+    LevelSelect.position = CGPointMake(60,225);
+    [self addChild:LevelSelect];
     
     /*SKLabelNode *MainMenuLabel = [SKLabelNode labelNodeWithFontNamed:@"Helvetica"];
     MainMenuLabel.text = @"Main Menu";
