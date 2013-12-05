@@ -63,7 +63,7 @@
     self.screenWidth = background.size.width;
     self.screenLength = background.size.height;
     background.position = CGPointMake(self.screenWidth/2, self.screenLength/2);
-    background.alpha = .7;
+    background.alpha = .9;
     
     [self addChild:background];
 }

@@ -26,7 +26,7 @@
 - (void) LevelSelectButton
 {
     SKShapeNode *Button;
-    Button = [[RectangleNode alloc] initWithWidth:200 andHeight:50];
+    Button = [[RectangleNode alloc] initWithWidth:100 andHeight:25];
     Button.fillColor = [SKColor grayColor];
     Button.xScale=2;
     Button.yScale=2;
