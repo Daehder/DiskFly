@@ -69,7 +69,8 @@
     CGPoint touchPoint = [touch locationInNode:self];
     CGPoint touchPointInView = [touch locationInView:self.scene.view];
     
-    if ((self.scene.size.height - touchPointInView.y) < 75)
+    if ((self.scene.size.height - touchPointInView.y) < 75 &&
+        self.userInteractionEnabled)
     {
         CGPoint newPosition = self.position;
         newPosition.x = newPosition.x + (touchPoint.x - self.lastTouchLocation.x);
@@ -84,7 +85,8 @@
     }
     
     if ((self.scene.size.height - touchPointInView.y) > 75 &&
-        !self.canReset)
+        !self.canReset &&
+        - self.lastTimeInZone.timeIntervalSinceNow > .03)
     {
         self.firstPositionOutOfZone = touchPointInView;
         self.physicsBody.velocity = CGVectorMake(-(self.firstPositionOutOfZone.x - self.lastPositionInZone.x) /

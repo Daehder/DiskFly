@@ -105,7 +105,7 @@
     [self addChild: self.star];
 }
 
--(Disc*) makeStarReturnwithX:(float)x andY: (float)y
+-(Disc*) makeStarReturnwithX: (float)x andY: (float)y
 {
     self.star = [[Disc alloc] init];
     self.star.position = CGPointMake(x, y);
@@ -203,10 +203,9 @@
     [self resume];
     
     [self resetDisk];
+    self.swipes = 0;
     [self clearObstacles];
     [self loadLevel:self.currentLevelNumber];
-    
-    self.swipes = 0;
 }
 
 -(void) clearObstacles
@@ -241,21 +240,21 @@
 }
 
 -(BOOL) starInOutsideGoal{
-    return  self.star.position.y > self.scene.size.height - 90;
+    return  self.star.position.y > 475;
 }
 
 -(BOOL) starInMiddleGoal {
     return  self.star.position.x > 47.5 &&
-            self.star.position.x < self.scene.size.width - 47.5 &&
-            self.star.position.y > self.scene.size.height - 76.25 &&
-            self.star.position.y < self.scene.size.height - 38.75;
+            self.star.position.x < 275 &&
+            self.star.position.y > 490 &&
+            self.star.position.y < 530;
 }
 
 -(BOOL) starInInsideGoal {
     return  self.star.position.x > 70 &&
-            self.star.position.x < self.scene.size.width - 70 &&
-            self.star.position.y > self.scene.size.height - 70 &&
-            self.star.position.y < self.scene.size.height - 60;
+            self.star.position.x < 250 &&
+            self.star.position.y > 505 &&
+            self.star.position.y < 515;
 }
 
 -(BOOL) starTouchingGoal {
