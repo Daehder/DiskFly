@@ -18,6 +18,7 @@
     if([scene isKindOfClass:[MyScene class]])
     {
         NSMutableArray *level = [self getLevel:levelNum];
+        
         return [self putObjectsInScene: scene fromLevel: level];
     }
     else
@@ -128,5 +129,7 @@
     }
     return obstacles;
 }
+
+
 
 @end
