@@ -66,6 +66,7 @@
     
     SKPhysicsBody *edge = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
     edge.restitution = .3;
+    edge.usesPreciseCollisionDetection = YES;
     self.physicsBody = edge;
     self.physicsBody.restitution = .4;
     
