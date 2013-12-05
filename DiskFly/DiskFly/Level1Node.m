@@ -53,7 +53,7 @@
     UITouch *touch = [touches anyObject];
     self.lastTouchLocation = [touch locationInNode:self];
     
-    SKAction *fadeout = [SKAction fadeOutWithDuration:.1];
+    SKAction *fadeout = [SKAction fadeOutWithDuration:.03];
     [self runAction:fadeout completion:^
      {
          MyScene *Play = [MyScene sceneWithSize:self.scene.size];
