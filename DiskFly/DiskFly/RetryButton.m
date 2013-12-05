@@ -52,14 +52,6 @@
     triangle.xScale = .225;
     [self addChild:triangle];
     
-    /*SKLabelNode *Label;
-    Label = [SKLabelNode labelNodeWithFontNamed:@"helvetica"];
-    Label.text = @" 0 ";
-    Label.fontSize = 60;
-    Label.fontColor = [SKColor grayColor];
-    Label.position = CGPointMake(0, -23);
-    [self addChild:Label];*/
-    
 }
 
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event

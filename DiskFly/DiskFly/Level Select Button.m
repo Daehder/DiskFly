@@ -26,7 +26,7 @@
 - (void) LevelSelectButton
 {
     SKShapeNode *Button;
-    Button = [[RectangleNode alloc] initWithWidth:200 andHeight:50];
+    Button = [[RectangleNode alloc] initWithWidth:100 andHeight:25];
     Button.fillColor = [SKColor grayColor];
     Button.xScale=1;
     Button.yScale=1;
@@ -36,7 +36,7 @@
     
     SKLabelNode *Text;
     Text = [SKLabelNode labelNodeWithFontNamed:@"helvetica"];
-    Text.text = @"Level Select";
+    Text.text = @"Play!";
     Text.fontSize = 30;
     Text.fontColor = [SKColor whiteColor];
     Text.position = CGPointMake(100, 15);

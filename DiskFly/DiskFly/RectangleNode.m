@@ -23,6 +23,7 @@
     [path closePath];
     
     self.path = path.CGPath;
+    
     return self;
 }
 

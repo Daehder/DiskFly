@@ -36,7 +36,7 @@
     Label.text = @"LEVEL SELECT";
     Label.fontSize = 20;
     Label.fontColor = [SKColor whiteColor];
-    Label.position = CGPointMake(self.frame.size.width *.535, self.frame.size.height *.90);
+    Label.position = CGPointMake(self.frame.size.width *.525, self.frame.size.height *.90);
     [self addChild:Label];
     
     SKShapeNode *BackButton;
