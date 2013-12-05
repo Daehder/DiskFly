@@ -51,7 +51,7 @@
                      @{@"type": @"rect", @"x":@225, @"y":@400},
                      @{@"type": @"circle", @"x":@160, @"y":@200}];
     
-    NSArray *levels = @[l1, l2, l3, l4];
+    NSArray *levels = @[l1, l2, l3, l4, l9];
     
     if(level >= [levels count])
         return levels[[levels count] - 1];
