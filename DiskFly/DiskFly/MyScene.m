@@ -16,7 +16,6 @@
 @property MoveZone *zone;
 @property int swipes;
 @property NSMutableArray *obstacles;
-@property int level;
 
 @end
 
@@ -48,54 +47,13 @@
 
 -(void)loadLevel: (int) level
 {
-    self.level = level;
     self.swipes = 0;
     LevelCreator *maker = [[LevelCreator alloc] init];
     self.obstacles = [maker createLevel:level inScene:self];
     self.currentLevelNumber = level;
-    if (level == 1) {
-        [self loadTutorial];
-    }
     
 }
 
--(void) loadTutorial
-{
-    SKLabelNode *instructions = [[SKLabelNode alloc] initWithFontNamed:@"Helvetica"];
-    instructions.text = @"move the yellow cue around";
-    instructions.fontSize = 20;
-    instructions.fontColor = [SKColor whiteColor];
-    instructions.position = CGPointMake(self.scene.size.width / 2, 130);
-    [self addChild:instructions];
-
-    instructions = [[SKLabelNode alloc] initWithFontNamed:@"Helvetica"];
-    instructions.text = @"inside the gray box";
-    instructions.fontSize = 20;
-    instructions.fontColor = [SKColor whiteColor];
-    instructions.position = CGPointMake(self.scene.size.width / 2, 110);
-    [self addChild:instructions];
-    
-    instructions = [[SKLabelNode alloc] initWithFontNamed:@"Helvetica"];
-    instructions.text = @"drag the disc outside";
-    instructions.fontSize = 20;
-    instructions.fontColor = [SKColor whiteColor];
-    instructions.position = CGPointMake(self.scene.size.width / 2, 200);
-    [self addChild:instructions];
-    
-    instructions = [[SKLabelNode alloc] initWithFontNamed:@"Helvetica"];
-    instructions.text = @"of the box to flick it";
-    instructions.fontSize = 20;
-    instructions.fontColor = [SKColor whiteColor];
-    instructions.position = CGPointMake(self.scene.size.width / 2, 180);
-    [self addChild:instructions];
-    
-    instructions = [[SKLabelNode alloc] initWithFontNamed:@"Helvetica"];
-    instructions.text = @"try to hit the blue disk into the goal!";
-    instructions.fontSize = 20;
-    instructions.fontColor = [SKColor whiteColor];
-    instructions.position = CGPointMake(self.scene.size.width / 2, 500);
-    [self addChild:instructions];
-}
 
 -(void) makeCue
 {
@@ -196,10 +154,6 @@
 
 -(void) update:(CFTimeInterval)currentTime
 {
-    if(self.level == 1)
-    {
-        [self loadTutorial];
-    }
     if (self.cue.position.y > 100) {
         [self.zone makePhysicsBody];
         self.zone.physicsBody.categoryBitMask = 0xFFFFFFFF;
