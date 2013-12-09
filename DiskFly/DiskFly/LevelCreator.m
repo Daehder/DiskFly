@@ -113,40 +113,7 @@
         
         if ([object[@"type"] isEqualToString:@"tutorial"])
         {
-            SKLabelNode *instructions = [[SKLabelNode alloc] initWithFontNamed:@"Helvetica"];
-            instructions.text = @"move the yellow cue around";
-            instructions.fontSize = 20;
-            instructions.fontColor = [SKColor whiteColor];
-            instructions.position = CGPointMake(scene.size.width / 2, 130);
-            [scene addChild:instructions];
-            
-            instructions = [[SKLabelNode alloc] initWithFontNamed:@"Helvetica"];
-            instructions.text = @"inside the gray box";
-            instructions.fontSize = 20;
-            instructions.fontColor = [SKColor whiteColor];
-            instructions.position = CGPointMake(scene.size.width / 2, 110);
-            [scene addChild:instructions];
-            
-            instructions = [[SKLabelNode alloc] initWithFontNamed:@"Helvetica"];
-            instructions.text = @"drag the disc outside";
-            instructions.fontSize = 20;
-            instructions.fontColor = [SKColor whiteColor];
-            instructions.position = CGPointMake(scene.size.width / 2, 200);
-            [scene addChild:instructions];
-            
-            instructions = [[SKLabelNode alloc] initWithFontNamed:@"Helvetica"];
-            instructions.text = @"of the box to flick it";
-            instructions.fontSize = 20;
-            instructions.fontColor = [SKColor whiteColor];
-            instructions.position = CGPointMake(scene.size.width / 2, 180);
-            [scene addChild:instructions];
-            
-            instructions = [[SKLabelNode alloc] initWithFontNamed:@"Helvetica"];
-            instructions.text = @"try to hit the blue disk into the goal!";
-            instructions.fontSize = 20;
-            instructions.fontColor = [SKColor whiteColor];
-            instructions.position = CGPointMake(scene.size.width / 2, 500);
-            [scene addChild:instructions];
+            [self createTutorialInScene: scene];
         }
 
         else if ([object[@"type"] isEqualToString:@"rect"])
@@ -169,6 +136,44 @@
         }
     }
     return obstacles;
+}
+
+- (void) createTutorialInScene: (SKScene*) scene
+{
+    SKLabelNode *instructions = [[SKLabelNode alloc] initWithFontNamed:@"Helvetica"];
+    instructions.text = @"move the yellow cue around";
+    instructions.fontSize = 20;
+    instructions.fontColor = [SKColor whiteColor];
+    instructions.position = CGPointMake(scene.size.width / 2, 130);
+    [scene addChild:instructions];
+    
+    instructions = [[SKLabelNode alloc] initWithFontNamed:@"Helvetica"];
+    instructions.text = @"inside the gray box";
+    instructions.fontSize = 20;
+    instructions.fontColor = [SKColor whiteColor];
+    instructions.position = CGPointMake(scene.size.width / 2, 110);
+    [scene addChild:instructions];
+    
+    instructions = [[SKLabelNode alloc] initWithFontNamed:@"Helvetica"];
+    instructions.text = @"drag the disc outside";
+    instructions.fontSize = 20;
+    instructions.fontColor = [SKColor whiteColor];
+    instructions.position = CGPointMake(scene.size.width / 2, 200);
+    [scene addChild:instructions];
+    
+    instructions = [[SKLabelNode alloc] initWithFontNamed:@"Helvetica"];
+    instructions.text = @"of the box to flick it";
+    instructions.fontSize = 20;
+    instructions.fontColor = [SKColor whiteColor];
+    instructions.position = CGPointMake(scene.size.width / 2, 180);
+    [scene addChild:instructions];
+    
+    instructions = [[SKLabelNode alloc] initWithFontNamed:@"Helvetica"];
+    instructions.text = @"try to hit the blue disk into the goal!";
+    instructions.fontSize = 20;
+    instructions.fontColor = [SKColor whiteColor];
+    instructions.position = CGPointMake(scene.size.width / 2, 500);
+    [scene addChild:instructions];
 }
 
 

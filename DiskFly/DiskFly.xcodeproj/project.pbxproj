@@ -172,8 +172,6 @@
 				F6292BA01832CEBA00128EEA /* Resume Button.m */,
 				F6E1D0DE182C74B50041FB92 /* Level Select Button.h */,
 				F635B906182C3753009D04D1 /* Level Select Button.m */,
-				F6E1D0DB182C74870041FB92 /* Level Select Scene.h */,
-				F6E1D0DC182C74870041FB92 /* Level Select Scene.m */,
 				F6E1D0DF182C77440041FB92 /* Back Button.h */,
 				F6E1D0E0182C77440041FB92 /* Back Button.m */,
 				F6B9C819182C9DAF00B667E6 /* Level1Node.h */,
@@ -184,6 +182,60 @@
 				03BADF80184DA1B30048285B /* NextLevelButton.m */,
 			);
 			name = Buttons;
+			sourceTree = "<group>";
+		};
+		03B31B8518557171008785C5 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				F6E1D0DB182C74870041FB92 /* Level Select Scene.h */,
+				F6E1D0DC182C74870041FB92 /* Level Select Scene.m */,
+				03F2C2B3181DABFB00DBAA85 /* MyScene.h */,
+				03F2C2B4181DABFB00DBAA85 /* MyScene.m */,
+				F635B902182C2FE7009D04D1 /* MainMenuScreen.h */,
+				F635B903182C2FE7009D04D1 /* MainMenuScreen.m */,
+				03B22A24184528460006B008 /* CongratulationsScene.h */,
+				03ACED3F184E7F7600EB8C5A /* CongratulationsScene.m */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
+		03B31B86185571FD008785C5 /* End User Objects */ = {
+			isa = PBXGroup;
+			children = (
+				3723CBEE1822E90200C07CFF /* GoalNode.h */,
+				3723CBEF1822E90200C07CFF /* GoalNode.m */,
+				3782B6901822DEAE00C8E79F /* Disc.h */,
+				3782B6911822DEAE00C8E79F /* Disc.m */,
+				03B22A2118451AC60006B008 /* Obstacles.h */,
+				03B22A2218451AC60006B008 /* Obstacles.m */,
+				369EE739182975960066BDD0 /* MoveZone.h */,
+				369EE73A182975960066BDD0 /* MoveZone.m */,
+			);
+			name = "End User Objects";
+			sourceTree = "<group>";
+		};
+		03B31B8718557222008785C5 /* Building Blocks */ = {
+			isa = PBXGroup;
+			children = (
+				F635B908182C39B3009D04D1 /* RectangleNode.h */,
+				F635B909182C39B3009D04D1 /* RectangleNode.m */,
+				F6292B9C1832CDC000128EEA /* Triangle.h */,
+				F6292B9D1832CDC000128EEA /* Triangle.m */,
+				8C5CB271182C1B6600148D8F /* Circle.h */,
+				8C5CB272182C1B6600148D8F /* Circle.m */,
+			);
+			name = "Building Blocks";
+			sourceTree = "<group>";
+		};
+		03B31B8818557230008785C5 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				03AD16DB183EAA8400B6DBB1 /* LevelCreator.h */,
+				03AD16DC183EAA8400B6DBB1 /* LevelCreator.m */,
+				8C5CB26E182C1B3300148D8F /* MenuNode.h */,
+				8C5CB26F182C1B3300148D8F /* MenuNode.m */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 		03F2C28A181DABFB00DBAA85 = {
@@ -222,31 +274,11 @@
 			children = (
 				03F2C2B0181DABFB00DBAA85 /* ViewController.h */,
 				03F2C2B1181DABFB00DBAA85 /* ViewController.m */,
-				03F2C2B3181DABFB00DBAA85 /* MyScene.h */,
-				03F2C2B4181DABFB00DBAA85 /* MyScene.m */,
-				03AD16DB183EAA8400B6DBB1 /* LevelCreator.h */,
-				03AD16DC183EAA8400B6DBB1 /* LevelCreator.m */,
-				3723CBEE1822E90200C07CFF /* GoalNode.h */,
-				3723CBEF1822E90200C07CFF /* GoalNode.m */,
-				3782B6901822DEAE00C8E79F /* Disc.h */,
-				3782B6911822DEAE00C8E79F /* Disc.m */,
+				03B31B8518557171008785C5 /* Scenes */,
+				03B31B8818557230008785C5 /* Helpers */,
+				03B31B86185571FD008785C5 /* End User Objects */,
 				038EC1D5183C0CA600CC887C /* Buttons */,
-				8C5CB26E182C1B3300148D8F /* MenuNode.h */,
-				8C5CB26F182C1B3300148D8F /* MenuNode.m */,
-				F635B902182C2FE7009D04D1 /* MainMenuScreen.h */,
-				F635B903182C2FE7009D04D1 /* MainMenuScreen.m */,
-				F635B908182C39B3009D04D1 /* RectangleNode.h */,
-				F635B909182C39B3009D04D1 /* RectangleNode.m */,
-				F6292B9C1832CDC000128EEA /* Triangle.h */,
-				F6292B9D1832CDC000128EEA /* Triangle.m */,
-				03B22A24184528460006B008 /* CongratulationsScene.h */,
-				03ACED3F184E7F7600EB8C5A /* CongratulationsScene.m */,
-				8C5CB271182C1B6600148D8F /* Circle.h */,
-				8C5CB272182C1B6600148D8F /* Circle.m */,
-				03B22A2118451AC60006B008 /* Obstacles.h */,
-				03B22A2218451AC60006B008 /* Obstacles.m */,
-				369EE739182975960066BDD0 /* MoveZone.h */,
-				369EE73A182975960066BDD0 /* MoveZone.m */,
+				03B31B8718557222008785C5 /* Building Blocks */,
 				03F2C2A7181DABFB00DBAA85 /* AppDelegate.h */,
 				03F2C2A8181DABFB00DBAA85 /* AppDelegate.m */,
 				03F2C2AA181DABFB00DBAA85 /* Main_iPhone.storyboard */,
